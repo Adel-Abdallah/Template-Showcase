@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - Minimalist Template</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">ESSENTIAL.</a>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Shop</a>
+            <a href="product.html" class="nav-link">Featured</a>
+            <a href="wishlist.html" class="nav-link">Saved</a>
+            <a href="cart.html" class="nav-link">Cart</a>
+        </nav>
+    </header>
+
+    <main class="pdp-container">
+        <div class="pdp-grid">
+            <div class="pdp-image">
+                <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&h=800&fit=crop"
+                    alt="Essential Low-Top">
+            </div>
+            <div class="pdp-content">
+                <h1 class="pdp-title">Essential Low-Top</h1>
+                <p class="pdp-price">$185.00</p>
+                <p class="pdp-desc">Crafted from premium Italian leather with a minimalist silhouette. The Essential
+                    Low-Top is designed to be worn daily, for years to come.</p>
+
+                <div class="pdp-options">
+                    <label class="option-label">Size</label>
+                    <select class="option-select">
+                        <option>US 7</option>
+                        <option>US 8</option>
+                        <option>US 9</option>
+                        <option>US 10</option>
+                        <option>US 11</option>
+                    </select>
+                </div>
+
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Quality essentials since 2020</p>
+    </footer>
+
+    <style>
+        .pdp-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .pdp-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .pdp-grid {
+                grid-template-columns: 1fr 1fr;
+                align-items: start;
+            }
+        }
+
+        .pdp-image {
+            aspect-ratio: 1;
+            background: #f5f5f5;
+            overflow: hidden;
+        }
+
+        .pdp-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pdp-content {
+            padding: 1rem 0;
+        }
+
+        .pdp-title {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .pdp-price {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .pdp-desc {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .pdp-options {
+            margin-bottom: 2rem;
+        }
+
+        .option-label {
+            display: block;
+            font-size: 0.875rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .option-select {
+            width: 100%;
+            max-width: 200px;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            max-width: 300px;
+            padding: 1rem 2rem;
+            background: #111;
+            color: #fff;
+            border: none;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .add-to-cart:hover {
+            background: #333;
+        }
+    </style>
+</body>
+
+</html>

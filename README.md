@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Template Showcase
+
+A collection of **10 complete, production-ready e-commerce templates** built with Next.js and Vanilla CSS.
+
+🌐 **Live Demo**: [Coming Soon]
+
+## Features
+
+- ✅ 10 Unique Design Themes
+- ✅ Product List Pages (PLP)
+- ✅ Product Detail Pages (PDP)
+- ✅ Shopping Cart
+- ✅ Wishlist
+- ✅ Responsive Design (Mobile-First)
+- ✅ Downloadable HTML/CSS Templates
+
+## The Templates
+
+| # | Theme | Style |
+|---|-------|-------|
+| 1 | **Minimalist** | Clean, whitespace, essentialism |
+| 2 | **Luxury** | Dark mode, gold accents, serif |
+| 3 | **Tech** | Cyberpunk, neon, monospace |
+| 4 | **Editorial** | Magazine layout, bold type |
+| 5 | **Organic** | Earth tones, soft shapes |
+| 6 | **Vibrant** | Bold gradients, playful |
+| 7 | **Industrial** | Brutalist, raw, dashed lines |
+| 8 | **Glassmorphism** | Translucent, blur, pastels |
+| 9 | **SaaS** | Modern UI, split-screen |
+| 10 | **Immersive** | Scroll-snap, full-screen art |
+
+## Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Vanilla CSS (CSS Modules)
+- **Language**: TypeScript
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000` to see the template showcase.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/app/
+├── page.tsx              # Homepage gallery
+├── about/                # About page
+├── contact/              # Contact page
+├── minimalist/           # Minimalist theme
+│   ├── layout.tsx        # Theme header/footer
+│   ├── page.tsx          # PLP
+│   ├── product/page.tsx  # PDP
+│   ├── cart/page.tsx
+│   └── wishlist/page.tsx
+├── luxury/               # Luxury theme
+├── tech/                 # Tech theme
+├── editorial/            # Editorial theme
+├── organic/              # Organic theme
+├── vibrant/              # Vibrant theme
+├── industrial/           # Industrial theme
+├── glass/                # Glassmorphism theme
+├── saas/                 # SaaS theme
+└── immersive/            # Immersive theme
+```
 
-## Learn More
+## Author
 
-To learn more about Next.js, take a look at the following resources:
+**Adel Abdallah** - Software Engineer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Portfolio: [adelgafo.website](https://adelgafo.website/)
+- Services: [gafohive.io](https://gafohive.io/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License - Feel free to use these templates for your projects!

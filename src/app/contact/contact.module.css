@@ -8,29 +8,33 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 3rem;
+    padding: 1rem 1.5rem;
     border-bottom: 1px solid #222;
     position: sticky;
     top: 0;
-    background: rgba(10, 10, 10, 0.9);
+    background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
     z-index: 100;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .navLogo {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #fff;
 }
 
 .navLinks {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .navLink {
     color: #888;
     transition: color 0.2s;
+    font-size: 0.875rem;
 }
 
 .navLink:hover {
@@ -40,13 +44,13 @@
 .main {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 2rem 1.5rem;
 }
 
 .title {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 800;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -57,57 +61,52 @@
 .subtitle {
     text-align: center;
     color: #888;
-    font-size: 1.1rem;
-    margin-bottom: 4rem;
+    font-size: 1rem;
+    margin-bottom: 3rem;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.5;
 }
 
 .contactGrid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
-}
-
-@media (min-width: 768px) {
-    .contactGrid {
-        grid-template-columns: 1fr 1.5fr;
-    }
+    gap: 2rem;
 }
 
 .info h2 {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
     color: #fff;
 }
 
 .infoItem {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .infoItem strong {
     display: block;
     color: #888;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     margin-bottom: 0.25rem;
 }
 
 .infoItem a {
     color: #667eea;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .services {
-    margin-top: 3rem;
-    padding-top: 2rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
     border-top: 1px solid #222;
 }
 
 .services h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #888;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .services ul {
@@ -116,35 +115,36 @@
 
 .services li {
     color: #aaa;
-    padding: 0.5rem 0;
-    padding-left: 1rem;
+    padding: 0.4rem 0;
+    padding-left: 0.75rem;
     border-left: 2px solid #667eea;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
 }
 
 .form {
     background: #111;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 16px;
     border: 1px solid #222;
 }
 
 .formGroup {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .formGroup label {
     display: block;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     color: #888;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .formGroup input,
 .formGroup select,
 .formGroup textarea {
     width: 100%;
-    padding: 0.875rem 1rem;
+    padding: 0.75rem;
     background: #0a0a0a;
     border: 1px solid #333;
     border-radius: 8px;
@@ -161,6 +161,7 @@
 
 .formGroup textarea {
     resize: vertical;
+    min-height: 100px;
 }
 
 .submitBtn {
@@ -181,29 +182,78 @@
 }
 
 .footer {
-    padding: 2rem 3rem;
+    padding: 1.5rem;
     border-top: 1px solid #222;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     gap: 1rem;
+    text-align: center;
 }
 
 .footer p {
     color: #666;
+    font-size: 0.85rem;
 }
 
 .footerLinks {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .footerLinks a {
     color: #666;
     transition: color 0.2s;
+    font-size: 0.85rem;
 }
 
 .footerLinks a:hover {
     color: #fff;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .nav {
+        padding: 1.5rem 2rem;
+    }
+
+    .navLogo {
+        font-size: 1.25rem;
+    }
+
+    .navLinks {
+        gap: 2rem;
+    }
+
+    .main {
+        padding: 3rem 2rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .contactGrid {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 3rem;
+    }
+
+    .form {
+        padding: 2rem;
+    }
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2rem 3rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .title {
+        font-size: 3rem;
+    }
 }
