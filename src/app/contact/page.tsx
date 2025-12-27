@@ -26,7 +26,7 @@ export default function ContactPage() {
 
                         <div className={styles.infoItem}>
                             <strong>Email</strong>
-                            <a href="mailto:contact@adelgafo.website">contact@adelgafo.website</a>
+                            <a href="mailto:adelgafo@gmail.com">adelgafo@gmail.com</a>
                         </div>
 
                         <div className={styles.infoItem}>
@@ -58,7 +58,7 @@ export default function ContactPage() {
 
                     <form
                         className={styles.form}
-                        action="https://formsubmit.co/contact@adelgafo.website"
+                        action="https://formsubmit.co/adelgafo@gmail.com"
                         method="POST"
                     >
                         <input type="hidden" name="_subject" value="New Contact from Template Showcase" />
