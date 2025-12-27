@@ -1,0 +1,53 @@
+.container {
+    padding: 4rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #2c2925;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    text-align: center;
+}
+
+.image {
+    aspect-ratio: 1;
+    border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%;
+    background: #e6e2dd;
+    margin-bottom: 1.5rem;
+    box-shadow: 10px 10px 30px #d1cdc8, -10px -10px 30px #ffffff;
+}
+
+.name {
+    font-size: 1rem;
+    color: #2c2925;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 0.95rem;
+    color: #8c857b;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    width: 100%;
+    padding: 0.875rem;
+    background: #4a453f;
+    color: #f7f5f2;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}

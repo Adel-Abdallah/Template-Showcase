@@ -1,0 +1,93 @@
+/* Tech Theme Layout Styles */
+.layoutContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+}
+
+.bgGrid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.header {
+    position: relative;
+    z-index: 10;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #0f0;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.navLink {
+    color: #0f0;
+    font-size: 0.875rem;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+}
+
+.navLink:hover {
+    border-color: #0f0;
+    background: rgba(0, 255, 0, 0.1);
+}
+
+.navIcons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.iconLink {
+    color: #0f0;
+    font-size: 0.875rem;
+    border: 1px solid #0f0;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s;
+}
+
+.iconLink:hover {
+    background: #0f0;
+    color: #000;
+}
+
+.main {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.footer {
+    position: relative;
+    z-index: 10;
+    padding: 1.5rem;
+    border-top: 2px solid #0f0;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #0f0;
+    opacity: 0.5;
+}

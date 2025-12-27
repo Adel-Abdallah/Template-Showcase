@@ -1,0 +1,53 @@
+.layoutContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    color: #111;
+    font-family: 'Arial Black', Arial, sans-serif;
+}
+
+.header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    letter-spacing: -2px;
+    background: linear-gradient(90deg, #ff00cc, #3333ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.navLink {
+    font-size: 0.875rem;
+    color: #666;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.navLink:hover {
+    color: #ff00cc;
+}
+
+.main {
+    flex: 1;
+}
+
+.footer {
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #999;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-weight: normal;
+}

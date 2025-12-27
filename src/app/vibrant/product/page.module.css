@@ -1,0 +1,119 @@
+.container {
+    padding: 4rem 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.visual {
+    background: radial-gradient(circle at center, #ff00cc22 0%, #3333ff11 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.6;
+}
+
+.productImage {
+    width: 350px;
+    height: 450px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    transform: rotate(-5deg);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #3333ff;
+}
+
+.info {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tag {
+    font-size: 1rem;
+    color: #ff00cc;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 3rem;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    letter-spacing: -2px;
+}
+
+.price {
+    font-size: 2rem;
+    color: #3333ff;
+    margin-bottom: 2rem;
+}
+
+.desc {
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 3rem;
+    font-weight: normal;
+}
+
+.btn {
+    background: linear-gradient(90deg, #3333ff, #ff00cc);
+    color: #fff;
+    padding: 1.5rem 3rem;
+    font-size: 1.5rem;
+    border-radius: 100px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.btn:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 10px 30px rgba(51, 51, 255, 0.4);
+}
+
+.pills {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.pill {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #f0f0f0;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-weight: bold;
+    color: #999;
+}

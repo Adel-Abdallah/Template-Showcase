@@ -1,141 +1,386 @@
 .page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
   min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  background: #0a0a0a;
+  color: #fff;
 }
 
-.main {
+/* Navigation */
+.nav {
   display: flex;
-  min-height: 100vh;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
   justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  gap: 1rem;
+}
+
+.navLogo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.navLink {
+  color: #888;
+  transition: color 0.2s;
+  font-size: 0.875rem;
+}
+
+.navLink:hover {
+  color: #fff;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 1.5rem;
 }
 
 .intro {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+.intro strong {
+  color: #fff;
+}
+
+.heroActions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.heroBtnPrimary {
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+}
+
+.heroBtnPrimary:hover {
+  transform: translateY(-2px);
+}
+
+.heroBtnSecondary {
+  padding: 0.875rem 1.5rem;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+
+.heroBtnSecondary:hover {
+  border-color: #888;
+}
+
+/* How To Section */
+.howTo {
+  padding: 3rem 1.5rem;
+  background: #111;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.step {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.stepNumber {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 auto 0.75rem;
+}
+
+.step h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.step p {
+  color: #888;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+/* Templates Section */
+.templatesSection {
+  padding: 3rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.cardWrapper {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
+.card {
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  transition: all 0.3s;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.cardDesc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.pages {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.pages span {
+  font-size: 0.6rem;
+  padding: 0.25rem 0.4rem;
+  border-radius: 4px;
   font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
+.cardActions {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+  gap: 0;
+  background: #1a1a1a;
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
 }
 
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
+.previewBtn,
+.downloadBtn {
+  flex: 1;
+  padding: 0.875rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 0.2s;
+  border: none;
   cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.previewBtn {
+  background: #1a1a1a;
+  color: #fff;
+  border-right: 1px solid #333;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.previewBtn:hover {
+  background: #222;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+.downloadBtn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+}
+
+.downloadBtn:hover {
+  filter: brightness(1.1);
+}
+
+/* Footer */
+.footer {
+  padding: 2rem 1.5rem;
+  border-top: 1px solid #222;
+  background: #0a0a0a;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.footer p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #667eea;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footerLinks a {
+  color: #666;
+  transition: color 0.2s;
+  font-size: 0.9rem;
+}
+
+.footerLinks a:hover {
+  color: #fff;
+}
+
+/* Tablet and up */
+@media (min-width: 640px) {
+  .nav {
+    padding: 1.5rem 2rem;
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+  .navLogo {
+    font-size: 1.25rem;
+  }
+
+  .navLinks {
+    gap: 2rem;
+  }
+
+  .hero {
+    padding: 5rem 2rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footerContent {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
   }
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
+/* Desktop */
+@media (min-width: 1024px) {
+  .nav {
+    padding: 1.5rem 3rem;
   }
 
-  .intro {
-    gap: 16px;
+  .hero {
+    padding: 6rem 2rem;
   }
 
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+  .title {
+    font-size: 3.5rem;
   }
 
-  .page {
-    --background: #000;
-    --foreground: #000;
+  .subtitle {
+    font-size: 1.5rem;
+  }
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
+  .sectionTitle {
+    font-size: 2rem;
+  }
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 2rem;
+    min-height: 220px;
+  }
+
+  .cardTitle {
+    font-size: 1.5rem;
   }
 }

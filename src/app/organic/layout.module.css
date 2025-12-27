@@ -1,0 +1,49 @@
+.layoutContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f5f2;
+    color: #5a544b;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+}
+
+.header {
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: #4a453f;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.navLink {
+    font-size: 0.875rem;
+    color: #8c857b;
+    transition: color 0.2s;
+}
+
+.navLink:hover {
+    color: #4a453f;
+}
+
+.main {
+    flex: 1;
+}
+
+.footer {
+    padding: 3rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #999;
+}

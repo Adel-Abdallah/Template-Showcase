@@ -1,0 +1,92 @@
+.container {
+    padding: 3rem 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.imageSection {
+    background: #333;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.productMock {
+    width: 180px;
+    height: 300px;
+    background: #1a1a1a;
+    border: 4px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.infoSection {
+    padding: 3rem;
+    border-left: 2px solid #444;
+}
+
+.meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    color: #888;
+    font-family: monospace;
+}
+
+.productName {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.priceStrip {
+    background: #ff3300;
+    color: #000;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    transform: skew(-10deg);
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 500px;
+}
+
+.actionBtn {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.actionBtn:hover {
+    background: #ff3300;
+}

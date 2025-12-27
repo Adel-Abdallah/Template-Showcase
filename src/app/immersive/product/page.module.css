@@ -1,0 +1,86 @@
+.page {
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.section {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.artworkLarge {
+    width: 60vmin;
+    height: 80vmin;
+    max-width: 400px;
+    max-height: 500px;
+    background: #111;
+    border: 1px solid #222;
+    margin-bottom: 3rem;
+}
+
+.details {
+    text-align: center;
+}
+
+.edition {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 100;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.artist {
+    font-size: 1rem;
+    opacity: 0.5;
+}
+
+.content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    opacity: 0.8;
+}
+
+.price {
+    font-size: 2rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    padding: 1.25rem 4rem;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+}

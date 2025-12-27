@@ -1,0 +1,125 @@
+/* Luxury Cart Styles */
+.container {
+    padding: 4rem 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.cartGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    .cartGrid {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.item {
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #222;
+}
+
+.itemImage {
+    width: 120px;
+    height: 150px;
+    background: #111;
+    border: 1px solid #222;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: #333;
+}
+
+.itemInfo {
+    flex: 1;
+}
+
+.itemName {
+    font-size: 1.25rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+}
+
+.itemVariant {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.itemPrice {
+    font-size: 1.1rem;
+    color: #bf9b30;
+}
+
+.removeBtn {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: #666;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.summary {
+    background: #0a0a0a;
+    padding: 2.5rem;
+    border: 1px solid #222;
+    height: fit-content;
+}
+
+.summaryRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    color: #888;
+}
+
+.summaryTotal {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    border-top: 1px solid #222;
+    font-size: 1.25rem;
+    color: #bf9b30;
+}
+
+.checkoutBtn {
+    width: 100%;
+    padding: 1.25rem;
+    background: #bf9b30;
+    color: #000;
+    border: none;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.checkoutBtn:hover {
+    background: #d4af37;
+}

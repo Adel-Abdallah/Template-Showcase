@@ -1,0 +1,84 @@
+/* Luxury Wishlist Styles */
+.container {
+    padding: 4rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    position: relative;
+    text-align: center;
+}
+
+.removeBtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #111;
+    border: 1px solid #333;
+    color: #bf9b30;
+    font-size: 0.8rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.image {
+    aspect-ratio: 3/4;
+    background: #111;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 0.8rem;
+    border: 1px solid #222;
+}
+
+.name {
+    font-size: 1.25rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+}
+
+.price {
+    font-size: 1rem;
+    color: #bf9b30;
+    margin-bottom: 1.5rem;
+}
+
+.addToCart {
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid #bf9b30;
+    color: #bf9b30;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.addToCart:hover {
+    background: #bf9b30;
+    color: #000;
+}

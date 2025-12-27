@@ -1,0 +1,52 @@
+.layoutContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4ecdf;
+    color: #1a1a1a;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.header {
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.navLink {
+    font-size: 0.875rem;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.navLink:hover {
+    color: #000;
+}
+
+.main {
+    flex: 1;
+}
+
+.footer {
+    padding: 2rem 3rem;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999;
+}

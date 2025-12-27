@@ -1,0 +1,183 @@
+.page {
+    min-height: 100vh;
+    background: #0a0a0a;
+    color: #fff;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    background: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.navLogo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.navLinks {
+    display: flex;
+    gap: 2rem;
+}
+
+.navLink {
+    color: #888;
+    transition: color 0.2s;
+}
+
+.navLink:hover {
+    color: #fff;
+}
+
+.main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.name {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.role {
+    font-size: 1.25rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.section {
+    margin-bottom: 3rem;
+}
+
+.section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+}
+
+.section p {
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.skillCategory h3 {
+    font-size: 1rem;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.skillCategory ul {
+    list-style: none;
+}
+
+.skillCategory li {
+    color: #aaa;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #222;
+}
+
+.clients {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.client {
+    background: #111;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #222;
+}
+
+.client strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.client span {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+
+.ctaBtn {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.ctaBtnSecondary {
+    padding: 1rem 2rem;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.footer {
+    padding: 2rem 3rem;
+    border-top: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer p {
+    color: #666;
+}
+
+.footerLinks {
+    display: flex;
+    gap: 2rem;
+}
+
+.footerLinks a {
+    color: #666;
+    transition: color 0.2s;
+}
+
+.footerLinks a:hover {
+    color: #fff;
+}
