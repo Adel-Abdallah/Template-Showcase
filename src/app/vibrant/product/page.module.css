@@ -2,6 +2,16 @@
     padding: 4rem 2rem;
 }
 
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    .visual {
+        min-height: 400px;
+    }
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -46,6 +56,13 @@
     color: #3333ff;
 }
 
+@media (max-width: 768px) {
+    .productImage {
+        width: 280px;
+        height: 360px;
+    }
+}
+
 .info {
     padding: 4rem;
     display: flex;
@@ -67,6 +84,12 @@
     line-height: 0.9;
     margin-bottom: 2rem;
     letter-spacing: -2px;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
 }
 
 .price {

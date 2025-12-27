@@ -7,6 +7,12 @@
     align-items: center;
 }
 
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem 1rem;
+    }
+}
+
 @media (min-width: 1024px) {
     .container {
         grid-template-columns: 1fr 1.5fr;
@@ -34,6 +40,12 @@
     line-height: 1.1;
     margin-bottom: 1.5rem;
     color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
 }
 
 .desc {

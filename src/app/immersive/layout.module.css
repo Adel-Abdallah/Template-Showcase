@@ -18,6 +18,15 @@
     mix-blend-mode: difference;
 }
 
+@media (max-width: 768px) {
+    .nav {
+        padding: 1rem;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
 .logo {
     font-size: 1.5rem;
     font-style: italic;

@@ -203,7 +203,7 @@ export default function Home() {
                             </Link>
                             <div className={styles.cardActions}>
                                 <Link href={`/${t.id}`} className={styles.previewBtn}>Preview</Link>
-                                <a href={`/downloads/${t.id}-template.zip`} download className={styles.downloadBtn}>Download</a>
+                                <a href={`/downloads/${t.id}-project.zip`} download className={styles.downloadBtn}>Download</a>
                             </div>
                         </div>
                     ))}

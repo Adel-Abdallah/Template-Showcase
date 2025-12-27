@@ -15,6 +15,14 @@
     border-bottom: 1px solid #ddd;
 }
 
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+}
+
 .logo {
     font-size: 1.5rem;
     font-weight: 900;
@@ -25,6 +33,14 @@
 .nav {
     display: flex;
     gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 .navLink {
