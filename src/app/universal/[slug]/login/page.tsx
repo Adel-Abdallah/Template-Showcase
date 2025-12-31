@@ -5,7 +5,7 @@ import Button from '../../../../shared/components/ui/Button';
 import { loadThemeData } from '../../../../shared/utils/themeLoader';
 import Link from 'next/link';
 
-export default async function LoginPage({ params }: { params: { slug: string } }) {
+export default async function LoginPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     // We load theme data to check validity, and maybe pass classes if needed
     // But AuthTemplate handles most layout.

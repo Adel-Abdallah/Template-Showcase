@@ -2,6 +2,30 @@
     "theme": "organic",
     "title": "Pure & Natural",
     "subtitle": "Earth First",
+    "style": {
+        "colors": {
+            "primary": "#416d47",
+            "onPrimary": "#ffffff",
+            "secondary": "#d8e2dc",
+            "onSecondary": "#2f3e46",
+            "background": "#f4f7f6",
+            "text": "#2f3e46",
+            "border": "#cad2c5",
+            "cardBg": "#ffffff"
+        },
+        "typography": {
+            "fontFamily": "Merriweather, serif",
+            "headingsFamily": "Merriweather, serif"
+        },
+        "shape": {
+            "borderRadius": "16px",
+            "borderWidth": "1px"
+        },
+        "effects": {
+            "shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)"
+        }
+    },
+    "animations": true,
     "apiConfig": {
         "endpoint": "products/category/skincare",
         "params": {

@@ -53,9 +53,9 @@ export default function Alert({
 
     const alertStyle: React.CSSProperties = {
         padding: '1rem',
-        borderRadius: '8px',
+        borderRadius: 'var(--radius, 8px)',
         background: currentConfig.bg,
-        border: `1px solid ${currentConfig.border}`,
+        border: `var(--border-width, 1px) solid ${currentConfig.border}`,
         color: currentConfig.color,
         display: 'flex',
         gap: '0.8rem',

@@ -10,7 +10,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     leftIcon?: React.ReactNode;
     rightIcon?: React.ReactNode;
     fullWidth?: boolean;
-    fullWidth?: boolean;
 }
 
 export default function Button({
@@ -70,9 +69,9 @@ export default function Button({
             borderColor: 'transparent',
         },
         danger: {
-            background: '#ef4444',
+            background: 'var(--color-error, #ef4444)',
             color: '#fff',
-            borderColor: '#ef4444',
+            borderColor: 'var(--color-error, #ef4444)',
         }
     };
 
@@ -90,16 +89,7 @@ export default function Button({
             className={className} // For Tailwind or CSS classes
             {...props}
         >
-            {isLoading && <Loader2 className="animate-spin" size={size === 'sm' ? 14 : 18} />}
-            <style jsx>{`
-                @keyframes spin {
-                    from { transform: rotate(0deg); }
-                    to { transform: rotate(360deg); }
-                }
-                .animate-spin {
-                    animation: spin 1s linear infinite;
-                }
-            `}</style>
+            {isLoading && <Loader2 className={`animate-spin ${className}`} size={size === 'sm' ? 14 : 18} />}
             {!isLoading && leftIcon}
             {children}
             {!isLoading && rightIcon}

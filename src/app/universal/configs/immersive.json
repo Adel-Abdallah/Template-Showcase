@@ -1,7 +1,30 @@
 {
     "theme": "immersive",
     "title": "The Gallery",
-    "subtitle": "Experience Design",
+    "subtitle": "Dive Deep",
+    "style": {
+        "colors": {
+            "primary": "#00d4ff",
+            "onPrimary": "#000000",
+            "secondary": "#09090b",
+            "onSecondary": "#00d4ff",
+            "background": "#000212",
+            "text": "#e0f2fe",
+            "border": "#1e293b",
+            "cardBg": "rgba(15, 23, 42, 0.6)"
+        },
+        "typography": {
+            "fontFamily": "Exo 2, sans-serif",
+            "headingsFamily": "Exo 2, sans-serif"
+        },
+        "shape": {
+            "borderRadius": "20px",
+            "borderWidth": "1px"
+        },
+        "effects": {
+            "shadow": "0 0 40px rgba(0, 212, 255, 0.1)"
+        }
+    },
     "apiConfig": {
         "endpoint": "products/category/mobile-accessories",
         "params": {

@@ -32,12 +32,36 @@ export default function ProductSlider({ title, products, styles, slug }: Product
         <section style={{ margin: '4rem 0' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', padding: '0 2rem' }}>
                 <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{title}</h2>
-                <div style={{ display: 'flex', gap: '0.5rem' }}>
-                    <button onClick={() => scroll('left')} style={{ padding: '0.5rem', borderRadius: '50%', border: '1px solid var(--border)', cursor: 'pointer', background: 'transparent', color: 'inherit' }}>
-                        <ChevronLeft />
+                <div style={{ display: 'flex', gap: '0.8rem' }}>
+                    <button
+                        onClick={() => scroll('left')}
+                        style={{
+                            padding: '0.8rem',
+                            borderRadius: '50%',
+                            border: '1px solid var(--border)',
+                            cursor: 'pointer',
+                            background: 'var(--card-bg)',
+                            color: 'var(--text)',
+                            boxShadow: 'var(--shadow-md)',
+                            transition: 'all 0.2s ease'
+                        }}
+                    >
+                        <ChevronLeft size={20} />
                     </button>
-                    <button onClick={() => scroll('right')} style={{ padding: '0.5rem', borderRadius: '50%', border: '1px solid var(--border)', cursor: 'pointer', background: 'transparent', color: 'inherit' }}>
-                        <ChevronRight />
+                    <button
+                        onClick={() => scroll('right')}
+                        style={{
+                            padding: '0.8rem',
+                            borderRadius: '50%',
+                            border: '1px solid var(--border)',
+                            cursor: 'pointer',
+                            background: 'var(--card-bg)',
+                            color: 'var(--text)',
+                            boxShadow: 'var(--shadow-md)',
+                            transition: 'all 0.2s ease'
+                        }}
+                    >
+                        <ChevronRight size={20} />
                     </button>
                 </div>
             </div>

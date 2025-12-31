@@ -1,7 +1,30 @@
 {
     "theme": "industrial",
     "title": "WAREHOUSE_42",
-    "subtitle": "HEAVY DUTY",
+    "subtitle": "Built Tough",
+    "style": {
+        "colors": {
+            "primary": "#f97316",
+            "onPrimary": "#000000",
+            "secondary": "#475569",
+            "onSecondary": "#ffffff",
+            "background": "#1c1917",
+            "text": "#e7e5e4",
+            "border": "#44403c",
+            "cardBg": "#292524"
+        },
+        "typography": {
+            "fontFamily": "Roboto Mono, monospace",
+            "headingsFamily": "Roboto Mono, monospace"
+        },
+        "shape": {
+            "borderRadius": "2px",
+            "borderWidth": "2px"
+        },
+        "effects": {
+            "shadow": "4px 4px 0px rgba(0, 0, 0, 0.5)"
+        }
+    },
     "apiConfig": {
         "endpoint": "products/category/home-decoration",
         "params": {

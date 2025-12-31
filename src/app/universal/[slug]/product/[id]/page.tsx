@@ -16,7 +16,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <ProductView
             product={product}
             themeConfig={themeData.config}
-            themeStyles={themeData.styles}
         />
     );
 }

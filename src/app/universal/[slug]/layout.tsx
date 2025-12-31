@@ -21,7 +21,7 @@ export default async function UniversalLayout({
 
     return (
         <div className={styles.pageWrapper}>
-            <Header config={config.header} styles={styles} title={config.title} />
+            <Header config={config.header} styles={styles} title={config.title} slug={slug} themeConfig={config} />
             <main>{children}</main>
             <Footer config={config.footer} styles={styles} />
         </div>

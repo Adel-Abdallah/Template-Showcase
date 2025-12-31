@@ -1,6 +1,30 @@
 {
     "theme": "glass",
     "title": "The Collection",
+    "subtitle": "Transparent Design",
+    "style": {
+        "colors": {
+            "primary": "rgba(255, 255, 255, 0.2)",
+            "onPrimary": "#ffffff",
+            "secondary": "rgba(255, 255, 255, 0.1)",
+            "onSecondary": "#ffffff",
+            "background": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+            "text": "#ffffff",
+            "border": "rgba(255, 255, 255, 0.2)",
+            "cardBg": "rgba(255, 255, 255, 0.1)"
+        },
+        "typography": {
+            "fontFamily": "Poppins, sans-serif",
+            "headingsFamily": "Poppins, sans-serif"
+        },
+        "shape": {
+            "borderRadius": "24px",
+            "borderWidth": "1px"
+        },
+        "effects": {
+            "shadow": "0 8px 32px 0 rgba(31, 38, 135, 0.37)"
+        }
+    },
     "apiConfig": {
         "endpoint": "products/category/sunglasses",
         "params": {

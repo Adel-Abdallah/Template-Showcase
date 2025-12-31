@@ -4,14 +4,14 @@ import Input from '../../../../shared/components/ui/Input';
 import Button from '../../../../shared/components/ui/Button';
 import { loadThemeData } from '../../../../shared/utils/themeLoader';
 
-export default async function TwoFactorPage({ params }: { params: { slug: string } }) {
+export default async function TwoFactorPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const themeData = await loadThemeData(slug);
 
     return (
         <AuthTemplate
             slug={slug}
-            themeStyles={themeData?.styles}
+            themeConfig={themeData?.config}
             title="Two-Factor Authentication"
             subtitle="Enter the code sent to your device."
             footerLink={{ text: "Didn't receive code?", label: "Resend", href: "#" }}

@@ -4,14 +4,14 @@ import Input from '../../../../shared/components/ui/Input';
 import Button from '../../../../shared/components/ui/Button';
 import { loadThemeData } from '../../../../shared/utils/themeLoader';
 
-export default async function ForgotPasswordPage({ params }: { params: { slug: string } }) {
+export default async function ForgotPasswordPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const themeData = await loadThemeData(slug);
 
     return (
         <AuthTemplate
             slug={slug}
-            themeStyles={themeData?.styles}
+            themeConfig={themeData?.config}
             title="Forgot Password?"
             subtitle="No worries, we'll send you reset instructions."
             footerLink={{ text: "Remember your password?", label: "Back to login", href: `/universal/${slug}/login` }}

@@ -8,12 +8,11 @@ import ThemeWrapper from '../../../../../shared/components/ThemeWrapper';
 interface ProductViewProps {
     product: any;
     themeConfig: any;
-    themeStyles: any;
 }
 
-export default function ProductView({ product, themeConfig, themeStyles }: ProductViewProps) {
+export default function ProductView({ product, themeConfig }: ProductViewProps) {
     return (
-        <ThemeWrapper config={themeConfig} className={themeStyles.container || ''}>
+        <ThemeWrapper config={themeConfig}>
             <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem 1rem', minHeight: '80vh' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem' }}>
                     {/* Image Gallery */}

@@ -11,6 +11,7 @@ interface ModalProps {
     children: React.ReactNode;
     size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
     closeOnOverlayClick?: boolean;
+    portalStyles?: React.CSSProperties; // To inject theme variables into the portal
 }
 
 export default function Modal({
@@ -19,7 +20,8 @@ export default function Modal({
     title,
     children,
     size = 'md',
-    closeOnOverlayClick = true
+    closeOnOverlayClick = true,
+    portalStyles
 }: ModalProps) {
     const [mounted, setMounted] = useState(false);
 
@@ -80,7 +82,7 @@ export default function Modal({
     };
 
     return createPortal(
-        <div style={overlayStyle} onClick={handleOverlayClick}>
+        <div style={{ ...overlayStyle, ...portalStyles }} onClick={handleOverlayClick}>
             <div style={modalStyle}>
                 {/* Header */}
                 <div style={{

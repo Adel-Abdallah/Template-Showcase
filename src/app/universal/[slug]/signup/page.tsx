@@ -4,14 +4,14 @@ import Input from '../../../../shared/components/ui/Input';
 import Button from '../../../../shared/components/ui/Button';
 import { loadThemeData } from '../../../../shared/utils/themeLoader';
 
-export default async function SignupPage({ params }: { params: { slug: string } }) {
+export default async function SignupPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const themeData = await loadThemeData(slug);
 
     return (
         <AuthTemplate
             slug={slug}
-            themeStyles={themeData?.styles}
+            themeConfig={themeData?.config}
             title="Create Account"
             subtitle="Start your journey with us today."
             footerLink={{ text: "Already have an account?", label: "Sign in", href: `/universal/${slug}/login` }}

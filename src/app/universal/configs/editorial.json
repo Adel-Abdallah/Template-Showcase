@@ -1,7 +1,30 @@
 {
     "theme": "editorial",
     "title": "The Edit",
-    "subtitle": "Curated Fashion",
+    "subtitle": "Stories Matter",
+    "style": {
+        "colors": {
+            "primary": "#b91c1c",
+            "onPrimary": "#ffffff",
+            "secondary": "#f3f4f6",
+            "onSecondary": "#1f2937",
+            "background": "#fdfbf7",
+            "text": "#1c1917",
+            "border": "#e7e5e4",
+            "cardBg": "#ffffff"
+        },
+        "typography": {
+            "fontFamily": "Georgia, serif",
+            "headingsFamily": "Georgia, serif"
+        },
+        "shape": {
+            "borderRadius": "0px",
+            "borderWidth": "1px"
+        },
+        "effects": {
+            "shadow": "none"
+        }
+    },
     "apiConfig": {
         "endpoint": "products/category/tops",
         "params": {

@@ -2,47 +2,71 @@
     "theme": "luxury",
     "title": "Maison de Luxe",
     "subtitle": "Winter Collection",
-    "apiConfig": {
-        "endpoint": "products/category/mens-watches",
-        "params": {
-            "limit": 8
+    "style": {
+        "colors": {
+            "primary": "#d4af37",
+            "onPrimary": "#000000",
+            "secondary": "#111111",
+            "onSecondary": "#d4af37",
+            "background": "#050505",
+            "text": "#f5f5f5",
+            "border": "#333333",
+            "cardBg": "#0a0a0a"
+        },
+        "typography": {
+            "fontFamily": "Playfair Display, serif",
+            "headingsFamily": "Playfair Display, serif"
+        },
+        "shape": {
+            "borderRadius": "0px",
+            "borderWidth": "1px"
+        },
+        "effects": {
+            "shadow": "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+        },
+        "animations": true,
+        "apiConfig": {
+            "endpoint": "products/category/mens-watches",
+            "params": {
+                "limit": 8
+            }
+        },
+        "features": {
+            "hero": true
+        },
+        "header": {
+            "links": [
+                {
+                    "label": "Collection",
+                    "href": "/universal/luxury"
+                },
+                {
+                    "label": "Maison",
+                    "href": "/universal/luxury/about"
+                },
+                {
+                    "label": "Concierge",
+                    "href": "/universal/luxury/contact"
+                },
+                {
+                    "label": "My Account",
+                    "href": "/universal/luxury/login"
+                }
+            ],
+            "cartIcon": false
+        },
+        "footer": {
+            "text": "Maison de Luxe. Est. 1924.",
+            "links": [
+                {
+                    "label": "Legal",
+                    "href": "/universal/luxury/terms"
+                },
+                {
+                    "label": "Privacy",
+                    "href": "/universal/luxury/privacy"
+                }
+            ]
         }
-    },
-    "features": {
-        "hero": true
-    },
-    "header": {
-        "links": [
-            {
-                "label": "Collection",
-                "href": "/universal/luxury"
-            },
-            {
-                "label": "Maison",
-                "href": "/universal/luxury/about"
-            },
-            {
-                "label": "Concierge",
-                "href": "/universal/luxury/contact"
-            },
-            {
-                "label": "My Account",
-                "href": "/universal/luxury/login"
-            }
-        ],
-        "cartIcon": false
-    },
-    "footer": {
-        "text": "Maison de Luxe. Est. 1924.",
-        "links": [
-            {
-                "label": "Legal",
-                "href": "/universal/luxury/terms"
-            },
-            {
-                "label": "Privacy",
-                "href": "/universal/luxury/privacy"
-            }
-        ]
     }
 }

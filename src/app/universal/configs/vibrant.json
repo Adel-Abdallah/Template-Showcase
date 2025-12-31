@@ -1,7 +1,31 @@
 {
     "theme": "vibrant",
     "title": "POP CULTURE",
-    "subtitle": "LOUD & PROUD",
+    "subtitle": "Bold & Colorful",
+    "style": {
+        "colors": {
+            "primary": "#ff0080",
+            "onPrimary": "#ffffff",
+            "secondary": "#7928ca",
+            "onSecondary": "#ffffff",
+            "background": "#ffffff",
+            "text": "#111111",
+            "border": "#e5e5e5",
+            "cardBg": "#f3f4f6"
+        },
+        "typography": {
+            "fontFamily": "Raleway, sans-serif",
+            "headingsFamily": "Raleway, sans-serif"
+        },
+        "shape": {
+            "borderRadius": "12px",
+            "borderWidth": "0px"
+        },
+        "effects": {
+            "shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
+        },
+        "animations": true
+    },
     "apiConfig": {
         "endpoint": "products/category/smartphones",
         "params": {

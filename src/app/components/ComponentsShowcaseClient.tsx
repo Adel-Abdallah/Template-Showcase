@@ -3,7 +3,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft, Save, Search, Bell } from 'lucide-react';
+import { ArrowLeft, Save, Search, Bell, Heart, User, ShoppingBag } from 'lucide-react';
+import { useCartStore } from '../../shared/store/useCartStore';
+import { useWishlistStore } from '../../shared/store/useWishlistStore';
 
 // Imports from Atomic UI (Refactored to use CSS Vars)
 import Button from '../../shared/components/ui/Button';
@@ -28,6 +30,12 @@ interface ComponentsShowcaseProps {
 export default function ComponentsShowcaseClient({ availableThemes, currentSlug, themeStyles, themeConfig }: ComponentsShowcaseProps) {
     const router = useRouter();
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const { items: cartItems } = useCartStore();
+    const { items: wishlistItems } = useWishlistStore();
+
+    const wishlistCount = wishlistItems.length;
+    const cartCount = cartItems.length;
+    const currentConfig = themeConfig; // Alias for consistency with pasted code
 
     // Apply the theme container class which defines all CSS variables (--primary, --bg, etc.)
     // If the theme loader failed or styles are missing, fallback might be needed, but we assume styles exist.
@@ -54,7 +62,7 @@ export default function ComponentsShowcaseClient({ availableThemes, currentSlug,
             minHeight: '100vh',
             paddingBottom: '4rem',
             // Default explicit background to prevent white flash
-            backgroundColor: themeConfig.style.colors.background
+            background: themeConfig.style.colors.background
         } as React.CSSProperties;
     } else {
         // Fallback or just standard object
@@ -62,6 +70,7 @@ export default function ComponentsShowcaseClient({ availableThemes, currentSlug,
     }
 
     const rootClass = themeStyles.container || '';
+    const animationsEnabled = themeConfig?.style?.animations === true;
 
     // Helpers to handle theme switching via URL
     const handleThemeChange = (slug: string) => {
@@ -70,33 +79,97 @@ export default function ComponentsShowcaseClient({ availableThemes, currentSlug,
 
     return (
         <div className={rootClass} style={dynamicStyles}>
-            <header className={themeStyles.header || ''} style={{ padding: '1.5rem', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            {/* Premium Floating Header */}
+            <header style={{
+                position: 'sticky',
+                top: '1rem',
+                zIndex: 50,
+                maxWidth: '1200px',
+                margin: '0 auto',
+                padding: '0.8rem 1.5rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                background: 'rgba(255, 255, 255, 0.05)', // Super subtle
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                borderRadius: '100px', // Pill shape
+                border: '1px solid rgba(255,255,255,0.1)', // Very faint border
+                boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+                animation: animationsEnabled ? 'slideUp 0.6s ease-out' : 'none'
+            }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <Link href="/" style={{ color: 'var(--text)' }}><ArrowLeft /></Link>
-                    <h1 style={{ fontSize: '1.5rem', margin: 0, color: 'var(--text)' }}>UI Components Library</h1>
+                    <h1 style={{ width: '200px', fontSize: '1.5rem', fontWeight: '900', letterSpacing: '-0.02em', fontStyle: 'italic', margin: 0 }}>
+                        {currentConfig.title}
+                    </h1>
                 </div>
 
-                {/* Theme Toggler */}
-                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap', maxWidth: '600px', justifyContent: 'flex-end' }}>
-                    <span style={{ fontSize: '0.9rem', opacity: 0.7, color: 'var(--text)' }}>Theme:</span>
-                    {availableThemes.map(t => (
-                        <button
-                            key={t.slug}
-                            onClick={() => handleThemeChange(t.slug)}
-                            style={{
-                                padding: '0.4rem 0.8rem',
-                                background: currentSlug === t.slug ? 'var(--text)' : 'transparent',
-                                color: currentSlug === t.slug ? 'var(--bg)' : 'var(--text)',
-                                border: '1px solid var(--border)',
-                                borderRadius: '4px', // This is UI for the showcase itself, can be independent or use var(--radius)
-                                cursor: 'pointer',
-                                textTransform: 'capitalize',
-                                fontSize: '0.8rem'
-                            }}
-                        >
-                            {t.slug}
-                        </button>
+                {/* Desktop Nav */}
+                <nav className="hidden md:flex" style={{ gap: '2rem', fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    {['Templates', 'Pages', 'Sections', 'Components'].map((item) => (
+                        <a key={item} href="#" style={{ textDecoration: 'none', color: 'inherit', opacity: 0.8, transition: 'opacity 0.2s' }}>{item}</a>
                     ))}
+                </nav>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                    <nav className="hidden md:flex" style={{ gap: '1.5rem', fontSize: '0.85rem', fontWeight: 'bold' }}>
+                        {currentConfig.header?.links?.map((link: any, i: number) => (
+                            <a key={i} href={link.href} style={{ textDecoration: 'none', color: 'inherit' }}>{link.label}</a>
+                        ))}
+                    </nav>
+
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', paddingLeft: '1rem', borderLeft: '1px solid rgba(128,128,128,0.2)' }}>
+                        {/* Wishlist Icon */}
+                        <Link href={`/universal/${currentSlug}/wishlist`} style={{ position: 'relative', color: 'inherit' }}>
+                            <Heart size={20} />
+                            {wishlistCount > 0 && (
+                                <span style={{
+                                    position: 'absolute',
+                                    top: '-8px',
+                                    right: '-8px',
+                                    background: 'var(--color-error, red)',
+                                    color: 'white',
+                                    fontSize: '0.7rem',
+                                    fontWeight: 'bold',
+                                    width: '18px',
+                                    height: '18px',
+                                    borderRadius: '50%',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    border: '2px solid var(--bg)' // Cutout effect
+                                }}>
+                                    {wishlistCount}
+                                </span>
+                            )}
+                        </Link>
+
+                        <button style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}>
+                            <User size={20} />
+                        </button>
+                        <button style={{ position: 'relative', background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}>
+                            <ShoppingBag size={20} />
+                            {cartCount > 0 && (
+                                <span style={{
+                                    position: 'absolute',
+                                    top: '-5px',
+                                    right: '-5px',
+                                    background: 'var(--text)',
+                                    color: 'var(--bg)',
+                                    borderRadius: '50%',
+                                    width: '16px',
+                                    height: '16px',
+                                    fontSize: '10px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontWeight: 'bold'
+                                }}>
+                                    {cartCount}
+                                </span>
+                            )}
+                        </button>
+                    </div>
                 </div>
             </header>
 
@@ -164,11 +237,7 @@ export default function ComponentsShowcaseClient({ availableThemes, currentSlug,
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
                 title="Modal Component"
-                // Pass theme styles to modal overlay if needed, or ensure modal portal is inside provider
-                // Since modal uses portal to body, checking if it inherits vars... 
-                // Usually Portal roots require re-applying the theme class or passing styles.
-                // For now, let's pass a safe fallback if vars aren't available globally
-                themeStyles={{ bg: 'var(--card-bg)', text: 'var(--text)' }}
+                portalStyles={dynamicStyles}
             >
                 <div style={{ textAlign: 'center', padding: '1rem 0' }}>
                     <div style={{ marginBottom: '1rem', color: 'var(--primary)' }}>

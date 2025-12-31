@@ -147,7 +147,7 @@ export default async function UniversalPage({
         '--font-heading': config.style.typography.headingsFamily || config.style.typography.fontFamily,
         fontFamily: 'var(--font-main)', // Apply immediately
         color: 'var(--text)',
-        backgroundColor: 'var(--bg)'
+        background: 'var(--bg)'
     } as React.CSSProperties : {};
 
     return (

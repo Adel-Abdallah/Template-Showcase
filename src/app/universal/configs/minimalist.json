@@ -2,6 +2,29 @@
     "theme": "minimalist",
     "title": "Essence",
     "subtitle": "Less is more.",
+    "style": {
+        "colors": {
+            "primary": "#171717",
+            "onPrimary": "#ffffff",
+            "secondary": "#f5f5f5",
+            "onSecondary": "#171717",
+            "background": "#ffffff",
+            "text": "#171717",
+            "border": "#e5e5e5",
+            "cardBg": "#ffffff"
+        },
+        "typography": {
+            "fontFamily": "Helvetica Neue, sans-serif",
+            "headingsFamily": "Helvetica Neue, sans-serif"
+        },
+        "shape": {
+            "borderRadius": "0px",
+            "borderWidth": "1px"
+        },
+        "effects": {
+            "shadow": "none"
+        }
+    },
     "apiConfig": {
         "endpoint": "products/category/furniture",
         "params": {
