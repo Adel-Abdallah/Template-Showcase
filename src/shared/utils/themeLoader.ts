@@ -57,13 +57,11 @@ export type Config = {
 };
 
 const configs: Record<string, () => Promise<{ default: Config }>> = {
-    glass: () => import('../../app/universal/configs/glass.json'),
     luxury: () => import('../../app/universal/configs/luxury.json'),
     minimalist: () => import('../../app/universal/configs/minimalist.json'),
     tech: () => import('../../app/universal/configs/tech.json'),
     editorial: () => import('../../app/universal/configs/editorial.json'),
     organic: () => import('../../app/universal/configs/organic.json'),
-    vibrant: () => import('../../app/universal/configs/vibrant.json'),
     industrial: () => import('../../app/universal/configs/industrial.json'),
     saas: () => import('../../app/universal/configs/saas.json'),
     immersive: () => import('../../app/universal/configs/immersive.json'),

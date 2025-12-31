@@ -84,18 +84,20 @@ export default function ProductCard({ product, styles, slug }: ProductCardProps)
                         className="product-image"
                     />
 
-                    {/* ACTION OVERLAY - Now always visible */}
+                    {/* Hover ACTION OVERLAY */}
                     <div className="product-actions" style={{
                         position: 'absolute',
                         bottom: 0,
                         left: 0,
                         right: 0,
                         padding: '1rem',
-                        background: 'linear-gradient(to top, rgba(0,0,0,0.85), transparent)',
+                        background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
                         display: 'flex',
                         gap: '0.8rem',
                         justifyContent: 'center',
                         alignItems: 'center',
+                        opacity: 0,
+                        transform: 'translateY(100%)',
                         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
                     }}>
                         <button
@@ -140,7 +142,15 @@ export default function ProductCard({ product, styles, slug }: ProductCardProps)
             </Link>
 
             <style jsx>{`
-                .product-card-container:hover .product-image {
+                .product-actions {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                div[class*="card"]:hover .product-actions {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                div[class*="card"]:hover img {
                     transform: scale(1.08);
                 }
                 
