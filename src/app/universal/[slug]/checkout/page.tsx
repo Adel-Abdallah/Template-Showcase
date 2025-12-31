@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { CreditCard } from 'lucide-react';
 
 export default function CheckoutPage({ params }: { params: { slug: string } }) {
     const { slug } = params;
@@ -29,10 +30,23 @@ export default function CheckoutPage({ params }: { params: { slug: string } }) {
 
                 <section style={{ padding: '2rem', border: '1px solid rgba(128,128,128,0.2)', borderRadius: '12px' }}>
                     <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>Payment</h2>
-                    <div style={{ padding: '1rem', border: '1px solid #ccc', borderRadius: '6px', marginBottom: '1rem', textAlign: 'center' }}>
-                        💳 Credit Card (Mock)
+                    <div style={{
+                        padding: '1.5rem',
+                        border: '1px solid rgba(128,128,128,0.3)',
+                        borderRadius: '8px',
+                        marginBottom: '1.5rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '1rem',
+                        background: 'rgba(255,255,255,0.05)'
+                    }}>
+                        <CreditCard size={24} style={{ opacity: 0.8 }} />
+                        <div>
+                            <p style={{ fontWeight: 'bold', marginBottom: '0.2rem' }}>Credit Card</p>
+                            <p style={{ fontSize: '0.85rem', opacity: 0.6 }}>Secure payment via Stripe (Mock)</p>
+                        </div>
                     </div>
-                    <Link href={`/universal/${slug}/thank-you`}>
+                    <Link href={`/universal/${slug}/confirmation`}>
                         <button style={{ width: '100%', padding: '1.2rem', borderRadius: '8px', border: 'none', background: '#333', color: '#fff', fontSize: '1.1rem', fontWeight: 'bold', cursor: 'pointer' }}>
                             Place Order
                         </button>

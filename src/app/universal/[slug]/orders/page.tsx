@@ -45,8 +45,10 @@ export default async function OrdersPage({ params }: { params: { slug: string } 
                                 </div>
                             </div>
 
-                            <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.5rem' }}>
+                            <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.5rem', minWidth: '140px' }}>
                                 <p style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>{order.total}</p>
+
+                                {/* Status Badge */}
                                 <div style={{
                                     display: 'flex',
                                     alignItems: 'center',
@@ -56,10 +58,24 @@ export default async function OrdersPage({ params }: { params: { slug: string } 
                                     borderRadius: '20px',
                                     background: order.status === 'Delivered' ? 'rgba(75, 181, 67, 0.1)' : 'rgba(255, 193, 7, 0.1)',
                                     color: order.status === 'Delivered' ? '#4bb543' : '#ffc107',
-                                    width: 'fit-content'
+                                    width: 'fit-content',
+                                    marginBottom: '0.5rem'
                                 }}>
                                     {order.status === 'Delivered' ? <CheckCircle size={14} /> : <Clock size={14} />}
                                     {order.status}
+                                </div>
+
+                                {/* Progress Bar */}
+                                <div style={{ width: '100%', height: '4px', background: 'rgba(128,128,128,0.2)', borderRadius: '2px', overflow: 'hidden' }}>
+                                    <div style={{
+                                        width: order.status === 'Delivered' ? '100%' : '40%',
+                                        height: '100%',
+                                        background: order.status === 'Delivered' ? '#4bb543' : '#ffc107',
+                                        transition: 'width 0.5s ease'
+                                    }} />
+                                </div>
+                                <div style={{ fontSize: '0.7rem', opacity: 0.5, marginTop: '2px' }}>
+                                    {order.status === 'Delivered' ? 'Completed' : 'Processing...'}
                                 </div>
                             </div>
                         </div>

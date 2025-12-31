@@ -23,9 +23,14 @@ export default function CartPage({ params }: { params: { slug: string } }) {
 // Client View Wrapper
 import { useEffect, useState } from 'react';
 
-function CartView({ slug }: { slug: string }) {
+function CartView({ slug }: { slug?: string }) {
     const { items, removeItem, updateQuantity, totalPrice } = useCartStore();
     const [themeStyles, setThemeStyles] = useState<Record<string, string>>({});
+    const pathname = usePathname();
+
+    // Fallback: derive slug from pathname if prop is missing/undefined
+    // Path: /universal/[slug]/cart -> split gives ['', 'universal', 'slug', 'cart']
+    const safeSlug = slug || pathname?.split('/')[2] || 'tech';
 
     // Quick hack to load styles on client for now, normally would pass from server parent
     useEffect(() => {
@@ -38,7 +43,7 @@ function CartView({ slug }: { slug: string }) {
         return (
             <div style={{ padding: '4rem', textAlign: 'center', minHeight: '60vh' }}>
                 <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Your Cart is Empty</h1>
-                <Link href={`/universal/${slug}`} style={{ textDecoration: 'underline' }}>Continue Shopping</Link>
+                <Link href={`/universal/${safeSlug}`} style={{ textDecoration: 'underline' }}>Continue Shopping</Link>
             </div>
         );
     }
@@ -80,7 +85,7 @@ function CartView({ slug }: { slug: string }) {
                         <span>Total</span>
                         <span>${totalPrice().toFixed(2)}</span>
                     </div>
-                    <Link href={`/universal/${slug}/checkout`}>
+                    <Link href={`/universal/${safeSlug}/checkout`}>
                         <button style={{
                             width: '100%',
                             padding: '1rem',
