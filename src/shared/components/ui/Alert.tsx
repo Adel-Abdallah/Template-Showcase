@@ -24,27 +24,27 @@ export default function Alert({
     // Config based on variant
     const config = {
         success: {
-            bg: 'rgba(75, 181, 67, 0.1)',
-            border: '#4bb543',
-            color: '#4bb543',
+            bg: 'var(--color-success-bg, rgba(75, 181, 67, 0.1))',
+            border: 'var(--color-success, #4bb543)',
+            color: 'var(--color-success, #4bb543)',
             icon: <CheckCircle size={20} />
         },
         error: {
-            bg: 'rgba(239, 68, 68, 0.1)',
-            border: '#ef4444',
-            color: '#ef4444',
+            bg: 'var(--color-error-bg, rgba(239, 68, 68, 0.1))',
+            border: 'var(--color-error, #ef4444)',
+            color: 'var(--color-error, #ef4444)',
             icon: <XCircle size={20} />
         },
         warning: {
-            bg: 'rgba(255, 193, 7, 0.1)',
-            border: '#ffc107',
-            color: '#ffc107',
+            bg: 'var(--color-warning-bg, rgba(255, 193, 7, 0.1))',
+            border: 'var(--color-warning, #ffc107)',
+            color: 'var(--color-warning, #ffc107)',
             icon: <AlertCircle size={20} />
         },
         info: {
-            bg: 'rgba(59, 130, 246, 0.1)',
-            border: '#3b82f6',
-            color: '#3b82f6',
+            bg: 'var(--color-info-bg, rgba(59, 130, 246, 0.1))',
+            border: 'var(--color-info, #3b82f6)',
+            color: 'var(--color-info, #3b82f6)',
             icon: <Info size={20} />
         }
     };

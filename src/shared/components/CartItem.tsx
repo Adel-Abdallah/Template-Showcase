@@ -13,26 +13,25 @@ interface CartItemProps {
     };
     onUpdateQuantity: (id: number, quantity: number) => void;
     onRemove: (id: number) => void;
-    styles: Record<string, string>;
 }
 
-export default function CartItem({ item, onUpdateQuantity, onRemove, styles }: CartItemProps) {
+export default function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
     return (
         <div style={{
             display: 'flex',
             alignItems: 'center',
             gap: '1rem',
             padding: '1.5rem',
-            borderBottom: '1px solid rgba(128,128,128,0.2)',
-            background: 'rgba(255,255,255,0.02)'
+            borderBottom: '1px solid var(--border)',
+            background: 'rgba(255,255,255,0.02)' // Could be var(--card-bg) but keeping subtle difference for row
         }}>
-            <div style={{ width: '80px', height: '80px', flexShrink: 0, borderRadius: '8px', overflow: 'hidden' }}>
+            <div style={{ width: '80px', height: '80px', flexShrink: 0, borderRadius: 'var(--radius)', overflow: 'hidden' }}>
                 <img src={item.image} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
 
             <div style={{ flex: 1 }}>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 'bold', marginBottom: '0.25rem' }}>{item.name}</h3>
-                <p style={{ opacity: 0.7 }}>${item.price.toFixed(2)}</p>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 'bold', marginBottom: '0.25rem', color: 'var(--text)' }}>{item.name}</h3>
+                <p style={{ opacity: 0.7, color: 'var(--text)' }}>${item.price.toFixed(2)}</p>
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -41,20 +40,20 @@ export default function CartItem({ item, onUpdateQuantity, onRemove, styles }: C
                     style={{
                         width: '30px', height: '30px',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        border: '1px solid rgba(128,128,128,0.3)', borderRadius: '4px',
-                        background: 'transparent', color: 'inherit', cursor: 'pointer'
+                        border: '1px solid var(--border)', borderRadius: '4px',
+                        background: 'transparent', color: 'var(--text)', cursor: 'pointer'
                     }}
                 >
                     -
                 </button>
-                <span style={{ width: '20px', textAlign: 'center' }}>{item.quantity}</span>
+                <span style={{ width: '20px', textAlign: 'center', color: 'var(--text)' }}>{item.quantity}</span>
                 <button
                     onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
                     style={{
                         width: '30px', height: '30px',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        border: '1px solid rgba(128,128,128,0.3)', borderRadius: '4px',
-                        background: 'transparent', color: 'inherit', cursor: 'pointer'
+                        border: '1px solid var(--border)', borderRadius: '4px',
+                        background: 'transparent', color: 'var(--text)', cursor: 'pointer'
                     }}
                 >
                     +

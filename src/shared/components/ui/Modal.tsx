@@ -11,11 +11,6 @@ interface ModalProps {
     children: React.ReactNode;
     size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
     closeOnOverlayClick?: boolean;
-    themeStyles?: {
-        bg?: string;
-        text?: string;
-        overlay?: string;
-    };
 }
 
 export default function Modal({
@@ -24,8 +19,7 @@ export default function Modal({
     title,
     children,
     size = 'md',
-    closeOnOverlayClick = true,
-    themeStyles = {}
+    closeOnOverlayClick = true
 }: ModalProps) {
     const [mounted, setMounted] = useState(false);
 
@@ -55,7 +49,7 @@ export default function Modal({
         left: 0,
         right: 0,
         bottom: 0,
-        background: themeStyles.overlay || 'rgba(0, 0, 0, 0.7)',
+        background: 'rgba(0, 0, 0, 0.7)', // Standard overlay
         backdropFilter: 'blur(5px)',
         zIndex: 9999,
         display: 'flex',
@@ -65,16 +59,16 @@ export default function Modal({
     };
 
     const modalStyle: React.CSSProperties = {
-        background: themeStyles.bg || '#1a1a1a',
-        color: themeStyles.text || 'inherit',
-        borderRadius: '16px',
+        background: 'var(--card-bg, #1a1a1a)',
+        color: 'var(--text, inherit)',
+        borderRadius: 'var(--radius, 16px)',
         width: '100%',
         maxWidth,
         maxHeight: '90vh',
         display: 'flex',
         flexDirection: 'column',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
-        border: '1px solid rgba(255,255,255,0.1)',
+        boxShadow: 'var(--shadow-md, 0 25px 50px -12px rgba(0, 0, 0, 0.5))',
+        border: '1px solid var(--border)',
         position: 'relative',
         animation: 'modalSlideUp 0.3s ease-out'
     };

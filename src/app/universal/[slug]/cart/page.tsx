@@ -16,7 +16,6 @@ export default async function CartPage({ params }: { params: Promise<{ slug: str
         <CartView
             slug={slug}
             themeConfig={themeData.config}
-            themeStyles={themeData.styles}
         />
     );
 }

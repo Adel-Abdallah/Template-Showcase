@@ -9,12 +9,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     leftIcon?: React.ReactNode;
     rightIcon?: React.ReactNode;
     fullWidth?: boolean;
-    // Allow injecting theme-specific styles
-    themeStyles?: {
-        borderColor?: string;
-        focusBorderColor?: string;
-        borderRadius?: string;
-    };
 }
 
 export default function Input({
@@ -26,7 +20,6 @@ export default function Input({
     fullWidth = true,
     className = '',
     style,
-    themeStyles = {},
     ...props
 }: InputProps) {
 
@@ -46,16 +39,13 @@ export default function Input({
         alignItems: 'center',
     };
 
-    const borderColor = error ? '#ef4444' : (themeStyles.borderColor || 'rgba(128,128,128,0.3)');
-    const radius = themeStyles.borderRadius || '8px';
-
     const inputStyle: React.CSSProperties = {
         width: '100%',
         padding: '0.6rem 1rem',
         paddingLeft: leftIcon ? '2.5rem' : '1rem',
         paddingRight: rightIcon ? '2.5rem' : '1rem',
         borderRadius: 'var(--radius, 8px)',
-        border: `1px solid ${error ? '#ef4444' : 'var(--border, #ccc)'}`,
+        border: `var(--border-width, 1px) solid ${error ? '#ef4444' : 'var(--border, #ccc)'}`,
         background: 'var(--card-bg, rgba(255,255,255,0.05))',
         color: 'var(--text, #000)',
         fontSize: '0.95rem',
@@ -88,11 +78,11 @@ export default function Input({
                     style={inputStyle}
                     {...props}
                     onFocus={(e) => {
-                        e.currentTarget.style.borderColor = themeStyles.focusBorderColor || '#3b82f6';
+                        e.currentTarget.style.borderColor = error ? '#ef4444' : 'var(--primary, #3b82f6)';
                         if (props.onFocus) props.onFocus(e);
                     }}
                     onBlur={(e) => {
-                        e.currentTarget.style.borderColor = borderColor;
+                        e.currentTarget.style.borderColor = error ? '#ef4444' : 'var(--border, #ccc)';
                         if (props.onBlur) props.onBlur(e);
                     }}
                 />

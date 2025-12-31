@@ -10,13 +10,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     leftIcon?: React.ReactNode;
     rightIcon?: React.ReactNode;
     fullWidth?: boolean;
-    // Allow injecting theme-specific styles
-    themeStyles?: {
-        primary?: string;
-        secondary?: string;
-        text?: string;
-        radius?: string;
-    };
+    fullWidth?: boolean;
 }
 
 export default function Button({
@@ -29,7 +23,6 @@ export default function Button({
     fullWidth = false,
     className = '',
     style,
-    themeStyles = {},
     ...props
 }: ButtonProps) {
 
@@ -39,12 +32,12 @@ export default function Button({
         alignItems: 'center',
         justifyContent: 'center',
         gap: '0.5rem',
-        borderRadius: themeStyles.radius || 'var(--radius, 8px)',
+        borderRadius: 'var(--radius, 8px)',
         fontWeight: 600,
         cursor: props.disabled || isLoading ? 'not-allowed' : 'pointer',
         opacity: props.disabled || isLoading ? 0.7 : 1,
         transition: 'all 0.2s ease',
-        border: '1px solid transparent',
+        border: 'var(--border-width, 1px) solid transparent',
         fontFamily: 'inherit',
         ...style
     };

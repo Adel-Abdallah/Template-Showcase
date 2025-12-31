@@ -19,16 +19,16 @@ export default function Badge({ children, variant = 'default', style }: BadgePro
             border = 'currentColor';
             break;
         case 'success':
-            bg = 'rgba(75, 181, 67, 0.15)';
-            color = '#4bb543';
+            bg = 'var(--color-success-bg, rgba(75, 181, 67, 0.15))';
+            color = 'var(--color-success, #4bb543)';
             break;
         case 'warning':
-            bg = 'rgba(255, 193, 7, 0.15)';
-            color = '#ffc107';
+            bg = 'var(--color-warning-bg, rgba(255, 193, 7, 0.15))';
+            color = 'var(--color-warning, #ffc107)';
             break;
         case 'error':
-            bg = 'rgba(239, 68, 68, 0.15)';
-            color = '#ef4444';
+            bg = 'var(--color-error-bg, rgba(239, 68, 68, 0.15))';
+            color = 'var(--color-error, #ef4444)';
             break;
     }
 

@@ -15,7 +15,6 @@ export default async function CheckoutPage({ params }: { params: Promise<{ slug:
         <CheckoutView
             slug={slug}
             themeConfig={themeData.config}
-            themeStyles={themeData.styles}
         />
     );
 }

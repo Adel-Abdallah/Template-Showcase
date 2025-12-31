@@ -11,12 +11,11 @@ import Input from '../../../../shared/components/ui/Input';
 interface CheckoutViewProps {
     slug: string;
     themeConfig: any;
-    themeStyles: any;
 }
 
-export default function CheckoutView({ slug, themeConfig, themeStyles }: CheckoutViewProps) {
+export default function CheckoutView({ slug, themeConfig }: CheckoutViewProps) {
     return (
-        <ThemeWrapper config={themeConfig} className={themeStyles.container}>
+        <ThemeWrapper config={themeConfig}>
             <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', minHeight: '80vh' }}>
                 <h1 style={{ fontSize: '2.5rem', marginBottom: '2rem', textAlign: 'center', color: 'var(--text)' }}>Checkout</h1>
 
@@ -47,7 +46,7 @@ export default function CheckoutView({ slug, themeConfig, themeStyles }: Checkou
                             display: 'flex',
                             alignItems: 'center',
                             gap: '1rem',
-                            background: 'rgba(255,255,255,0.05)' // Keep subtle overlay or make var
+                            background: 'var(--card-bg)' // Replaced rgba with card-bg for consistency or could add a secondary-bg var
                         }}>
                             <CreditCard size={24} style={{ opacity: 0.8, color: 'var(--text)' }} />
                             <div>

@@ -16,7 +16,7 @@ export default async function LoginPage({ params }: { params: { slug: string } }
     return (
         <AuthTemplate
             slug={slug}
-            themeStyles={themeData?.styles}
+            themeConfig={themeData?.config}
             title="Welcome Back"
             subtitle="Please enter your details to sign in."
             footerLink={{ text: "Don't have an account?", label: "Sign up", href: `/universal/${slug}/signup` }}

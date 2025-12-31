@@ -10,14 +10,13 @@ import Button from '../../../../shared/components/ui/Button';
 interface CartViewProps {
     slug: string;
     themeConfig: any;
-    themeStyles: any;
 }
 
-export default function CartView({ slug, themeConfig, themeStyles }: CartViewProps) {
+export default function CartView({ slug, themeConfig }: CartViewProps) {
     const { items, removeItem, updateQuantity, totalPrice } = useCartStore();
 
     return (
-        <ThemeWrapper config={themeConfig} className={themeStyles.container}>
+        <ThemeWrapper config={themeConfig}>
             <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '2rem' }}>
                 <h1 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: 'var(--text)' }}>Shopping Cart</h1>
 
@@ -30,14 +29,11 @@ export default function CartView({ slug, themeConfig, themeStyles }: CartViewPro
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 350px', gap: '2rem' }}>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                             {items.map((item) => (
-                                // Ensure CartItem styles are compatible or refactor it too, but we pass vars now
                                 <CartItem
                                     key={item.id}
                                     item={item}
                                     onRemove={removeItem}
                                     onUpdateQuantity={updateQuantity}
-                                    // Pass styles object if CartItem uses it, otherwise it relies on CSS props
-                                    styles={themeStyles}
                                 />
                             ))}
                         </div>
