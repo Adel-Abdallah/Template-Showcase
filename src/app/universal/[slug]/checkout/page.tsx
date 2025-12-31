@@ -4,8 +4,11 @@ import React from 'react';
 import Link from 'next/link';
 import { CreditCard } from 'lucide-react';
 
-export default function CheckoutPage({ params }: { params: { slug: string } }) {
-    const { slug } = params;
+import { useParams } from 'next/navigation';
+
+export default function CheckoutPage() {
+    const params = useParams();
+    const slug = params?.slug as string || 'tech';
 
     return (
         <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', minHeight: '80vh' }}>
