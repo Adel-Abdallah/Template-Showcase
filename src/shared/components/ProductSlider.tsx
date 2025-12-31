@@ -35,30 +35,38 @@ export default function ProductSlider({ title, products, styles, slug }: Product
                 <div style={{ display: 'flex', gap: '0.8rem' }}>
                     <button
                         onClick={() => scroll('left')}
+                        className="slider-arrow"
                         style={{
                             padding: '0.8rem',
-                            borderRadius: '50%',
+                            borderRadius: 'var(--radius)',
                             border: '1px solid var(--border)',
                             cursor: 'pointer',
                             background: 'var(--card-bg)',
                             color: 'var(--text)',
                             boxShadow: 'var(--shadow-md)',
-                            transition: 'all 0.2s ease'
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            transition: 'all 0.3s ease'
                         }}
                     >
                         <ChevronLeft size={20} />
                     </button>
                     <button
                         onClick={() => scroll('right')}
+                        className="slider-arrow"
                         style={{
                             padding: '0.8rem',
-                            borderRadius: '50%',
+                            borderRadius: 'var(--radius)',
                             border: '1px solid var(--border)',
                             cursor: 'pointer',
                             background: 'var(--card-bg)',
                             color: 'var(--text)',
                             boxShadow: 'var(--shadow-md)',
-                            transition: 'all 0.2s ease'
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            transition: 'all 0.3s ease'
                         }}
                     >
                         <ChevronRight size={20} />
@@ -86,6 +94,12 @@ export default function ProductSlider({ title, products, styles, slug }: Product
             <style jsx>{`
                 div::-webkit-scrollbar {
                     display: none;
+                }
+                .slider-arrow:hover {
+                    background: var(--text) !important;
+                    color: var(--bg) !important;
+                    transform: scale(1.1);
+                    border-color: var(--text) !important;
                 }
             `}</style>
         </section>

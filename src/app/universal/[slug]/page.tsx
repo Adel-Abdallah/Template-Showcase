@@ -160,7 +160,7 @@ export default async function UniversalPage({
                 <h1 className={styles.heroTitle}>{config.title}</h1>
             </section>
 
-            {/* Secondary Navigation (Dynamic) */}
+            {/* Link Secondary Nav */}
             {config.apiConfig && (
                 <SecondaryNavbar
                     categories={dynamicCategories}
@@ -169,17 +169,19 @@ export default async function UniversalPage({
                 />
             )}
 
-            {/* Best Sellers Slider */}
-            {bestSellers.length > 0 && !category && (
-                <ProductSlider title="Best Sellers" products={bestSellers} styles={styles} slug={slug} />
-            )}
-
-            <div style={{ display: 'flex' }}>
+            <div style={{ display: 'flex', gap: '3rem' }}>
                 {/* Sidebar Filter (Dynamic Tags) */}
                 <SidebarFilter styles={styles} tags={dynamicTags} categories={dynamicCategories} />
 
                 {/* Main Grid */}
-                <div style={{ flex: 1 }}>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                    {/* Best Sellers Slider (Moved Inside) */}
+                    {bestSellers.length > 0 && !category && (
+                        <div style={{ marginBottom: '2rem' }}>
+                            <ProductSlider title="Best Sellers" products={bestSellers} styles={styles} slug={slug} />
+                        </div>
+                    )}
+
                     <div className={styles.grid} id="shop">
                         {products.map((p: any) => (
                             <ProductCard key={p.id} product={p} styles={styles} slug={slug} />

@@ -31,18 +31,18 @@ export default function Header({ config, styles, title, slug, themeConfig }: Hea
         position: 'sticky',
         top: '1rem',
         zIndex: 100,
-        maxWidth: '1400px',
+        maxWidth: '95%',
         margin: '0 auto',
-        padding: '0.8rem 2rem',
+        padding: '1rem 2.5rem',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        background: 'rgba(255, 255, 255, 0.05)',
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
+        background: 'rgba(255, 255, 255, 0.08)',
+        backdropFilter: 'blur(24px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(24px) saturate(180%)',
         borderRadius: '100px',
-        border: '1px solid rgba(255,255,255,0.1)',
-        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.05)',
+        border: '1px solid rgba(255,255,255,0.18)',
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
         animation: 'slideDown 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)',
         color: 'var(--text, inherit)'
     } : {};
@@ -76,22 +76,7 @@ export default function Header({ config, styles, title, slug, themeConfig }: Hea
                     justifyContent: 'center',
                     animation: animationsEnabled ? 'fadeInNav 0.8s ease-out 0.2s backwards' : 'none'
                 }}>
-                    {/* Standard Links */}
-                    {['Templates', 'Pages', 'Sections', 'Components'].map((item) => (
-                        <Link key={item} href={`/${item.toLowerCase()}`} className={styles.navLink || ''} style={{
-                            color: 'inherit',
-                            textDecoration: 'none',
-                            fontWeight: 700,
-                            textTransform: 'uppercase',
-                            fontSize: '0.85rem',
-                            letterSpacing: '0.05em',
-                            opacity: 0.8
-                        }}>
-                            {item}
-                        </Link>
-                    ))}
-
-                    <div style={{ width: '1px', height: '16px', background: 'currentColor', opacity: 0.2 }}></div>
+                    {/* Theme Links Only */}
 
                     {/* Theme Links */}
                     {config.links.map((link, index) => (

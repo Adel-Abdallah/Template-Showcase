@@ -117,12 +117,6 @@ export default function Modal({
                 </div>
             </div>
 
-            <style jsx>{`
-                @keyframes modalSlideUp {
-                    from { opacity: 0; transform: translateY(20px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-            `}</style>
         </div>,
         document.body
     );

@@ -16,19 +16,23 @@ export default function Badge({ children, variant = 'default', style }: BadgePro
     switch (variant) {
         case 'outline':
             bg = 'transparent';
-            border = 'currentColor';
+            border = 'var(--border, currentColor)';
+            color = 'var(--text, inherit)';
             break;
         case 'success':
-            bg = 'var(--color-success-bg, rgba(75, 181, 67, 0.15))';
-            color = 'var(--color-success, #4bb543)';
+            bg = 'rgba(75, 181, 67, 0.15)';
+            color = '#4bb543';
+            border = 'rgba(75, 181, 67, 0.3)';
             break;
         case 'warning':
-            bg = 'var(--color-warning-bg, rgba(255, 193, 7, 0.15))';
-            color = 'var(--color-warning, #ffc107)';
+            bg = 'rgba(255, 193, 7, 0.15)';
+            color = '#ffc107';
+            border = 'rgba(255, 193, 7, 0.3)';
             break;
         case 'error':
-            bg = 'var(--color-error-bg, rgba(239, 68, 68, 0.15))';
-            color = 'var(--color-error, #ef4444)';
+            bg = 'rgba(239, 68, 68, 0.15)';
+            color = '#ef4444';
+            border = 'rgba(239, 68, 68, 0.3)';
             break;
     }
 
@@ -36,14 +40,16 @@ export default function Badge({ children, variant = 'default', style }: BadgePro
         <span style={{
             display: 'inline-flex',
             alignItems: 'center',
-            padding: '0.25rem 0.6rem',
-            borderRadius: '12px',
-            fontSize: '0.75rem',
+            padding: '0.35rem 0.8rem',
+            borderRadius: 'var(--radius, 12px)',
+            fontSize: 'var(--font-size-sm, 0.75rem)',
+            fontFamily: 'var(--font-main, inherit)',
             fontWeight: 600,
             lineHeight: 1,
             backgroundColor: bg,
             color: color,
             border: `1px solid ${border}`,
+            letterSpacing: '0.02em',
             ...style
         }}>
             {children}
