@@ -1,0 +1,48 @@
+{
+    "theme": "organic",
+    "title": "Pure & Natural",
+    "subtitle": "Earth First",
+    "apiConfig": {
+        "endpoint": "products/category/skincare",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": false
+    },
+    "header": {
+        "links": [
+            {
+                "label": "Market",
+                "href": "/universal/organic"
+            },
+            {
+                "label": "Our Story",
+                "href": "/universal/organic/about"
+            },
+            {
+                "label": "Connect",
+                "href": "/universal/organic/contact"
+            },
+            {
+                "label": "Join",
+                "href": "/universal/organic/login"
+            }
+        ],
+        "cartIcon": true
+    },
+    "footer": {
+        "text": "Sustainably sourced. Ethically made.",
+        "links": [
+            {
+                "label": "Privacy",
+                "href": "/universal/organic/privacy"
+            },
+            {
+                "label": "Terms",
+                "href": "/universal/organic/terms"
+            }
+        ]
+    }
+}

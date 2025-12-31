@@ -1,0 +1,48 @@
+{
+    "theme": "vibrant",
+    "title": "POP CULTURE",
+    "subtitle": "LOUD & PROUD",
+    "apiConfig": {
+        "endpoint": "products/category/smartphones",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "header": {
+        "links": [
+            {
+                "label": "Drop",
+                "href": "/universal/vibrant"
+            },
+            {
+                "label": "Crew",
+                "href": "/universal/vibrant/about"
+            },
+            {
+                "label": "Hype",
+                "href": "/universal/vibrant/contact"
+            },
+            {
+                "label": "Sign In",
+                "href": "/universal/vibrant/login"
+            }
+        ],
+        "cartIcon": true
+    },
+    "footer": {
+        "text": "Colors that speak louder than words.",
+        "links": [
+            {
+                "label": "Terms",
+                "href": "/universal/vibrant/terms"
+            },
+            {
+                "label": "Privacy",
+                "href": "/universal/vibrant/privacy"
+            }
+        ]
+    }
+}

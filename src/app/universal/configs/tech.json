@@ -1,0 +1,48 @@
+{
+    "theme": "tech",
+    "title": "CYBER_STORE",
+    "subtitle": "FUTURE_READY",
+    "apiConfig": {
+        "endpoint": "products/category/laptops",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "header": {
+        "links": [
+            {
+                "label": "Products",
+                "href": "/universal/tech"
+            },
+            {
+                "label": "Specs",
+                "href": "/universal/tech/about"
+            },
+            {
+                "label": "Support",
+                "href": "/universal/tech/contact"
+            },
+            {
+                "label": "Login",
+                "href": "/universal/tech/login"
+            }
+        ],
+        "cartIcon": true
+    },
+    "footer": {
+        "text": "SYSTEM_ONLINE // V.2.0.24",
+        "links": [
+            {
+                "label": "Protocols",
+                "href": "/universal/tech/terms"
+            },
+            {
+                "label": "Data",
+                "href": "/universal/tech/privacy"
+            }
+        ]
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "theme": "immersive",
+    "title": "The Gallery",
+    "subtitle": "Experience Design",
+    "apiConfig": {
+        "endpoint": "products/category/mobile-accessories",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "header": {
+        "links": [
+            {
+                "label": "Exhibit",
+                "href": "/universal/immersive"
+            },
+            {
+                "label": "Artists",
+                "href": "/universal/immersive/about"
+            },
+            {
+                "label": "Inquire",
+                "href": "/universal/immersive/contact"
+            },
+            {
+                "label": "Member",
+                "href": "/universal/immersive/login"
+            }
+        ],
+        "cartIcon": true
+    },
+    "footer": {
+        "text": "Immerse yourself in the extraordinary.",
+        "links": [
+            {
+                "label": "Conditions",
+                "href": "/universal/immersive/terms"
+            },
+            {
+                "label": "Privacy",
+                "href": "/universal/immersive/privacy"
+            }
+        ]
+    }
+}

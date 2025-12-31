@@ -1,0 +1,147 @@
+.pageWrapper {
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    padding: 8rem 3rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex: 1;
+    width: 100%;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.heroTitle {
+    font-size: 5rem;
+    font-weight: 100;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1;
+    color: #fff;
+}
+
+.heroSubtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    display: block;
+    color: #fff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+}
+
+.image {
+    aspect-ratio: 3/4;
+    background: #111;
+    border: 1px solid #222;
+    margin-bottom: 2rem;
+    transition: transform 0.5s;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.5s;
+}
+
+.card:hover .image {
+    transform: scale(1.02);
+}
+
+.card:hover .image img {
+    opacity: 1;
+}
+
+.name {
+    font-style: italic;
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 0.9rem;
+    opacity: 0.5;
+    color: #fff;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.navLink {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.navLink:hover {
+    opacity: 1;
+}
+
+.logo {
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.footer {
+    margin-top: 8rem;
+    padding: 4rem;
+    text-align: center;
+    border-top: 1px solid #222;
+    color: #666;
+}
+
+.footerLinks {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}

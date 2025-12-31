@@ -180,7 +180,7 @@ export default function Home() {
                     {templates.map((t) => (
                         <div key={t.id} className={styles.cardWrapper}>
                             <Link
-                                href={`/${t.id}`}
+                                href={`/universal/${t.id}`}
                                 className={styles.card}
                                 style={{
                                     background: t.bg,
@@ -202,7 +202,7 @@ export default function Home() {
                                 </div>
                             </Link>
                             <div className={styles.cardActions}>
-                                <Link href={`/${t.id}`} className={styles.previewBtn}>Preview</Link>
+                                <Link href={`/universal/${t.id}`} className={styles.previewBtn}>Preview</Link>
                                 <a href={`/downloads/${t.id}-project.zip`} download className={styles.downloadBtn}>Download</a>
                             </div>
                         </div>

@@ -1,0 +1,133 @@
+.pageWrapper {
+    min-height: 100vh;
+    background-color: #f4ecdf;
+    font-family: 'Helvetica', sans-serif;
+    color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    padding: 4rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex: 1;
+    width: 100%;
+}
+
+.hero {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.heroTitle {
+    font-size: 4rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.heroSubtitle {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
+    display: block;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.card {
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.image {
+    aspect-ratio: 3/4;
+    background: #e6e2dd;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.price {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.header {
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    border-bottom: 1px solid #dcd5cb;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.navLink {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.logo {
+    font-family: 'Times New Roman', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.footer {
+    margin-top: 5rem;
+    padding: 4rem;
+    background: #1a1a1a;
+    color: #f4ecdf;
+    text-align: center;
+}
+
+.footerLinks {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footerLink {
+    color: #f4ecdf;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.footerLink:hover {
+    opacity: 1;
+}

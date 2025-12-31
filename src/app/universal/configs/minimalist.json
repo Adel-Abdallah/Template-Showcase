@@ -1,0 +1,48 @@
+{
+    "theme": "minimalist",
+    "title": "Essence",
+    "subtitle": "Less is more.",
+    "apiConfig": {
+        "endpoint": "products/category/furniture",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "header": {
+        "links": [
+            {
+                "label": "Shop",
+                "href": "/universal/minimalist"
+            },
+            {
+                "label": "Journal",
+                "href": "/universal/minimalist/about"
+            },
+            {
+                "label": "Info",
+                "href": "/universal/minimalist/contact"
+            },
+            {
+                "label": "Account",
+                "href": "/universal/minimalist/login"
+            }
+        ],
+        "cartIcon": true
+    },
+    "footer": {
+        "text": "Simplicity is the ultimate sophistication.",
+        "links": [
+            {
+                "label": "Policy",
+                "href": "/universal/minimalist/privacy"
+            },
+            {
+                "label": "Terms",
+                "href": "/universal/minimalist/terms"
+            }
+        ]
+    }
+}

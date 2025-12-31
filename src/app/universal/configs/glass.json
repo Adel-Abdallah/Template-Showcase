@@ -1,0 +1,47 @@
+{
+    "theme": "glass",
+    "title": "The Collection",
+    "apiConfig": {
+        "endpoint": "products/category/sunglasses",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": false
+    },
+    "header": {
+        "links": [
+            {
+                "label": "Shop",
+                "href": "/universal/glass"
+            },
+            {
+                "label": "About",
+                "href": "/universal/glass/about"
+            },
+            {
+                "label": "Contact",
+                "href": "/universal/glass/contact"
+            },
+            {
+                "label": "Account",
+                "href": "/universal/glass/login"
+            }
+        ],
+        "cartIcon": true
+    },
+    "footer": {
+        "text": "© 2024 Glass Inc. All rights reserved.",
+        "links": [
+            {
+                "label": "Privacy Policy",
+                "href": "/universal/glass/privacy"
+            },
+            {
+                "label": "Terms of Service",
+                "href": "/universal/glass/terms"
+            }
+        ]
+    }
+}

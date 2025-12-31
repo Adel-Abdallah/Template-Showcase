@@ -1,0 +1,48 @@
+{
+    "theme": "industrial",
+    "title": "WAREHOUSE_42",
+    "subtitle": "HEAVY DUTY",
+    "apiConfig": {
+        "endpoint": "products/category/home-decoration",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "header": {
+        "links": [
+            {
+                "label": "Catalog",
+                "href": "/universal/industrial"
+            },
+            {
+                "label": "Manifest",
+                "href": "/universal/industrial/about"
+            },
+            {
+                "label": "Dispatch",
+                "href": "/universal/industrial/contact"
+            },
+            {
+                "label": "Log In",
+                "href": "/universal/industrial/login"
+            }
+        ],
+        "cartIcon": true
+    },
+    "footer": {
+        "text": "Built to last. Engineered for performance.",
+        "links": [
+            {
+                "label": "Specs",
+                "href": "/universal/industrial/terms"
+            },
+            {
+                "label": "Data",
+                "href": "/universal/industrial/privacy"
+            }
+        ]
+    }
+}

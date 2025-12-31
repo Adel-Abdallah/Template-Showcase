@@ -1,0 +1,48 @@
+{
+    "theme": "editorial",
+    "title": "The Edit",
+    "subtitle": "Curated Fashion",
+    "apiConfig": {
+        "endpoint": "products/category/tops",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "header": {
+        "links": [
+            {
+                "label": "Lookbook",
+                "href": "/universal/editorial"
+            },
+            {
+                "label": "Agency",
+                "href": "/universal/editorial/about"
+            },
+            {
+                "label": "Press",
+                "href": "/universal/editorial/contact"
+            },
+            {
+                "label": "Profile",
+                "href": "/universal/editorial/login"
+            }
+        ],
+        "cartIcon": true
+    },
+    "footer": {
+        "text": "Fashion is temporary, style is forever.",
+        "links": [
+            {
+                "label": "Legal",
+                "href": "/universal/editorial/terms"
+            },
+            {
+                "label": "Privacy",
+                "href": "/universal/editorial/privacy"
+            }
+        ]
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "theme": "saas",
+    "title": "GrowFast",
+    "subtitle": "Scale your business today",
+    "apiConfig": {
+        "endpoint": "products/category/laptops",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "header": {
+        "links": [
+            {
+                "label": "Pricing",
+                "href": "/universal/saas"
+            },
+            {
+                "label": "Company",
+                "href": "/universal/saas/about"
+            },
+            {
+                "label": "Sales",
+                "href": "/universal/saas/contact"
+            },
+            {
+                "label": "Portal",
+                "href": "/universal/saas/login"
+            }
+        ],
+        "cartIcon": false
+    },
+    "footer": {
+        "text": "Empowering the next generation of startups.",
+        "links": [
+            {
+                "label": "Terms",
+                "href": "/universal/saas/terms"
+            },
+            {
+                "label": "Privacy",
+                "href": "/universal/saas/privacy"
+            }
+        ]
+    }
+}
