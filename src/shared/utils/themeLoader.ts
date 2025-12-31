@@ -63,7 +63,6 @@ const configs: Record<string, () => Promise<{ default: Config }>> = {
     editorial: () => import('../../app/universal/configs/editorial.json'),
     organic: () => import('../../app/universal/configs/organic.json'),
     industrial: () => import('../../app/universal/configs/industrial.json'),
-    saas: () => import('../../app/universal/configs/saas.json'),
     immersive: () => import('../../app/universal/configs/immersive.json'),
 };
 
