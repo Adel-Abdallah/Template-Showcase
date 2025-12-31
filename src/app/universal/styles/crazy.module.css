@@ -60,10 +60,6 @@
     overflow-x: hidden;
 }
 
-.container {
-    /* Removed background and height from here */
-}
-
 /* Header Styles */
 .header {
     padding: 1rem 2rem;

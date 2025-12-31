@@ -1,0 +1,127 @@
+{
+    "id": "biomimicry",
+    "title": "BIO_CORE",
+    "subtitle": "Natural Intelligence",
+    "description": "Organic shapes, cellular structures, and breathing animations.",
+    "categoryLayout": "pills",
+    "gridLayout": "masonry",
+    "filterLayout": "dropdowns",
+    "style": {
+        "colors": {
+            "primary": "#4CAF50",
+            "onPrimary": "#FFFFFF",
+            "secondary": "#8BC34A",
+            "onSecondary": "#000000",
+            "background": "#F1F8E9",
+            "text": "#33691E",
+            "cardBg": "#FFFFFF",
+            "border": "#DCEDC8",
+            "accent": "#FF5722"
+        },
+        "typography": {
+            "fontFamily": "Nunito, sans-serif",
+            "headingsFamily": "Comfortaa, cursive",
+            "baseSize": "16px",
+            "scaleRatio": 1.15
+        },
+        "shape": {
+            "borderRadius": "30px 50px 30px 50px",
+            "borderWidth": "0px",
+            "boxShadow": "0 10px 20px rgba(76, 175, 80, 0.15)"
+        },
+        "animations": {
+            "buttonHover": "transform: scale(1.1); border-radius: 50px;",
+            "cardHover": "border-radius: 50%; transform: rotate(5deg);"
+        }
+    },
+    "header": {
+        "layout": "logo-center",
+        "iconPosition": "left",
+        "sticky": true,
+        "cartIcon": true,
+        "links": [
+            {
+                "label": "Ecosystem",
+                "href": "/universal/biomimicry"
+            },
+            {
+                "label": "Species",
+                "href": "/universal/biomimicry/species"
+            },
+            {
+                "label": "Adapt",
+                "href": "/universal/biomimicry/adapt"
+            }
+        ]
+    },
+    "footer": {
+        "layout": "grid",
+        "showSocials": true,
+        "text": "Inspired by Nature",
+        "links": [
+            {
+                "label": "Growth",
+                "href": "/universal/biomimicry/growth"
+            }
+        ]
+    },
+    "apiConfig": {
+        "endpoint": "products",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "products": [
+        {
+            "id": 1,
+            "name": "Bamboo Chair",
+            "price": "$120.00",
+            "image": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&q=80",
+            "rating": 5.0,
+            "category": "Furniture",
+            "tags": [
+                "Eco",
+                "Wood"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Leaf Lamp",
+            "price": "$45.00",
+            "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=800&q=80",
+            "rating": 4.8,
+            "category": "Decor",
+            "tags": [
+                "Green",
+                "Light"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Cork Planter",
+            "price": "$25.00",
+            "image": "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=800&q=80",
+            "rating": 4.9,
+            "category": "Garden",
+            "tags": [
+                "Plant",
+                "Natural"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Moss Rug",
+            "price": "$150.00",
+            "image": "https://images.unsplash.com/photo-1587316823901-71fb58d248df?w=800&q=80",
+            "rating": 4.7,
+            "category": "Home",
+            "tags": [
+                "Soft",
+                "Green"
+            ]
+        }
+    ]
+}

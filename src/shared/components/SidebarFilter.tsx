@@ -10,10 +10,12 @@ interface SidebarFilterProps {
     tags?: string[];
     isOpen?: boolean;
     onClose?: () => void;
-    themeStyle?: React.CSSProperties; // Pass raw CSS variables
+    mode?: 'drawer' | 'horizontal' | 'dropdowns';
+    position?: 'left' | 'right';
+    themeStyle?: React.CSSProperties;
 }
 
-export default function SidebarFilter({ styles, categories, tags, isOpen, onClose, themeStyle }: SidebarFilterProps) {
+export default function SidebarFilter({ styles, categories, tags, isOpen, onClose, themeStyle, mode = 'drawer', position = 'right' }: SidebarFilterProps) {
     const [mounted, setMounted] = useState(false);
     const [openSections, setOpenSections] = useState<Record<string, boolean>>({
         price: true,
@@ -23,21 +25,113 @@ export default function SidebarFilter({ styles, categories, tags, isOpen, onClos
 
     useEffect(() => {
         setMounted(true);
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
+        if (mode === 'drawer') {
+            if (isOpen) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         }
         return () => {
             document.body.style.overflow = '';
         };
-    }, [isOpen]);
+    }, [isOpen, mode]);
 
     const toggleSection = (section: string) => {
         setOpenSections(prev => ({ ...prev, [section]: !prev[section] }));
     };
 
     if (!mounted) return null;
+
+    if (mode === 'horizontal') {
+        return (
+            <div style={{
+                display: 'flex',
+                gap: '2rem',
+                padding: '1.5rem',
+                background: 'var(--card-bg)',
+                border: '1px solid var(--border)',
+                borderRadius: 'var(--radius)',
+                flexWrap: 'wrap',
+                alignItems: 'start'
+            }}>
+                {/* Price */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    <span style={{ fontWeight: 'bold', fontSize: '0.9rem', marginBottom: '0.5rem' }}>PRICE</span>
+                    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                        {['Under $50', '$50 - $100', 'Over $100'].map(p => (
+                            <label key={p} style={{ fontSize: '0.9rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                                <input type="checkbox" /> {p}
+                            </label>
+                        ))}
+                    </div>
+                </div>
+                {/* Divide */}
+                <div style={{ width: '1px', height: '50px', background: 'var(--border)' }}></div>
+
+                {/* Collections */}
+                {tags && tags.length > 0 && (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                        <span style={{ fontWeight: 'bold', fontSize: '0.9rem', marginBottom: '0.5rem' }}>TAGS</span>
+                        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                            {tags.slice(0, 5).map(tag => (
+                                <span key={tag} style={{
+                                    padding: '0.2rem 0.6rem',
+                                    border: '1px solid var(--border)',
+                                    borderRadius: '50px',
+                                    fontSize: '0.8rem',
+                                    cursor: 'pointer'
+                                }}>{tag}</span>
+                            ))}
+                        </div>
+                    </div>
+                )}
+            </div>
+        );
+    }
+
+    if (mode === 'dropdowns') {
+        return (
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', padding: '1rem', background: 'var(--card-bg)', borderRadius: 'var(--radius)' }}>
+                {Object.keys(openSections).map(section => (
+                    <div key={section} style={{ position: 'relative' }}>
+                        <button
+                            onClick={() => toggleSection(section)}
+                            style={{
+                                padding: '0.5rem 1rem',
+                                border: '1px solid var(--border)',
+                                background: 'var(--bg)',
+                                borderRadius: '4px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.5rem',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            {section.charAt(0).toUpperCase() + section.slice(1)} <ChevronDown size={14} />
+                        </button>
+                        {openSections[section] && (
+                            <div style={{
+                                position: 'absolute',
+                                top: '100%',
+                                left: 0,
+                                marginTop: '0.5rem',
+                                background: 'var(--card-bg)',
+                                border: '1px solid var(--border)',
+                                padding: '1rem',
+                                borderRadius: '4px',
+                                zIndex: 50,
+                                minWidth: '200px',
+                                boxShadow: 'var(--shadow-md)'
+                            }}>
+                                <div style={{ fontSize: '0.9rem' }}>Filter options for {section}...</div>
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
+        );
+    }
 
     return createPortal(
         <>
@@ -62,10 +156,10 @@ export default function SidebarFilter({ styles, categories, tags, isOpen, onClos
             {/* Drawer */}
             <aside
                 style={{
-                    ...themeStyle, // Apply CSS variables first
+                    ...themeStyle,
                     position: 'fixed',
                     top: 0,
-                    right: 0, // Right side drawer
+                    [position]: 0,
                     bottom: 0,
                     width: '320px',
                     maxWidth: '85vw',
@@ -73,11 +167,12 @@ export default function SidebarFilter({ styles, categories, tags, isOpen, onClos
                     zIndex: 9999,
                     padding: '2rem',
                     overflowY: 'auto',
-                    transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
+                    transform: isOpen ? 'translateX(0)' : `translateX(${position === 'left' ? '-100%' : '100%'})`,
                     transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                    borderLeft: '1px solid var(--border)',
-                    boxShadow: '-4px 0 20px rgba(0,0,0,0.1)',
-                    color: 'var(--text)', // Ensure text color is set
+                    borderRight: position === 'left' ? '1px solid var(--border)' : 'none',
+                    borderLeft: position === 'right' ? '1px solid var(--border)' : 'none',
+                    boxShadow: position === 'left' ? '4px 0 20px rgba(0,0,0,0.1)' : '-4px 0 20px rgba(0,0,0,0.1)',
+                    color: 'var(--text)',
                 }}
                 className="sidebar-filter"
             >

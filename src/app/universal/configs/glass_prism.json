@@ -1,0 +1,131 @@
+{
+    "id": "glass_prism",
+    "title": "PRISM",
+    "subtitle": "Crystal Clear",
+    "description": "Advanced refractive glassmorphism with vivid colors and deep blur.",
+    "categoryLayout": "pills",
+    "gridLayout": "grid",
+    "filterLayout": "dropdowns",
+    "style": {
+        "colors": {
+            "primary": "#FFFFFF",
+            "onPrimary": "#000000",
+            "secondary": "#E0E0E0",
+            "onSecondary": "#000000",
+            "background": "#000000",
+            "text": "#FFFFFF",
+            "cardBg": "rgba(255, 255, 255, 0.1)",
+            "border": "rgba(255, 255, 255, 0.2)",
+            "accent": "#00C6FF"
+        },
+        "typography": {
+            "fontFamily": "Raleway, sans-serif",
+            "headingsFamily": "Montserrat, sans-serif",
+            "baseSize": "16px",
+            "scaleRatio": 1.2
+        },
+        "shape": {
+            "borderRadius": "30px",
+            "borderWidth": "1px",
+            "boxShadow": "0 8px 32px 0 rgba(31, 38, 135, 0.37)"
+        },
+        "animations": {
+            "buttonHover": "backdrop-filter: blur(20px); box-shadow: 0 0 20px rgba(255,255,255,0.4);",
+            "cardHover": "transform: translateY(-10px);"
+        }
+    },
+    "header": {
+        "layout": "logo-center",
+        "iconPosition": "left",
+        "sticky": true,
+        "cartIcon": true,
+        "links": [
+            {
+                "label": "Collection",
+                "href": "/universal/glass_prism"
+            },
+            {
+                "label": "Gallery",
+                "href": "/universal/glass_prism/gallery"
+            },
+            {
+                "label": "About",
+                "href": "/universal/glass_prism/about"
+            }
+        ]
+    },
+    "footer": {
+        "layout": "simple",
+        "showSocials": true,
+        "text": "Refracting Light Since 2024",
+        "links": [
+            {
+                "label": "Terms",
+                "href": "/universal/glass_prism/terms"
+            },
+            {
+                "label": "Contact",
+                "href": "/universal/glass_prism/contact"
+            }
+        ]
+    },
+    "apiConfig": {
+        "endpoint": "products",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "products": [
+        {
+            "id": 1,
+            "name": "Crystal Vase",
+            "price": "$120.00",
+            "image": "https://images.unsplash.com/photo-1544062820-c972579dfd2d?w=800&q=80",
+            "rating": 5.0,
+            "category": "Decor",
+            "tags": [
+                "Glass",
+                "Clear"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Prism Paperweight",
+            "price": "$45.00",
+            "image": "https://images.unsplash.com/photo-1517840138243-fc0572b83c77?w=800&q=80",
+            "rating": 4.8,
+            "category": "Office",
+            "tags": [
+                "Light",
+                "Color"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Glass Teapot",
+            "price": "$85.00",
+            "image": "https://images.unsplash.com/photo-1550958661-46f001556093?w=800&q=80",
+            "rating": 4.9,
+            "category": "Kitchen",
+            "tags": [
+                "Tea",
+                "Delicate"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Mirror Sculpture",
+            "price": "$299.00",
+            "image": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=800&q=80",
+            "rating": 4.7,
+            "category": "Art",
+            "tags": [
+                "Reflection",
+                "Modern"
+            ]
+        }
+    ]
+}

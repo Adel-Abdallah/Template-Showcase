@@ -1,0 +1,131 @@
+{
+    "id": "deep_space",
+    "title": "ABYSS",
+    "subtitle": "Explore the Unknown",
+    "description": "Dark, immersive space theme with parallax stars and glowing nebulas.",
+    "categoryLayout": "minimal",
+    "gridLayout": "grid",
+    "filterLayout": "top-bar",
+    "layoutOptions": {
+        "heroVisible": true,
+        "animations": true
+    },
+    "style": {
+        "colors": {
+            "primary": "#FFFFFF",
+            "onPrimary": "#000000",
+            "secondary": "#7F00FF",
+            "onSecondary": "#FFFFFF",
+            "background": "#000000",
+            "text": "#B0B0B0",
+            "cardBg": "rgba(20, 20, 30, 0.8)",
+            "border": "#222",
+            "accent": "#7F00FF"
+        },
+        "typography": {
+            "fontFamily": "Exo 2, sans-serif",
+            "headingsFamily": "Orbitron, sans-serif",
+            "baseSize": "16px",
+            "scaleRatio": 1.25
+        },
+        "shape": {
+            "borderRadius": "50%",
+            "borderWidth": "1px",
+            "boxShadow": "0 0 20px rgba(127, 0, 255, 0.2)"
+        },
+        "animations": {
+            "buttonHover": "box-shadow: 0 0 30px rgba(127, 0, 255, 0.6);",
+            "cardHover": "transform: scale(1.05);"
+        }
+    },
+    "header": {
+        "layout": "logo-center",
+        "iconPosition": "left",
+        "sticky": true,
+        "cartIcon": true,
+        "links": [
+            {
+                "label": "Galaxy",
+                "href": "/universal/deep_space"
+            },
+            {
+                "label": "Planets",
+                "href": "/universal/deep_space/planets"
+            },
+            {
+                "label": "Stars",
+                "href": "/universal/deep_space/stars"
+            }
+        ]
+    },
+    "footer": {
+        "layout": "simple",
+        "showSocials": true,
+        "text": "Lost in Space",
+        "links": [
+            {
+                "label": "Mission",
+                "href": "/universal/deep_space/mission"
+            }
+        ]
+    },
+    "apiConfig": {
+        "endpoint": "products",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "products": [
+        {
+            "id": 1,
+            "name": "Telescope X1",
+            "price": "$450.00",
+            "image": "https://images.unsplash.com/photo-1594913785233-02f5c71d5334?w=800&q=80",
+            "rating": 5.0,
+            "category": "Science",
+            "tags": [
+                "Space",
+                "View"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Star Map",
+            "price": "$35.00",
+            "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&q=80",
+            "rating": 4.9,
+            "category": "Decor",
+            "tags": [
+                "Map",
+                "Stars"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Meteor Fragment",
+            "price": "$1200.00",
+            "image": "https://images.unsplash.com/photo-1534970028765-38ce47ef958d?w=800&q=80",
+            "rating": 5.0,
+            "category": "Collectibles",
+            "tags": [
+                "Rare",
+                "Rock"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Space Suit Replica",
+            "price": "$3000.00",
+            "image": "https://images.unsplash.com/photo-1454789548779-d5594f5b6833?w=800&q=80",
+            "rating": 4.8,
+            "category": "Apparel",
+            "tags": [
+                "Costume",
+                "Space"
+            ]
+        }
+    ]
+}

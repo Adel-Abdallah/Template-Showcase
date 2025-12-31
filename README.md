@@ -1,6 +1,6 @@
 # Template Showcase
 
-A collection of **10 complete, production-ready e-commerce templates** built with Next.js and Vanilla CSS.
+A collection of **complete, production-ready e-commerce templates** built with Next.js and Vanilla CSS.
 
 🌐 **Live Demo**: [Coming Soon]
 

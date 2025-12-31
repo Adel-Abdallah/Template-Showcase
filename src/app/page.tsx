@@ -18,7 +18,7 @@ export default function Home() {
             {/* Hero Section */}
             <header className={styles.hero}>
                 <h1 className={styles.title}>E-commerce Template Collection</h1>
-                <p className={styles.subtitle}>10 Complete, Production-Ready Templates</p>
+                <p className={styles.subtitle}> Complete, Production-Ready Templates</p>
                 <p className={styles.intro}>
                     A curated collection of modern e-commerce templates built with <strong>Next.js</strong> and <strong>Vanilla CSS</strong>.
                     Each template includes a product list page, product detail page, cart, and wishlist —

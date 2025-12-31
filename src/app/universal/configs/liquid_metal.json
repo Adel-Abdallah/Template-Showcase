@@ -1,0 +1,131 @@
+{
+    "id": "liquid_metal",
+    "title": "LIQUID_METAL",
+    "subtitle": "Future Business",
+    "description": "Chrome finishes, smooth gradients, and a premium corporate feel.",
+    "categoryLayout": "bar",
+    "filterLayout": "top-bar",
+    "gridLayout": "list",
+    "style": {
+        "colors": {
+            "primary": "#E0E0E0",
+            "onPrimary": "#000000",
+            "secondary": "#A0A0A0",
+            "onSecondary": "#FFFFFF",
+            "background": "#F5F5F7",
+            "text": "#1D1D1F",
+            "cardBg": "#FFFFFF",
+            "border": "#D2D2D7",
+            "accent": "#0071E3"
+        },
+        "typography": {
+            "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
+            "headingsFamily": "Inter, sans-serif",
+            "baseSize": "16px",
+            "scaleRatio": 1.15
+        },
+        "shape": {
+            "borderRadius": "12px",
+            "borderWidth": "1px",
+            "boxShadow": "0 10px 30px rgba(0,0,0,0.1)"
+        },
+        "animations": {
+            "buttonHover": "transform: scale(1.02);",
+            "cardHover": "transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.15);"
+        }
+    },
+    "header": {
+        "layout": "logo-center",
+        "iconPosition": "right",
+        "sticky": true,
+        "cartIcon": true,
+        "links": [
+            {
+                "label": "Enterprise",
+                "href": "/universal/liquid_metal"
+            },
+            {
+                "label": "Solutions",
+                "href": "/universal/liquid_metal/solutions"
+            },
+            {
+                "label": "Investors",
+                "href": "/universal/liquid_metal/investors"
+            }
+        ]
+    },
+    "footer": {
+        "layout": "grid",
+        "showSocials": true,
+        "text": "© 2026 Liquid Corp.",
+        "links": [
+            {
+                "label": "Privacy",
+                "href": "/universal/liquid_metal/privacy"
+            },
+            {
+                "label": "Legal",
+                "href": "/universal/liquid_metal/legal"
+            }
+        ]
+    },
+    "apiConfig": {
+        "endpoint": "products",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "products": [
+        {
+            "id": 1,
+            "name": "Titanium Watch",
+            "price": "$2500.00",
+            "image": "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800&q=80",
+            "rating": 5.0,
+            "category": "Accessories",
+            "tags": [
+                "Luxury",
+                "Metal"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Steel Pen",
+            "price": "$150.00",
+            "image": "https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=800&q=80",
+            "rating": 4.5,
+            "category": "Office",
+            "tags": [
+                "Writing",
+                "Premium"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Aluminum Lamp",
+            "price": "$399.00",
+            "image": "https://images.unsplash.com/photo-1513506003013-194a5d68d878?w=800&q=80",
+            "rating": 4.7,
+            "category": "Home",
+            "tags": [
+                "Minimal",
+                "Silver"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Silver Headphones",
+            "price": "$550.00",
+            "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80",
+            "rating": 4.8,
+            "category": "Tech",
+            "tags": [
+                "Audio",
+                "Sleek"
+            ]
+        }
+    ]
+}

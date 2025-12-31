@@ -1,0 +1,127 @@
+{
+    "id": "retro_arcade",
+    "title": "ARCADE_84",
+    "subtitle": "INSERT COIN",
+    "description": "8-bit inspired pixel art theme with CRT effects.",
+    "categoryLayout": "tabs",
+    "gridLayout": "list",
+    "filterLayout": "sidebar-right",
+    "style": {
+        "colors": {
+            "primary": "#00FF00",
+            "onPrimary": "#000000",
+            "secondary": "#FF0055",
+            "onSecondary": "#FFFFFF",
+            "background": "#121212",
+            "text": "#E0E0E0",
+            "cardBg": "#000000",
+            "border": "#00FF00",
+            "accent": "#00FF00"
+        },
+        "typography": {
+            "fontFamily": "'Press Start 2P', cursive",
+            "headingsFamily": "'VT323', monospace",
+            "baseSize": "14px",
+            "scaleRatio": 1.1
+        },
+        "shape": {
+            "borderRadius": "0px",
+            "borderWidth": "4px",
+            "boxShadow": "none"
+        },
+        "animations": {
+            "buttonHover": "background-color: #FF0055; color: #fff;",
+            "cardHover": "border-color: #FF0055;"
+        }
+    },
+    "header": {
+        "layout": "logo-left",
+        "iconPosition": "right",
+        "sticky": true,
+        "cartIcon": true,
+        "links": [
+            {
+                "label": "Games",
+                "href": "/universal/retro_arcade"
+            },
+            {
+                "label": "High Scores",
+                "href": "/universal/retro_arcade/scores"
+            },
+            {
+                "label": "Merch",
+                "href": "/universal/retro_arcade/merch"
+            }
+        ]
+    },
+    "footer": {
+        "layout": "simple",
+        "showSocials": true,
+        "text": "GAME OVER",
+        "links": [
+            {
+                "label": "Credits",
+                "href": "/universal/retro_arcade/credits"
+            }
+        ]
+    },
+    "apiConfig": {
+        "endpoint": "products",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "products": [
+        {
+            "id": 1,
+            "name": "Joystick Pro",
+            "price": "$25.00",
+            "image": "https://images.unsplash.com/photo-1592840496073-f626a578a1ee?w=800&q=80",
+            "rating": 5.0,
+            "category": "Controls",
+            "tags": [
+                "Arcade",
+                "Retro"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Pixel Art Frame",
+            "price": "$40.00",
+            "image": "https://images.unsplash.com/photo-1563298723-dcfebaa392e3?w=800&q=80",
+            "rating": 4.8,
+            "category": "Decor",
+            "tags": [
+                "8-bit",
+                "Art"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Console Case",
+            "price": "$30.00",
+            "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+            "rating": 4.7,
+            "category": "Accessories",
+            "tags": [
+                "Gaming",
+                "Protection"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Retro Neon Sign",
+            "price": "$80.00",
+            "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&q=80",
+            "rating": 5.0,
+            "category": "Lighting",
+            "tags": [
+                "Neon",
+                "Vibe"
+            ]
+        }
+    ]
+}

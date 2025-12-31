@@ -1,0 +1,131 @@
+{
+    "id": "neon_tokyo",
+    "title": "NEON_TOKYO",
+    "subtitle": "2077 VIBES",
+    "description": "A cyberpunk aesthetic with glitch effects and neon lighting.",
+    "categoryLayout": "tabs",
+    "gridLayout": "masonry",
+    "filterLayout": "sidebar-left",
+    "style": {
+        "colors": {
+            "primary": "#FF00FF",
+            "onPrimary": "#FFFFFF",
+            "secondary": "#00FFFF",
+            "onSecondary": "#000000",
+            "background": "#050505",
+            "text": "#E0E0E0",
+            "cardBg": "#111111",
+            "border": "#FF00FF",
+            "accent": "#00FFFF"
+        },
+        "typography": {
+            "fontFamily": "Roboto, sans-serif",
+            "headingsFamily": "Orbitron, sans-serif",
+            "baseSize": "16px",
+            "scaleRatio": 1.2
+        },
+        "shape": {
+            "borderRadius": "0px",
+            "borderWidth": "1px",
+            "boxShadow": "0 0 10px #FF00FF"
+        },
+        "animations": {
+            "buttonHover": "filter: hue-rotate(90deg);",
+            "cardHover": "transform: translate(2px, -2px); box-shadow: 4px 4px 0px #00FFFF;"
+        }
+    },
+    "header": {
+        "layout": "logo-left",
+        "iconPosition": "right",
+        "sticky": true,
+        "cartIcon": true,
+        "links": [
+            {
+                "label": "District 1",
+                "href": "/universal/neon_tokyo"
+            },
+            {
+                "label": "Netrun",
+                "href": "/universal/neon_tokyo/about"
+            },
+            {
+                "label": "Data",
+                "href": "/universal/neon_tokyo/support"
+            }
+        ]
+    },
+    "footer": {
+        "layout": "simple",
+        "showSocials": true,
+        "text": "SYSTEM.OFFLINE // REBOOT",
+        "links": [
+            {
+                "label": "Protocol",
+                "href": "/universal/neon_tokyo/terms"
+            },
+            {
+                "label": "Connect",
+                "href": "/universal/neon_tokyo/contact"
+            }
+        ]
+    },
+    "apiConfig": {
+        "endpoint": "products",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "products": [
+        {
+            "id": 1,
+            "name": "Neural Link V2",
+            "price": "$999.00",
+            "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
+            "rating": 5.0,
+            "category": "Tech",
+            "tags": [
+                "Cyberware",
+                "Brain"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Cyber Deck",
+            "price": "$1250.00",
+            "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80",
+            "rating": 4.8,
+            "category": "Computers",
+            "tags": [
+                "Hacking",
+                "Portable"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Neon Katana",
+            "price": "$450.00",
+            "image": "https://images.unsplash.com/photo-1535581652167-3d609353a992?w=800&q=80",
+            "rating": 4.9,
+            "category": "Weapons",
+            "tags": [
+                "Melee",
+                "Light"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Holo-Visor",
+            "price": "$299.00",
+            "image": "https://images.unsplash.com/photo-1626285861696-9f0bf5a49c6d?w=800&q=80",
+            "rating": 4.6,
+            "category": "Wearables",
+            "tags": [
+                "AR",
+                "Vision"
+            ]
+        }
+    ]
+}

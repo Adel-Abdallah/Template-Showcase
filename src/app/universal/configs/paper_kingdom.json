@@ -1,0 +1,131 @@
+{
+    "id": "paper_kingdom",
+    "title": "PAPER_KINGDOM",
+    "subtitle": "Crafted with Care",
+    "description": "A playful, textured theme designed for kids and creative projects.",
+    "categoryLayout": "pills",
+    "filterLayout": "top-bar",
+    "gridLayout": "masonry",
+    "style": {
+        "colors": {
+            "primary": "#FF6B6B",
+            "onPrimary": "#FFFFFF",
+            "secondary": "#4ECDC4",
+            "onSecondary": "#000000",
+            "background": "#FFF9E6",
+            "text": "#2C3E50",
+            "cardBg": "#FFFFFF",
+            "border": "#2C3E50",
+            "accent": "#FFE66D"
+        },
+        "typography": {
+            "fontFamily": "Comic Neue, cursive",
+            "headingsFamily": "Fredoka One, cursive",
+            "baseSize": "18px",
+            "scaleRatio": 1.3
+        },
+        "shape": {
+            "borderRadius": "2px",
+            "borderWidth": "2px",
+            "boxShadow": "4px 4px 0px rgba(0,0,0,0.2)"
+        },
+        "animations": {
+            "buttonHover": "transform: rotate(-3deg) scale(1.1);",
+            "cardHover": "transform: rotate(2deg);"
+        }
+    },
+    "header": {
+        "layout": "logo-center",
+        "iconPosition": "left",
+        "sticky": false,
+        "cartIcon": true,
+        "links": [
+            {
+                "label": "Playground",
+                "href": "/universal/paper_kingdom"
+            },
+            {
+                "label": "Story Time",
+                "href": "/universal/paper_kingdom/stories"
+            },
+            {
+                "label": "Drawings",
+                "href": "/universal/paper_kingdom/art"
+            }
+        ]
+    },
+    "footer": {
+        "layout": "centered",
+        "showSocials": false,
+        "text": "Made with paper and glue!",
+        "links": [
+            {
+                "label": "Grown Ups",
+                "href": "/universal/paper_kingdom/parents"
+            },
+            {
+                "label": "Safety",
+                "href": "/universal/paper_kingdom/safety"
+            }
+        ]
+    },
+    "apiConfig": {
+        "endpoint": "products",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "products": [
+        {
+            "id": 1,
+            "name": "Origami Set",
+            "price": "$15.00",
+            "image": "https://images.unsplash.com/photo-1574279545564-e1d17d5904ae?w=800&q=80",
+            "rating": 5.0,
+            "category": "Crafts",
+            "tags": [
+                "Paper",
+                "Fun"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Crayon Box",
+            "price": "$8.00",
+            "image": "https://images.unsplash.com/photo-1517260739337-6799d2cc9fe8?w=800&q=80",
+            "rating": 4.8,
+            "category": "Art",
+            "tags": [
+                "Color",
+                "Draw"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Cardboard Castle",
+            "price": "$35.00",
+            "image": "https://images.unsplash.com/photo-1627932649069-b57f86440263?w=800&q=80",
+            "rating": 4.9,
+            "category": "Toys",
+            "tags": [
+                "Build",
+                "Play"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Story Book",
+            "price": "$12.00",
+            "image": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80",
+            "rating": 5.0,
+            "category": "Books",
+            "tags": [
+                "Read",
+                "Learn"
+            ]
+        }
+    ]
+}

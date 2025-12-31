@@ -1,0 +1,149 @@
+/* Retro Arcade - Pixel Art / CRT / 80s */
+
+@keyframes blink {
+
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.pageWrapper {
+    background-color: #121212;
+    color: #00FF00;
+    font-family: 'Courier New', monospace;
+    /* Fallback */
+    min-height: 100vh;
+    border: 10px solid #222;
+    /* Bezel */
+    position: relative;
+}
+
+/* CRT Scanline Overlay */
+.pageWrapper::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 1000;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}
+
+/* Header */
+.header {
+    background: #000;
+    border-bottom: 4px solid var(--primary);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: var(--secondary) !important;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 0px #fff;
+}
+
+.navLink {
+    color: var(--text);
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0 1rem;
+}
+
+.navLink:hover {
+    background: var(--primary);
+    color: #000;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.heroTitle {
+    font-size: 3rem;
+    color: var(--primary);
+    text-shadow: 4px 4px 0px #000;
+}
+
+.heroSubtitle {
+    color: #fff;
+    animation: blink 1s infinite;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card {
+    background: #000;
+    border: 4px solid var(--primary);
+    padding: 1rem;
+    position: relative;
+    box-shadow: 8px 8px 0px #222;
+}
+
+.card:hover {
+    border-color: var(--secondary);
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px #222;
+}
+
+.card img {
+    image-rendering: pixelated;
+    /* Crucial for retro feel */
+    border: 2px solid #333;
+    margin-bottom: 1rem;
+}
+
+.cardTitle {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.cardPrice {
+    color: var(--secondary);
+}
+
+/* Button */
+.button {
+    background: var(--primary);
+    color: #000;
+    border: none;
+    padding: 1rem;
+    box-shadow: 4px 4px 0px #fff;
+    cursor: pointer;
+    font-family: inherit;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background: var(--secondary);
+    color: #fff;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 4px solid var(--primary);
+}

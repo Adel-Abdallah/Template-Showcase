@@ -22,7 +22,7 @@ export default function AboutPage() {
                 <section className={styles.section}>
                     <h2>About This Project</h2>
                     <p>
-                        This template showcase is a collection of 10 complete, production-ready e-commerce templates
+                        This template showcase is a collection of complete, production-ready e-commerce templates
                         built with Next.js and Vanilla CSS. Each template includes a product list page, product detail page,
                         cart, and wishlist — all with unique design systems and fully responsive layouts.
                     </p>

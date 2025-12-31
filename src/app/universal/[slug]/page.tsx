@@ -152,26 +152,34 @@ export default async function UniversalPage({
 
     return (
         <div className={styles.container} style={dynamicStyles}>
-            {/* Hero Section */}
-            <section className={styles.hero}>
-                {config.subtitle && (
-                    <span className={styles.heroSubtitle}>{config.subtitle}</span>
-                )}
-                <h1 className={styles.heroTitle}>{config.title}</h1>
-            </section>
-
-            {/* Link Secondary Nav */}
+            {/* Link Secondary Nav (Now Above Hero) */}
             {config.apiConfig && (
-                <SecondaryNavbar
-                    categories={dynamicCategories}
-                    slug={slug}
-                    styles={styles}
-                />
+                <div style={{ padding: '0 2rem', marginTop: '1rem', position: 'relative', zIndex: 10 }}>
+                    <SecondaryNavbar
+                        categories={dynamicCategories}
+                        slug={slug}
+                        styles={styles}
+                        layout={config.categoryLayout || 'pills'} // Default to pills if undefined
+                        themeStyle={dynamicStyles}
+                    />
+                </div>
+            )}
+
+            {/* Hero Section */}
+            {(config.layoutOptions?.heroVisible !== false) && (
+                <section className={styles.hero}>
+                    {config.subtitle && (
+                        <span className={styles.heroSubtitle}>{config.subtitle}</span>
+                    )}
+                    <h1 className={styles.heroTitle}>{config.title}</h1>
+                </section>
             )}
 
             <ShopLayout
                 styles={styles}
                 themeStyle={dynamicStyles}
+                filterLayout={(config.filterLayout as any) || 'drawer'}
+                gridLayout={(config.gridLayout as any) || 'grid'} // Temporary cast if needed, but prefer updating ShopLayout
                 sidebarProps={{
                     styles: styles,
                     tags: dynamicTags,

@@ -1,0 +1,126 @@
+{
+    "id": "neo_brutalism",
+    "title": "BRUTAL",
+    "subtitle": "Raw Power",
+    "description": "Bold, high-contrast, stark typography, marquee effects.",
+    "categoryLayout": "tabs",
+    "gridLayout": "grid",
+    "filterLayout": "sidebar-left",
+    "layoutOptions": {
+        "heroVisible": true
+    },
+    "style": {
+        "colors": {
+            "primary": "#FF3333",
+            "onPrimary": "#FFFFFF",
+            "secondary": "#000000",
+            "onSecondary": "#FFFFFF",
+            "background": "#F0F0F0",
+            "text": "#000000",
+            "cardBg": "#FFFFFF",
+            "border": "#000000",
+            "accent": "#FFFF00"
+        },
+        "typography": {
+            "fontFamily": "Archivo Black, sans-serif",
+            "headingsFamily": "Archivo Black, sans-serif",
+            "baseSize": "18px",
+            "scaleRatio": 1.5
+        },
+        "shape": {
+            "borderRadius": "0px",
+            "borderWidth": "4px",
+            "boxShadow": "8px 8px 0px #000000"
+        },
+        "animations": {
+            "buttonHover": "transform: translate(-4px, -4px); box-shadow: 12px 12px 0px #000;",
+            "cardHover": "transform: translate(-4px, -4px); box-shadow: 16px 16px 0px #000;"
+        }
+    },
+    "header": {
+        "layout": "logo-left",
+        "iconPosition": "right",
+        "sticky": true,
+        "cartIcon": true,
+        "links": [
+            {
+                "label": "Shop",
+                "href": "/universal/neo_brutalism"
+            },
+            {
+                "label": "Lookbook",
+                "href": "/universal/neo_brutalism/lookbook"
+            }
+        ]
+    },
+    "footer": {
+        "layout": "simple",
+        "showSocials": true,
+        "text": "NO COMPROMISE.",
+        "links": [
+            {
+                "label": "Info",
+                "href": "/universal/neo_brutalism/info"
+            }
+        ]
+    },
+    "apiConfig": {
+        "endpoint": "products",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "products": [
+        {
+            "id": 1,
+            "name": "Concrete Lamp",
+            "price": "$100.00",
+            "image": "https://images.unsplash.com/photo-1540932296105-01b3e108af1c?w=800&q=80",
+            "rating": 5.0,
+            "category": "Decor",
+            "tags": [
+                "Raw",
+                "Heavy"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Steel Chair",
+            "price": "$250.00",
+            "image": "https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=800&q=80",
+            "rating": 4.5,
+            "category": "Furniture",
+            "tags": [
+                "Metal",
+                "Cold"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Red Beanie",
+            "price": "$30.00",
+            "image": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=800&q=80",
+            "rating": 4.8,
+            "category": "Apparel",
+            "tags": [
+                "Bold",
+                "Warm"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Black Boots",
+            "price": "$180.00",
+            "image": "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=800&q=80",
+            "rating": 4.9,
+            "category": "Footwear",
+            "tags": [
+                "Tough",
+                "Leather"
+            ]
+        }
+    ]
+}

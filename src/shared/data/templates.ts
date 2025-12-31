@@ -119,5 +119,27 @@ export const templates: Template[] = [
         pillText: "#FFFFFF",
         font: "'Quicksand', sans-serif",
         border: "none"
-    }
+    },
+    {
+        id: "turbo_racing",
+        name: "Turbo Racing",
+        desc: "High-octane car gaming theme with vibrant blue, yellow, and orange accents.",
+        bg: "#0A0A12",
+        text: "#FFFFFF",
+        descColor: "#CCCFD6",
+        pillBg: "#FF9900",
+        pillText: "#000000",
+        font: "'Orbitron', sans-serif",
+        border: "1px solid #00CCFF"
+    },
+    { id: "neon_tokyo", name: "Neon Tokyo", desc: "Cyberpunk 2077 vibes with glitch effects.", bg: "#050505", text: "#E0E0E0", descColor: "#E0E0E0", pillBg: "#FF00FF", pillText: "#FFF", font: "Orbitron", border: "1px solid #00FFFF" },
+    { id: "liquid_metal", name: "Liquid Metal", desc: "Premium chrome and future business sleekness.", bg: "#F5F5F7", text: "#1D1D1F", descColor: "#1D1D1F", pillBg: "#000", pillText: "#FFF", font: "Inter", border: "1px solid #CCC" },
+    { id: "paper_kingdom", name: "Paper Kingdom", desc: "Textured, origami-style theme for kids.", bg: "#FFF9E6", text: "#2C3E50", descColor: "#2C3E50", pillBg: "#FF6B6B", pillText: "#FFF", font: "Comic Neue", border: "2px solid #2C3E50" },
+    { id: "glass_prism", name: "Glass Prism", desc: "Advanced refractive glass with vivid gradients.", bg: "#000", text: "#FFF", descColor: "#DDD", pillBg: "rgba(255,255,255,0.2)", pillText: "#FFF", font: "Raleway", border: "1px solid rgba(255,255,255,0.2)" },
+    { id: "retro_arcade", name: "Retro Arcade", desc: "8-bit pixel art with CRT scanlines.", bg: "#121212", text: "#00FF00", descColor: "#00FF00", pillBg: "#FF0055", pillText: "#FFF", font: "Press Start 2P", border: "4px solid #00FF00" },
+    { id: "deep_space", name: "Deep Space", desc: "Immersive parallax stars and dark nebulas.", bg: "#000", text: "#CCC", descColor: "#AAA", pillBg: "#7F00FF", pillText: "#FFF", font: "Exo 2", border: "1px solid #7F00FF" },
+    { id: "biomimicry", name: "Biomimicry", desc: "Organic shapes and breathing animations.", bg: "#F1F8E9", text: "#33691E", descColor: "#33691E", pillBg: "#4CAF50", pillText: "#FFF", font: "Nunito", border: "none" },
+    { id: "hologram_hud", name: "Hologram HUD", desc: "Sci-fi interface with grid lines and flickering.", bg: "#001133", text: "#00FFFF", descColor: "#00FFFF", pillBg: "#0033FF", pillText: "#FFF", font: "Share Tech Mono", border: "1px solid #00FFFF" },
+    { id: "neo_brutalism", name: "Neo Brutalism", desc: "Bold, raw, high-contrast shock.", bg: "#F0F0F0", text: "#000", descColor: "#000", pillBg: "#000", pillText: "#FFF", font: "Archivo Black", border: "4px solid #000" },
+    { id: "candy_land", name: "Candy Land", desc: "Glossy 3D buttons and vibrant pastels.", bg: "#FFF0F5", text: "#880E4F", descColor: "#880E4F", pillBg: "#FF69B4", pillText: "#FFF", font: "Varela Round", border: "4px solid #FF69B4" }
 ];

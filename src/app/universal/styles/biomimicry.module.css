@@ -1,0 +1,162 @@
+/* Biomimicry - Organic / Cellular / Nature */
+
+@keyframes breathe {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.pageWrapper {
+    background-color: #F1F8E9;
+    color: #33691E;
+    font-family: var(--font-main);
+    min-height: 100vh;
+    /* Organic pattern */
+    background-image:
+        radial-gradient(#DCEDC8 10%, transparent 10%),
+        radial-gradient(#DCEDC8 10%, transparent 10%);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+}
+
+/* Header */
+.header {
+    margin: 2rem;
+    padding: 1rem 3rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.1);
+}
+
+.logo a {
+    color: var(--primary) !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navLink {
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.navLink:hover {
+    background: var(--secondary);
+    color: #fff;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+.heroTitle {
+    font-size: 4rem;
+    color: var(--primary);
+    font-family: var(--font-heading);
+    letter-spacing: -0.05em;
+    animation: breathe 5s infinite ease-in-out;
+}
+
+.heroSubtitle {
+    color: #689F38;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 3rem;
+    padding: 2rem 4rem;
+}
+
+.card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    /* Organic Blob Shape */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid #F1F8E9;
+}
+
+.card:hover {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(76, 175, 80, 0.2);
+    border-color: var(--secondary);
+}
+
+.card img {
+    border-radius: 50%;
+    width: 200px !important;
+    height: 200px !important;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.cardTitle {
+    font-size: 1.3rem;
+    color: var(--text);
+    font-weight: bold;
+}
+
+.cardPrice {
+    color: var(--secondary);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Button */
+.button {
+    background: var(--primary);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 30px 10px 30px 10px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+    transition: all 0.3s;
+}
+
+.button:hover {
+    border-radius: 10px 30px 10px 30px;
+    transform: scale(1.05);
+    background: var(--secondary);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 4rem;
+    background: #fff;
+    border-top: 1px dashed #DCEDC8;
+    color: #9CCC65;
+}
+
+.footerLink {
+    margin: 0 1rem;
+    color: #8BC34A;
+    text-decoration: none;
+    font-weight: 600;
+}

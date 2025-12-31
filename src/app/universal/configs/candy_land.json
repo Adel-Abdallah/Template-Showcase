@@ -1,0 +1,125 @@
+{
+    "id": "candy_land",
+    "title": "CANDY_POP",
+    "subtitle": "Sweet & Shiny",
+    "description": "3D Glossy buttons, vibrant pastels, and particle effects.",
+    "categoryLayout": "pills",
+    "style": {
+        "colors": {
+            "primary": "#FF69B4",
+            "onPrimary": "#FFFFFF",
+            "secondary": "#00CED1",
+            "onSecondary": "#FFFFFF",
+            "background": "#FFF0F5",
+            "text": "#880E4F",
+            "cardBg": "#FFFFFF",
+            "border": "#FFB6C1",
+            "accent": "#FFD700"
+        },
+        "typography": {
+            "fontFamily": "Varela Round, sans-serif",
+            "headingsFamily": "Fredoka One, cursive",
+            "baseSize": "18px",
+            "scaleRatio": 1.2
+        },
+        "shape": {
+            "borderRadius": "30px",
+            "borderWidth": "4px",
+            "boxShadow": "0 8px 0px #E6007E"
+        },
+        "animations": {
+            "buttonHover": "transform: translateY(4px); box-shadow: 0 0 0 #E6007E;",
+            "cardHover": "transform: scale(1.05);"
+        }
+    },
+    "header": {
+        "layout": "logo-center",
+        "iconPosition": "left",
+        "sticky": true,
+        "cartIcon": true,
+        "links": [
+            {
+                "label": "Sweets",
+                "href": "/universal/candy_land"
+            },
+            {
+                "label": "Treats",
+                "href": "/universal/candy_land/treats"
+            },
+            {
+                "label": "Gifts",
+                "href": "/universal/candy_land/gifts"
+            }
+        ]
+    },
+    "footer": {
+        "layout": "simple",
+        "showSocials": true,
+        "text": "Have a Sweet Day!",
+        "links": [
+            {
+                "label": "Yum",
+                "href": "/universal/candy_land/yum"
+            }
+        ]
+    },
+    "apiConfig": {
+        "endpoint": "products",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "products": [
+        {
+            "id": 1,
+            "name": "Lollipop Desk",
+            "price": "$150.00",
+            "image": "https://images.unsplash.com/photo-1575224300306-1b8da36134ec?w=800&q=80",
+            "rating": 5.0,
+            "category": "Furniture",
+            "tags": [
+                "Pink",
+                "Cute"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Bubblegum Lamp",
+            "price": "$60.00",
+            "image": "https://images.unsplash.com/photo-1542129202166-7b0b6911ecbe?w=800&q=80",
+            "rating": 4.8,
+            "category": "Decor",
+            "tags": [
+                "Pop",
+                "Round"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Donut Pillow",
+            "price": "$25.00",
+            "image": "https://images.unsplash.com/photo-1563823292-411db9d2110c?w=800&q=80",
+            "rating": 4.9,
+            "category": "Comfort",
+            "tags": [
+                "Soft",
+                "Tasty"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Pastel Mug",
+            "price": "$15.00",
+            "image": "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800&q=80",
+            "rating": 4.7,
+            "category": "Kitchen",
+            "tags": [
+                "Drink",
+                "Sweet"
+            ]
+        }
+    ]
+}

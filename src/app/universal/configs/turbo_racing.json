@@ -1,0 +1,142 @@
+{
+    "id": "turbo_racing",
+    "title": "TURBO_ZONE",
+    "subtitle": "Need for Speed",
+    "description": "High-octane car gaming theme with vibrant blue, yellow, and orange accents.",
+    "categoryLayout": "bar",
+    "gridLayout": "list",
+    "filterLayout": "sidebar-right",
+    "style": {
+        "colors": {
+            "primary": "#FF9900",
+            "onPrimary": "#000000",
+            "secondary": "#FFFF00",
+            "onSecondary": "#000000",
+            "background": "#0A0A12",
+            "text": "#FFFFFF",
+            "cardBg": "#1A1A24",
+            "border": "#00CCFF",
+            "accent": "#00CCFF"
+        },
+        "typography": {
+            "fontFamily": "Roboto, sans-serif",
+            "headingsFamily": "Orbitron, sans-serif",
+            "baseSize": "16px",
+            "scaleRatio": 1.25
+        },
+        "shape": {
+            "borderRadius": "4px",
+            "borderWidth": "2px",
+            "boxShadow": "0 0 20px rgba(0, 204, 255, 0.4)"
+        },
+        "animations": {
+            "buttonHover": "transform: skewX(-15deg) translateX(5px); box-shadow: 4px 4px 0px #FFFF00;",
+            "cardHover": "transform: scale(1.02) translateY(-5px); border-color: #FFFF00;"
+        }
+    },
+    "layout": {
+        "spacing": {
+            "sm": "1rem",
+            "md": "2rem",
+            "lg": "4rem"
+        },
+        "grid": {
+            "columns": 3,
+            "gap": "2rem"
+        }
+    },
+    "header": {
+        "layout": "logo-center",
+        "iconPosition": "left",
+        "sticky": true,
+        "cartIcon": true,
+        "links": [
+            {
+                "label": "Garage",
+                "href": "/universal/turbo_racing"
+            },
+            {
+                "label": "Tournaments",
+                "href": "/universal/turbo_racing/tournaments"
+            },
+            {
+                "label": "Leaderboard",
+                "href": "/universal/turbo_racing/leaderboard"
+            }
+        ]
+    },
+    "footer": {
+        "layout": "grid",
+        "showSocials": true,
+        "text": "GAME OVER // TURBO RACING 2024",
+        "links": [
+            {
+                "label": "Rules",
+                "href": "/universal/turbo_racing/terms"
+            },
+            {
+                "label": "Support",
+                "href": "/universal/turbo_racing/support"
+            }
+        ]
+    },
+    "apiConfig": {
+        "endpoint": "products",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "products": [
+        {
+            "id": 1,
+            "name": "Nitro Force Steering Wheel",
+            "price": "$299.00",
+            "image": "https://images.unsplash.com/photo-1616588589676-60b30c39bcb4?w=800&q=80",
+            "rating": 5.0,
+            "category": "Hardware",
+            "tags": [
+                "Racing",
+                "Sim"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Drift King Seat",
+            "price": "$450.00",
+            "image": "https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=800&q=80",
+            "rating": 4.9,
+            "category": "Furniture",
+            "tags": [
+                "Comfort",
+                "Pro"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Turbo Charger Kit",
+            "price": "$120.00",
+            "image": "https://images.unsplash.com/photo-1600703136783-653c6405200b?w=800&q=80",
+            "rating": 4.7,
+            "category": "Accessories",
+            "tags": [
+                "Speed",
+                "Upgrade"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Neon Underglow",
+            "price": "$89.99",
+            "image": "https://images.unsplash.com/photo-1563630423918-b58f07336ac9?w=800&q=80",
+            "rating": 4.5,
+            "category": "Lighting",
+            "tags": [
+                "Style",
+                "RGB"
+            ]
+        }
+    ]
+}
