@@ -1,0 +1,135 @@
+{
+    "id": "crazy",
+    "title": "CRAZY_MODE",
+    "subtitle": "Caution: High Voltage",
+    "description": "A high-octane, high-contrast black and yellow theme with aggressive animations.",
+    "style": {
+        "colors": {
+            "primary": "#FFD700",
+            "onPrimary": "#000000",
+            "secondary": "#FFFFFF",
+            "onSecondary": "#000000",
+            "background": "#000000",
+            "text": "#FFD700",
+            "cardBg": "#111111",
+            "border": "#FFD700",
+            "accent": "#FF0055"
+        },
+        "typography": {
+            "fontFamily": "Courier New, monospace",
+            "headingsFamily": "Impact, sans-serif",
+            "baseSize": "16px",
+            "scaleRatio": 1.4
+        },
+        "shape": {
+            "borderRadius": "0px",
+            "borderWidth": "2px",
+            "boxShadow": "8px 8px 0px #FFD700"
+        },
+        "animations": {
+            "buttonHover": "transform: translate(-4px, -4px); box-shadow: 12px 12px 0px #FFFFFF;",
+            "cardHover": "transform: scale(1.02) rotate(1deg); border-color: #FFFFFF;"
+        }
+    },
+    "layout": {
+        "spacing": {
+            "sm": "1rem",
+            "md": "2rem",
+            "lg": "4rem"
+        },
+        "grid": {
+            "columns": 3,
+            "gap": "2rem"
+        }
+    },
+    "header": {
+        "layout": "logo-center",
+        "iconPosition": "left",
+        "sticky": true,
+        "cartIcon": true,
+        "links": [
+            {
+                "label": "Products",
+                "href": "/universal/crazy"
+            },
+            {
+                "label": "About",
+                "href": "/universal/crazy/about"
+            }
+        ]
+    },
+    "footer": {
+        "layout": "simple",
+        "showSocials": true,
+        "text": "WARNING: CRAZY MODE ACTIVE",
+        "links": [
+            {
+                "label": "Terms",
+                "href": "/terms"
+            },
+            {
+                "label": "Privacy",
+                "href": "/privacy"
+            }
+        ]
+    },
+    "apiConfig": {
+        "endpoint": "products",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "products": [
+        {
+            "id": 1,
+            "name": "Glitch Hoodie",
+            "price": "$120.00",
+            "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80",
+            "rating": 4.8,
+            "category": "Apparel",
+            "tags": [
+                "Streetwear",
+                "Limited"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Cyber Kicks",
+            "price": "$250.00",
+            "image": "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=800&q=80",
+            "rating": 4.9,
+            "category": "Footwear",
+            "tags": [
+                "Running",
+                "Tech"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Neon Visor",
+            "price": "$85.00",
+            "image": "https://images.unsplash.com/photo-1514311721022-78d10b74125b?w=800&q=80",
+            "rating": 4.5,
+            "category": "Accessories",
+            "tags": [
+                "Summer",
+                "Rave"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Bass Cannon",
+            "price": "$199.00",
+            "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80",
+            "rating": 5.0,
+            "category": "Audio",
+            "tags": [
+                "Wireless",
+                "Loud"
+            ]
+        }
+    ]
+}

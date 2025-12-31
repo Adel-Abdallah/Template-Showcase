@@ -1,0 +1,194 @@
+/* Crazy Theme - Black & Yellow Aggressive Style */
+
+/* Keyframes for "Coming from Left/Right" */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+/* Base Layout */
+.pageWrapper {
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-family: var(--font-main);
+    overflow-x: hidden;
+}
+
+.container {
+    /* Removed background and height from here */
+}
+
+/* Header Styles */
+.header {
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--primary);
+}
+
+.navLink {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.navLink:hover {
+    color: var(--secondary);
+    text-shadow: 0 0 5px var(--primary);
+}
+
+/* Animations Triggered on Load (Simulated via simple classes) */
+.hero {
+    border-bottom: 4px solid var(--primary);
+    padding: 6rem 2rem;
+    text-align: center;
+    background: repeating-linear-gradient(45deg,
+            #000,
+            #000 10px,
+            #111 10px,
+            #111 20px);
+    animation: slideInLeft 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.heroTitle {
+    font-size: 5rem;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    color: var(--primary);
+    text-shadow: 4px 4px 0px #fff;
+    margin-bottom: 1rem;
+    letter-spacing: -2px;
+}
+
+.heroSubtitle {
+    background: var(--primary);
+    color: #000;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: inline-block;
+    transform: skew(-10deg);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 4rem 2rem;
+    animation: slideInRight 1s ease-out forwards;
+}
+
+/* Component Hooks */
+.button {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 900;
+    transition: all 0.1s;
+    background: var(--primary);
+    color: var(--on-primary);
+    border: 2px solid var(--primary);
+}
+
+.button:hover {
+    background: var(--secondary);
+    color: var(--on-secondary);
+    border-color: var(--secondary);
+    box-shadow: 8px 8px 0px var(--primary);
+    transform: translate(-4px, -4px);
+}
+
+/* Product Cards - "Things coming from right/left" is mostly page load,
+   but let's make the card interaction "crazy" */
+.card {
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    padding: 1rem;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    /* Bouncy */
+}
+
+.card:hover {
+    transform: scale(1.05) rotate(2deg);
+    z-index: 10;
+    box-shadow: 12px 12px 0px var(--accent, #fff);
+    border-color: var(--accent, #fff);
+}
+
+.card img {
+    filter: grayscale(100%) contrast(120%);
+    transition: filter 0.3s;
+}
+
+.card:hover img {
+    filter: grayscale(0%) contrast(100%);
+}
+
+.cardTitle {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.cardPrice {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: bold;
+}

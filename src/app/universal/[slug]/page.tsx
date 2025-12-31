@@ -4,8 +4,8 @@ import ProductCard from "../../../shared/components/ProductCard";
 import { fetchProducts, fetchCategories } from "../../../shared/services/dummyJson";
 import Pagination from "../../../shared/components/Pagination";
 import ProductSlider from "../../../shared/components/ProductSlider";
-import SidebarFilter from "../../../shared/components/SidebarFilter";
 import SecondaryNavbar from "../../../shared/components/SecondaryNavbar";
+import ShopLayout from "../../../shared/components/ShopLayout";
 import Link from "next/link";
 
 // Define the shape of product from DummyJSON
@@ -169,41 +169,43 @@ export default async function UniversalPage({
                 />
             )}
 
-            <div style={{ display: 'flex', gap: '3rem' }}>
-                {/* Sidebar Filter (Dynamic Tags) */}
-                <SidebarFilter styles={styles} tags={dynamicTags} categories={dynamicCategories} />
-
-                {/* Main Grid */}
-                <div style={{ flex: 1, minWidth: 0 }}>
-                    {/* Best Sellers Slider (Moved Inside) */}
-                    {bestSellers.length > 0 && !category && (
-                        <div style={{ marginBottom: '2rem' }}>
-                            <ProductSlider title="Best Sellers" products={bestSellers} styles={styles} slug={slug} />
-                        </div>
-                    )}
-
-                    <div className={styles.grid} id="shop">
-                        {products.map((p: any) => (
-                            <ProductCard key={p.id} product={p} styles={styles} slug={slug} />
-                        ))}
+            <ShopLayout
+                styles={styles}
+                themeStyle={dynamicStyles}
+                sidebarProps={{
+                    styles: styles,
+                    tags: dynamicTags,
+                    categories: dynamicCategories
+                }}
+            >
+                {/* Best Sellers Slider (Moved Inside) */}
+                {bestSellers.length > 0 && !category && (
+                    <div style={{ marginBottom: '2rem' }}>
+                        <ProductSlider title="Best Sellers" products={bestSellers} styles={styles} slug={slug} />
                     </div>
+                )}
 
-                    {/* Pagination Controls */}
-                    <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '3rem' }}>
-                        {currentPage > 1 && (
-                            <Link href={`/universal/${slug}?page=${currentPage - 1}${category ? `&category=${category}` : ''}#shop`}>
-                                <button style={{ padding: '0.5rem 1rem', cursor: 'pointer' }}>Previous</button>
-                            </Link>
-                        )}
-                        <span style={{ padding: '0.5rem' }}>Page {currentPage}</span>
-                        {currentPage < totalPages && (
-                            <Link href={`/universal/${slug}?page=${currentPage + 1}${category ? `&category=${category}` : ''}#shop`}>
-                                <button style={{ padding: '0.5rem 1rem', cursor: 'pointer' }}>Next</button>
-                            </Link>
-                        )}
-                    </div>
+                <div className={styles.grid} id="shop">
+                    {products.map((p: any) => (
+                        <ProductCard key={p.id} product={p} styles={styles} slug={slug} />
+                    ))}
                 </div>
-            </div>
+
+                {/* Pagination Controls */}
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '3rem' }}>
+                    {currentPage > 1 && (
+                        <Link href={`/universal/${slug}?page=${currentPage - 1}${category ? `&category=${category}` : ''}#shop`}>
+                            <button style={{ padding: '0.5rem 1rem', cursor: 'pointer' }}>Previous</button>
+                        </Link>
+                    )}
+                    <span style={{ padding: '0.5rem' }}>Page {currentPage}</span>
+                    {currentPage < totalPages && (
+                        <Link href={`/universal/${slug}?page=${currentPage + 1}${category ? `&category=${category}` : ''}#shop`}>
+                            <button style={{ padding: '0.5rem 1rem', cursor: 'pointer' }}>Next</button>
+                        </Link>
+                    )}
+                </div>
+            </ShopLayout>
         </div>
     );
 }

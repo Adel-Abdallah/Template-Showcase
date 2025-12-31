@@ -6,7 +6,7 @@ A collection of **10 complete, production-ready e-commerce templates** built wit
 
 ## Features
 
-- ✅ 10 Unique Design Themes
+- ✅ Unique Design Themes
 - ✅ Product List Pages (PLP)
 - ✅ Product Detail Pages (PDP)
 - ✅ Shopping Cart
@@ -23,11 +23,8 @@ A collection of **10 complete, production-ready e-commerce templates** built wit
 | 3 | **Tech** | Cyberpunk, neon, monospace |
 | 4 | **Editorial** | Magazine layout, bold type |
 | 5 | **Organic** | Earth tones, soft shapes |
-| 6 | **Vibrant** | Bold gradients, playful |
-| 7 | **Industrial** | Brutalist, raw, dashed lines |
-| 8 | **Glassmorphism** | Translucent, blur, pastels |
-| 9 | **SaaS** | Modern UI, split-screen |
-| 10 | **Immersive** | Scroll-snap, full-screen art |
+| 6 | **Industrial** | Brutalist, raw, dashed lines |
+| 7 | **Immersive** | Scroll-snap, full-screen art |
 
 ## Tech Stack
 
@@ -67,10 +64,7 @@ src/app/
 ├── tech/                 # Tech theme
 ├── editorial/            # Editorial theme
 ├── organic/              # Organic theme
-├── vibrant/              # Vibrant theme
 ├── industrial/           # Industrial theme
-├── glass/                # Glassmorphism theme
-├── saas/                 # SaaS theme
 └── immersive/            # Immersive theme
 ```
 

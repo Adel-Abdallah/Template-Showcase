@@ -1,0 +1,135 @@
+{
+    "id": "sky_ride",
+    "title": "SKY_RIDE",
+    "subtitle": "Soaring High",
+    "description": "A soft, airy theme with floating animations and pastel colors.",
+    "style": {
+        "colors": {
+            "primary": "#87CEEB",
+            "onPrimary": "#FFFFFF",
+            "secondary": "#E0F7FA",
+            "onSecondary": "#2F4F4F",
+            "background": "#F0F8FF",
+            "text": "#2F4F4F",
+            "cardBg": "#FFFFFF",
+            "border": "#B0E0E6",
+            "accent": "#FFD700"
+        },
+        "typography": {
+            "fontFamily": "Quicksand, sans-serif",
+            "headingsFamily": "Nunito, sans-serif",
+            "baseSize": "16px",
+            "scaleRatio": 1.25
+        },
+        "shape": {
+            "borderRadius": "24px",
+            "borderWidth": "0px",
+            "boxShadow": "0 10px 30px rgba(135, 206, 235, 0.2)"
+        },
+        "animations": {
+            "buttonHover": "transform: translateY(-3px); box-shadow: 0 10px 20px rgba(135, 206, 235, 0.4);",
+            "cardHover": "transform: translateY(-8px); box-shadow: 0 20px 40px rgba(135, 206, 235, 0.3);"
+        }
+    },
+    "layout": {
+        "spacing": {
+            "sm": "1.5rem",
+            "md": "3rem",
+            "lg": "5rem"
+        },
+        "grid": {
+            "columns": 3,
+            "gap": "3rem"
+        }
+    },
+    "header": {
+        "layout": "logo-center",
+        "iconPosition": "left",
+        "sticky": true,
+        "cartIcon": true,
+        "links": [
+            {
+                "label": "Cloud 9",
+                "href": "/universal/sky_ride"
+            },
+            {
+                "label": "Our Sky",
+                "href": "/universal/sky_ride/about"
+            }
+        ]
+    },
+    "footer": {
+        "layout": "simple",
+        "showSocials": true,
+        "text": "Floating on Cloud Nine",
+        "links": [
+            {
+                "label": "Winds",
+                "href": "/universal/sky_ride/terms"
+            },
+            {
+                "label": "Atmosphere",
+                "href": "/universal/sky_ride/privacy"
+            }
+        ]
+    },
+    "apiConfig": {
+        "endpoint": "products",
+        "params": {
+            "limit": 8
+        }
+    },
+    "features": {
+        "hero": true
+    },
+    "products": [
+        {
+            "id": 1,
+            "name": "Cloud Pillow",
+            "price": "$45.00",
+            "image": "https://images.unsplash.com/photo-1584100936595-c065db275756?w=800&q=80",
+            "rating": 5.0,
+            "category": "Home",
+            "tags": [
+                "Soft",
+                "Dreamy"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Sky Blue Vase",
+            "price": "$120.00",
+            "image": "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=800&q=80",
+            "rating": 4.7,
+            "category": "Decor",
+            "tags": [
+                "Ceramic",
+                "Blue"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Airy Curtains",
+            "price": "$85.00",
+            "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80",
+            "rating": 4.6,
+            "category": "Home",
+            "tags": [
+                "Light",
+                "Breezy"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Nimbus Lamp",
+            "price": "$299.00",
+            "image": "https://images.unsplash.com/photo-1507473888900-52a11b277292?w=800&q=80",
+            "rating": 4.9,
+            "category": "Lighting",
+            "tags": [
+                "Modern",
+                "Soft"
+            ]
+        }
+    ]
+}

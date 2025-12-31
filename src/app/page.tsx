@@ -10,10 +10,6 @@ export default function Home() {
             <nav className={styles.nav}>
                 <Link href="/" className={styles.navLogo}>Template Showcase</Link>
                 <div className={styles.navLinks}>
-                    <Link href="/templates" className={styles.navLink}>Templates</Link>
-                    <Link href="/pages" className={styles.navLink}>Pages</Link>
-                    <Link href="/sections" className={styles.navLink}>Sections</Link>
-                    <Link href="/components" className={styles.navLink}>Components</Link>
                     <Link href="/about" className={styles.navLink}>About</Link>
                     <Link href="/contact" className={styles.navLink}>Contact</Link>
                 </div>

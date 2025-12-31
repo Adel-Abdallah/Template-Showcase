@@ -73,18 +73,6 @@ export const templates: Template[] = [
         border: "none"
     },
     {
-        id: "vibrant",
-        name: "Vibrant",
-        desc: "Bold gradients, playful energy.",
-        bg: "linear-gradient(135deg, #ff00cc 0%, #3333ff 100%)",
-        text: "#ffffff",
-        descColor: "#ffffff",
-        pillBg: "rgba(255,255,255,0.3)",
-        pillText: "#ffffff",
-        font: "'Arial Black', sans-serif",
-        border: "none"
-    },
-    {
         id: "industrial",
         name: "Industrial",
         desc: "Brutalist, raw materials, dashed lines.",
@@ -95,30 +83,6 @@ export const templates: Template[] = [
         pillText: "#000000",
         font: "'Arial Narrow', sans-serif",
         border: "2px solid #ff3300"
-    },
-    {
-        id: "glass",
-        name: "Glassmorphism",
-        desc: "Translucent, blur, pastel gradients.",
-        bg: "linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%)",
-        text: "#ffffff",
-        descColor: "#ffffff",
-        pillBg: "rgba(255,255,255,0.4)",
-        pillText: "#a05a7a",
-        font: "-apple-system, sans-serif",
-        border: "none"
-    },
-    {
-        id: "saas",
-        name: "SaaS",
-        desc: "Functional split-screen, modern UI.",
-        bg: "#fafafa",
-        text: "#1a1a1a",
-        descColor: "#666666",
-        pillBg: "#667eea",
-        pillText: "#ffffff",
-        font: "-apple-system, sans-serif",
-        border: "1px solid #eee"
     },
     {
         id: "immersive",
@@ -132,4 +96,28 @@ export const templates: Template[] = [
         font: "'Times New Roman', serif",
         border: "1px solid #333"
     },
+    {
+        id: "crazy",
+        name: "Crazy Mode",
+        desc: "High contrast, aggressive animations, black & yellow.",
+        bg: "#000000",
+        text: "#FFD700",
+        descColor: "#FFD700",
+        pillBg: "#FFD700",
+        pillText: "#000000",
+        font: "'Courier New', monospace",
+        border: "2px solid #FFD700"
+    },
+    {
+        id: "sky_ride",
+        name: "Sky Ride",
+        desc: "A soft, airy theme with floating animations and pastel colors.",
+        bg: "#F0F8FF",
+        text: "#2F4F4F",
+        descColor: "#2F4F4F",
+        pillBg: "#87CEEB",
+        pillText: "#FFFFFF",
+        font: "'Quicksand', sans-serif",
+        border: "none"
+    }
 ];

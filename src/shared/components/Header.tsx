@@ -61,76 +61,145 @@ export default function Header({ config, styles, title, slug, themeConfig }: Hea
             )}
 
             <header className={!animationsEnabled ? styles.header : undefined} style={headerStyle}>
-                <div className={styles.logo} style={{ flexShrink: 0 }}>
-                    <Link href={baseUrl} style={{ textDecoration: 'none', color: 'inherit', fontWeight: 900, fontSize: '1.5rem', letterSpacing: '-0.03em', fontStyle: 'italic' }}>
-                        {title}
-                    </Link>
-                </div>
+                {/* Dynamic Layout Rendering */}
+                {themeConfig?.header?.iconPosition === 'left' ? (
+                    <>
+                        <div className={styles.cart} style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexShrink: 0, order: 1 }}>
+                            {/* Icons (Left) */}
+                            {/* Wishlist */}
+                            <Link href={`${baseUrl}/wishlist`} style={{ position: 'relative', color: 'inherit', display: 'flex', transition: 'transform 0.2s', transform: 'scale(1)' }}>
+                                <Heart size={22} strokeWidth={2.5} />
+                                {wishlistItems.length > 0 && (
+                                    <span style={{
+                                        position: 'absolute', top: -6, right: -6,
+                                        background: 'var(--primary, red)', color: 'var(--on-primary, white)',
+                                        fontSize: '0.6rem', width: '16px', height: '16px',
+                                        borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        fontWeight: 'bold', boxShadow: '0 2px 5px rgba(0,0,0,0.2)'
+                                    }}>
+                                        {wishlistItems.length}
+                                    </span>
+                                )}
+                            </Link>
 
-                {/* Main Navigation */}
-                <nav className={styles.nav} style={{
-                    display: 'flex',
-                    gap: '2rem',
-                    alignItems: 'center',
-                    flex: 1,
-                    justifyContent: 'center',
-                    animation: animationsEnabled ? 'fadeInNav 0.8s ease-out 0.2s backwards' : 'none'
-                }}>
-                    {/* Theme Links Only */}
+                            {/* Account */}
+                            <Link href={`${baseUrl}/account`} style={{ color: 'inherit', display: 'flex' }}>
+                                <User size={22} strokeWidth={2.5} />
+                            </Link>
 
-                    {/* Theme Links */}
-                    {config.links.map((link, index) => (
-                        <Link key={index} href={link.href} className={styles.navLink} style={{
-                            color: 'inherit',
-                            textDecoration: 'none',
-                            fontWeight: 700,
-                            textTransform: 'uppercase',
-                            fontSize: '0.85rem',
-                            letterSpacing: '0.05em'
+                            {/* Cart */}
+                            <Link href={`${baseUrl}/cart`} style={{ position: 'relative', color: 'inherit', display: 'flex' }}>
+                                <ShoppingCart size={22} strokeWidth={2.5} />
+                                {cartItems.length > 0 && (
+                                    <span style={{
+                                        position: 'absolute', top: -6, right: -6,
+                                        background: 'var(--text, black)', color: 'var(--bg, white)',
+                                        fontSize: '0.6rem', width: '16px', height: '16px',
+                                        borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        fontWeight: 'bold'
+                                    }}>
+                                        {cartItems.length}
+                                    </span>
+                                )}
+                            </Link>
+                        </div>
+
+                        <div className={styles.logo} style={{ flexShrink: 0, order: 2, flex: 1, textAlign: 'center' }}>
+                            <Link href={baseUrl} style={{ textDecoration: 'none', color: 'inherit', fontWeight: 900, fontSize: '1.5rem', letterSpacing: '-0.03em', fontStyle: 'italic' }}>
+                                {title}
+                            </Link>
+                        </div>
+
+                        {/* Main Navigation (Right) */}
+                        <nav className={styles.nav} style={{
+                            display: 'flex',
+                            gap: '2rem',
+                            alignItems: 'center',
+                            flexShrink: 0,
+                            justifyContent: 'flex-end',
+                            order: 3,
+                            animation: animationsEnabled ? 'fadeInNav 0.8s ease-out 0.2s backwards' : 'none'
                         }}>
-                            {link.label}
-                        </Link>
-                    ))}
-                </nav>
+                            {config?.links.map((link, index) => (
+                                <Link key={index} href={link.href} className={styles.navLink} style={{
+                                    color: 'inherit',
+                                    textDecoration: 'none',
+                                    fontWeight: 700,
+                                    textTransform: 'uppercase',
+                                    fontSize: '0.85rem',
+                                    letterSpacing: '0.05em'
+                                }}>
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </nav>
+                    </>
+                ) : (
+                    // Default Layout (Logo Left, Nav Center, Icons Right)
+                    <>
+                        <div className={styles.logo} style={{ flexShrink: 0 }}>
+                            <Link href={baseUrl} style={{ textDecoration: 'none', color: 'inherit', fontWeight: 900, fontSize: '1.5rem', letterSpacing: '-0.03em', fontStyle: 'italic' }}>
+                                {title}
+                            </Link>
+                        </div>
 
-                <div className={styles.cart} style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexShrink: 0 }}>
-                    {/* Wishlist */}
-                    <Link href={`${baseUrl}/wishlist`} style={{ position: 'relative', color: 'inherit', display: 'flex', transition: 'transform 0.2s', transform: 'scale(1)' }}>
-                        <Heart size={22} strokeWidth={2.5} />
-                        {wishlistItems.length > 0 && (
-                            <span style={{
-                                position: 'absolute', top: -6, right: -6,
-                                background: 'var(--primary, red)', color: 'var(--on-primary, white)',
-                                fontSize: '0.6rem', width: '16px', height: '16px',
-                                borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                fontWeight: 'bold', boxShadow: '0 2px 5px rgba(0,0,0,0.2)'
-                            }}>
-                                {wishlistItems.length}
-                            </span>
-                        )}
-                    </Link>
+                        <nav className={styles.nav} style={{
+                            display: 'flex',
+                            gap: '2rem',
+                            alignItems: 'center',
+                            flex: 1,
+                            justifyContent: 'center',
+                            animation: animationsEnabled ? 'fadeInNav 0.8s ease-out 0.2s backwards' : 'none'
+                        }}>
+                            {config?.links.map((link, index) => (
+                                <Link key={index} href={link.href} className={styles.navLink} style={{
+                                    color: 'inherit',
+                                    textDecoration: 'none',
+                                    fontWeight: 700,
+                                    textTransform: 'uppercase',
+                                    fontSize: '0.85rem',
+                                    letterSpacing: '0.05em'
+                                }}>
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </nav>
 
-                    {/* Account */}
-                    <Link href={`${baseUrl}/account`} style={{ color: 'inherit', display: 'flex' }}>
-                        <User size={22} strokeWidth={2.5} />
-                    </Link>
-
-                    {/* Cart */}
-                    <Link href={`${baseUrl}/cart`} style={{ position: 'relative', color: 'inherit', display: 'flex' }}>
-                        <ShoppingCart size={22} strokeWidth={2.5} />
-                        {cartItems.length > 0 && (
-                            <span style={{
-                                position: 'absolute', top: -6, right: -6,
-                                background: 'var(--text, black)', color: 'var(--bg, white)',
-                                fontSize: '0.6rem', width: '16px', height: '16px',
-                                borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                fontWeight: 'bold'
-                            }}>
-                                {cartItems.length}
-                            </span>
-                        )}
-                    </Link>
-                </div>
+                        <div className={styles.cart} style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexShrink: 0 }}>
+                            <Link href={`${baseUrl}/wishlist`} style={{ position: 'relative', color: 'inherit', display: 'flex', transition: 'transform 0.2s', transform: 'scale(1)' }}>
+                                <Heart size={22} strokeWidth={2.5} />
+                                {wishlistItems.length > 0 && (
+                                    <span style={{
+                                        position: 'absolute', top: -6, right: -6,
+                                        background: 'var(--primary, red)', color: 'var(--on-primary, white)',
+                                        fontSize: '0.6rem', width: '16px', height: '16px',
+                                        borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        fontWeight: 'bold', boxShadow: '0 2px 5px rgba(0,0,0,0.2)'
+                                    }}>
+                                        {wishlistItems.length}
+                                    </span>
+                                )}
+                            </Link>
+                            <Link href={`${baseUrl}/account`} style={{ color: 'inherit', display: 'flex' }}>
+                                <User size={22} strokeWidth={2.5} />
+                            </Link>
+                            <Link href={`${baseUrl}/cart`} style={{ position: 'relative', color: 'inherit', display: 'flex' }}>
+                                <ShoppingCart size={22} strokeWidth={2.5} />
+                                {cartItems.length > 0 && (
+                                    <span style={{
+                                        position: 'absolute', top: -6, right: -6,
+                                        background: 'var(--text, black)', color: 'var(--bg, white)',
+                                        fontSize: '0.6rem', width: '16px', height: '16px',
+                                        borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        fontWeight: 'bold'
+                                    }}>
+                                        {cartItems.length}
+                                    </span>
+                                )}
+                            </Link>
+                        </div>
+                    </>
+                )}
             </header>
         </>
     );

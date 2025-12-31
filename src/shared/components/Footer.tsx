@@ -13,13 +13,13 @@ export default function Footer({ config, styles }: FooterProps) {
     return (
         <footer className={styles.footer}>
             <div className={styles.footerLinks}>
-                {config.links.map((link, index) => (
+                {config?.links.map((link, index) => (
                     <Link key={index} href={link.href} className={styles.footerLink}>
                         {link.label}
                     </Link>
                 ))}
             </div>
-            <p className={styles.copyright}>{config.text}</p>
+            <p className={styles.copyright}>{config?.text}</p>
         </footer>
     );
 }
