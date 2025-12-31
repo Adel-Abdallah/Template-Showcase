@@ -7,10 +7,35 @@ export type Product = {
     image: string;
 };
 
+export type StyleConfig = {
+    colors: {
+        primary: string;
+        onPrimary: string;
+        secondary: string;
+        onSecondary: string;
+        background: string;
+        text: string;
+        border: string;
+        cardBg: string;
+    };
+    typography: {
+        fontFamily: string;
+        headingsFamily?: string;
+    };
+    shape: {
+        borderRadius: string;
+        borderWidth: string;
+    };
+    effects?: {
+        shadow: string;
+    };
+};
+
 export type Config = {
     theme: string;
     title: string;
     subtitle?: string;
+    style?: StyleConfig;
     products?: Product[];
     categories?: string[];
     tags?: string[];

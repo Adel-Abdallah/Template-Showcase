@@ -12,37 +12,65 @@ import Alert from '../../shared/components/ui/Alert';
 import Badge from '../../shared/components/ui/Badge';
 import Modal from '../../shared/components/ui/Modal';
 
-interface Props {
-    availableThemes: { slug: string; config: any }[];
+// Types
+interface ThemeConfig {
+    slug: string;
+    config: any;
+}
+
+interface ComponentsShowcaseProps {
+    availableThemes: ThemeConfig[]; // Renamed to match parent
     currentSlug: string;
-    themeStyles: any; // The CSS Module export
+    themeStyles: any; // The CSS Module object
     themeConfig: any;
 }
 
-export default function ComponentsShowcaseClient({ availableThemes, currentSlug, themeStyles, themeConfig }: Props) {
+export default function ComponentsShowcaseClient({ availableThemes, currentSlug, themeStyles, themeConfig }: ComponentsShowcaseProps) {
     const router = useRouter();
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // switchTheme simply navigates to the URL parameter
-    const switchTheme = (slug: string) => {
-        router.push(`/components?theme=${slug}`);
-    };
-
-    // We apply the root class from the imported CSS module.
-    // Usually it's `styles.container` or `styles.main` or just the theme name based on how it was built.
-    // Looking at the CSS files, `tech.module.css` likely has `.container`.
-    // Let's assume `themeStyles.container` exists and sets the variables logic.
-    // IF NOT, we might need `themeStyles[currentSlug]` if the class matches the slug.
-    // Let's dump the styles to see what we have if we were debugging, but for now apply `container`.
+    // Apply the theme container class which defines all CSS variables (--primary, --bg, etc.)
+    // If the theme loader failed or styles are missing, fallback might be needed, but we assume styles exist.
+    // Dynamic Style Extraction from JSON Config
+    let dynamicStyles: React.CSSProperties = {};
+    if (themeConfig && themeConfig.style) {
+        dynamicStyles = {
+            '--primary': themeConfig.style.colors.primary,
+            '--on-primary': themeConfig.style.colors.onPrimary,
+            '--secondary': themeConfig.style.colors.secondary,
+            '--on-secondary': themeConfig.style.colors.onSecondary,
+            '--bg': themeConfig.style.colors.background,
+            '--text': themeConfig.style.colors.text,
+            '--border': themeConfig.style.colors.border,
+            '--card-bg': themeConfig.style.colors.cardBg,
+            '--radius': themeConfig.style.shape.borderRadius,
+            '--border-width': themeConfig.style.shape.borderWidth,
+            '--shadow-md': themeConfig.style.effects?.shadow || 'none',
+            '--font-main': themeConfig.style.typography.fontFamily,
+            '--font-heading': themeConfig.style.typography.headingsFamily || themeConfig.style.typography.fontFamily,
+            fontFamily: 'var(--font-main)',
+            // Transition for smooth theme switching
+            transition: 'all 0.3s ease',
+            minHeight: '100vh',
+            paddingBottom: '4rem',
+            // Default explicit background to prevent white flash
+            backgroundColor: themeConfig.style.colors.background
+        } as React.CSSProperties;
+    } else {
+        // Fallback or just standard object
+        dynamicStyles = { minHeight: '100vh', paddingBottom: '4rem' };
+    }
 
     const rootClass = themeStyles.container || '';
 
-    // If the module doesn't export a 'container' class with variables, we might be in trouble.
-    // But most modules in this project seem to use .container { ... --primary: ... }
+    // Helpers to handle theme switching via URL
+    const handleThemeChange = (slug: string) => {
+        router.push(`/components?theme=${slug}`);
+    };
 
     return (
-        <div className={rootClass} style={{ minHeight: '100vh', paddingBottom: '4rem' }}>
-            <header style={{ padding: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--border, rgba(255,255,255,0.1))' }}>
+        <div className={rootClass} style={dynamicStyles}>
+            <header className={themeStyles.header || ''} style={{ padding: '1.5rem', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                     <Link href="/" style={{ color: 'var(--text)' }}><ArrowLeft /></Link>
                     <h1 style={{ fontSize: '1.5rem', margin: 0, color: 'var(--text)' }}>UI Components Library</h1>
@@ -54,13 +82,13 @@ export default function ComponentsShowcaseClient({ availableThemes, currentSlug,
                     {availableThemes.map(t => (
                         <button
                             key={t.slug}
-                            onClick={() => switchTheme(t.slug)}
+                            onClick={() => handleThemeChange(t.slug)}
                             style={{
                                 padding: '0.4rem 0.8rem',
-                                background: currentSlug === t.slug ? 'var(--primary)' : 'transparent',
-                                color: currentSlug === t.slug ? 'var(--on-primary, #000)' : 'var(--text)',
-                                border: `1px solid var(--border, rgba(128,128,128,0.3))`,
-                                borderRadius: '6px',
+                                background: currentSlug === t.slug ? 'var(--text)' : 'transparent',
+                                color: currentSlug === t.slug ? 'var(--bg)' : 'var(--text)',
+                                border: '1px solid var(--border)',
+                                borderRadius: '4px', // This is UI for the showcase itself, can be independent or use var(--radius)
                                 cursor: 'pointer',
                                 textTransform: 'capitalize',
                                 fontSize: '0.8rem'
@@ -78,6 +106,7 @@ export default function ComponentsShowcaseClient({ availableThemes, currentSlug,
                 <section>
                     <h2 style={{ fontSize: '2rem', marginBottom: '2rem', borderBottom: '1px solid var(--border)', paddingBottom: '0.5rem', color: 'var(--text)' }}>Buttons</h2>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center' }}>
+                        {/* No explicit themeStyles passed! They should inherit vars from .container */}
                         <Button>Primary Button</Button>
                         <Button variant="secondary">Secondary</Button>
                         <Button variant="outline">Outline</Button>
@@ -131,7 +160,16 @@ export default function ComponentsShowcaseClient({ availableThemes, currentSlug,
 
             </main>
 
-            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Modal Component">
+            <Modal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                title="Modal Component"
+                // Pass theme styles to modal overlay if needed, or ensure modal portal is inside provider
+                // Since modal uses portal to body, checking if it inherits vars... 
+                // Usually Portal roots require re-applying the theme class or passing styles.
+                // For now, let's pass a safe fallback if vars aren't available globally
+                themeStyles={{ bg: 'var(--card-bg)', text: 'var(--text)' }}
+            >
                 <div style={{ textAlign: 'center', padding: '1rem 0' }}>
                     <div style={{ marginBottom: '1rem', color: 'var(--primary)' }}>
                         <Bell size={48} />

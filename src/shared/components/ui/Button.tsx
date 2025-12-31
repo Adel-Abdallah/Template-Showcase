@@ -39,7 +39,7 @@ export default function Button({
         alignItems: 'center',
         justifyContent: 'center',
         gap: '0.5rem',
-        borderRadius: themeStyles.radius || '8px',
+        borderRadius: themeStyles.radius || 'var(--radius, 8px)',
         fontWeight: 600,
         cursor: props.disabled || isLoading ? 'not-allowed' : 'pointer',
         opacity: props.disabled || isLoading ? 0.7 : 1,
@@ -49,9 +49,10 @@ export default function Button({
         ...style
     };
 
-    // Size styles
     const sizeStyles: Record<string, React.CSSProperties> = {
-        ...style // Allow overriding
+        sm: { padding: '0.4rem 0.8rem', fontSize: '0.8rem' },
+        md: { padding: '0.6rem 1.2rem', fontSize: '1rem' },
+        lg: { padding: '0.8rem 1.5rem', fontSize: '1.1rem' }
     };
 
     const variants: Record<string, React.CSSProperties> = {

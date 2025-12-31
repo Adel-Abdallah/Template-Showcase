@@ -70,7 +70,7 @@ export default function Input({
                 <label style={{
                     fontSize: '0.9rem',
                     fontWeight: 500,
-                    opacity: 0.9,
+                    borderRadius: 'var(--radius, 8px)',
                     color: error ? '#ef4444' : 'inherit'
                 }}>
                     {label}

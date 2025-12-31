@@ -130,8 +130,28 @@ export default async function UniversalPage({
 
     const totalPages = Math.ceil(total / limit);
 
+    // Dynamic Style Extraction
+    const dynamicStyles: React.CSSProperties = config.style ? {
+        '--primary': config.style.colors.primary,
+        '--on-primary': config.style.colors.onPrimary,
+        '--secondary': config.style.colors.secondary,
+        '--on-secondary': config.style.colors.onSecondary,
+        '--bg': config.style.colors.background,
+        '--text': config.style.colors.text,
+        '--border': config.style.colors.border,
+        '--card-bg': config.style.colors.cardBg,
+        '--radius': config.style.shape.borderRadius,
+        '--border-width': config.style.shape.borderWidth,
+        '--shadow-md': config.style.effects?.shadow || 'none',
+        '--font-main': config.style.typography.fontFamily,
+        '--font-heading': config.style.typography.headingsFamily || config.style.typography.fontFamily,
+        fontFamily: 'var(--font-main)', // Apply immediately
+        color: 'var(--text)',
+        backgroundColor: 'var(--bg)'
+    } as React.CSSProperties : {};
+
     return (
-        <div className={styles.container}>
+        <div className={styles.container} style={dynamicStyles}>
             {/* Hero Section */}
             <section className={styles.hero}>
                 {config.subtitle && (

@@ -2,6 +2,29 @@
     "theme": "tech",
     "title": "CYBER_STORE",
     "subtitle": "FUTURE_READY",
+    "style": {
+        "colors": {
+            "primary": "#00ff00",
+            "onPrimary": "#000000",
+            "secondary": "#111111",
+            "onSecondary": "#00ff00",
+            "background": "#000000",
+            "text": "#00ff00",
+            "border": "#003300",
+            "cardBg": "#050505"
+        },
+        "typography": {
+            "fontFamily": "Courier New, monospace",
+            "headingsFamily": "Courier New, monospace"
+        },
+        "shape": {
+            "borderRadius": "0px",
+            "borderWidth": "1px"
+        },
+        "effects": {
+            "shadow": "0 0 10px rgba(0, 255, 0, 0.2)"
+        }
+    },
     "apiConfig": {
         "endpoint": "products/category/laptops",
         "params": {

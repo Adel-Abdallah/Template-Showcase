@@ -1,13 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useCartStore } from '../../../../../shared/store/useCartStore';
 import { useWishlistStore } from '../../../../../shared/store/useWishlistStore';
 import { ShoppingCart, Heart } from 'lucide-react';
+import Button from '../../../../../shared/components/ui/Button';
 
 export default function AddToCartButton({ product }: { product: any }) {
     const { addItem } = useCartStore();
     const { addItem: addToWishlist, isInWishlist } = useWishlistStore();
+    const [isLoading, setIsLoading] = useState(false);
 
     // Map API product to cart item
     const cartItem = {
@@ -18,43 +20,44 @@ export default function AddToCartButton({ product }: { product: any }) {
         quantity: 1
     };
 
+    const handleAddToCart = () => {
+        setIsLoading(true);
+        // Simulate network request for effect
+        setTimeout(() => {
+            addItem(cartItem);
+            setIsLoading(false);
+        }, 500);
+    };
+
     return (
-        <div style={{ display: 'flex', gap: '1rem' }}>
-            <button
-                onClick={() => addItem(cartItem)}
-                style={{
-                    flex: 1,
-                    padding: '1.2rem',
-                    borderRadius: '8px',
-                    border: 'none',
-                    background: '#333',
-                    color: '#fff',
-                    fontSize: '1.1rem',
-                    fontWeight: 'bold',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '0.8rem'
-                }}
-            >
-                <ShoppingCart /> Add to Cart
-            </button>
-            <button
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'stretch' }}>
+            <div style={{ flex: 1 }}>
+                <Button
+                    fullWidth
+                    onClick={handleAddToCart}
+                    isLoading={isLoading}
+                    leftIcon={<ShoppingCart size={20} />}
+                    style={{ height: '56px', fontSize: '1.1rem' }} // Minimal overrides, let theme handle colors
+                >
+                    Add to Cart
+                </Button>
+            </div>
+
+            <Button
+                variant="outline"
                 onClick={() => addToWishlist(cartItem)}
                 style={{
-                    padding: '1.2rem',
-                    borderRadius: '8px',
-                    border: '1px solid rgba(128,128,128,0.3)',
-                    background: 'transparent',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
+                    width: '56px',
+                    height: '56px',
+                    padding: 0,
+                    borderColor: 'var(--border, #ccc)' // Use theme border
                 }}
             >
-                <Heart fill={isInWishlist(product.id) ? 'red' : 'none'} color={isInWishlist(product.id) ? 'red' : 'currentColor'} />
-            </button>
+                <Heart
+                    fill={isInWishlist(product.id) ? 'var(--primary, red)' : 'none'}
+                    color={isInWishlist(product.id) ? 'var(--primary, red)' : 'currentColor'}
+                />
+            </Button>
         </div>
     );
 }
