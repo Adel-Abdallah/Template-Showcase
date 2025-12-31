@@ -49,6 +49,7 @@ export type Config = {
         heroVisible?: boolean;
         animations?: boolean;
     };
+    cardStyle?: 'standard' | 'blob' | 'minimal' | 'bordered';
     features: {
         hero: boolean;
     };
@@ -66,7 +67,7 @@ export type Config = {
     };
 };
 
-const configs: Record<string, () => Promise<{ default: Config }>> = {
+const configs: Record<string, () => Promise<{ default: any }>> = {
     luxury: () => import('../../app/universal/configs/luxury.json'),
     minimalist: () => import('../../app/universal/configs/minimalist.json'),
     tech: () => import('../../app/universal/configs/tech.json'),

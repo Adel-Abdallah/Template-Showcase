@@ -69,18 +69,28 @@ export default function AuthTemplate({
                         </Link>
                     </div>
 
-                    <div style={{ marginBottom: '2.5rem' }}>
-                        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}>{title}</h1>
-                        <p style={{ opacity: 0.7, fontSize: '1.1rem' }}>{subtitle}</p>
-                    </div>
-
-                    {children}
-
-                    {footerLink && (
-                        <div style={{ marginTop: '2rem', textAlign: 'center', opacity: 0.8 }}>
-                            {footerLink.text} <Link href={footerLink.href} style={{ fontWeight: 'bold', color: 'var(--primary)' }}>{footerLink.label}</Link>
+                    <div
+                        className={themeConfig?.cardStyle === 'blob' ? 'auth-blob' : ''}
+                        style={{
+                            padding: themeConfig?.cardStyle === 'blob' ? '3rem' : '0',
+                            borderRadius: themeConfig?.cardStyle === 'blob' ? '30% 70% 70% 30% / 30% 30% 70% 70%' : '0',
+                            background: themeConfig?.cardStyle === 'blob' ? 'var(--card-bg)' : 'transparent',
+                            boxShadow: themeConfig?.cardStyle === 'blob' ? '0 10px 40px rgba(135, 206, 235, 0.2)' : 'none',
+                            transition: 'all 0.4s ease'
+                        }}>
+                        <div style={{ marginBottom: '2.5rem' }}>
+                            <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}>{title}</h1>
+                            <p style={{ opacity: 0.7, fontSize: '1.1rem' }}>{subtitle}</p>
                         </div>
-                    )}
+
+                        {children}
+
+                        {footerLink && (
+                            <div style={{ marginTop: '2rem', textAlign: 'center', opacity: 0.8 }}>
+                                {footerLink.text} <Link href={footerLink.href} style={{ fontWeight: 'bold', color: 'var(--primary)' }}>{footerLink.label}</Link>
+                            </div>
+                        )}
+                    </div>
                 </div>
 
                 {/* Simple responsive CSS override */}
@@ -89,6 +99,25 @@ export default function AuthTemplate({
                         .hidden.md\\:flex {
                             display: none !important;
                         }
+                    }
+                    
+                    /* Blob Hover Animation */
+                    @keyframes float {
+                        0% { transform: translateY(0px); }
+                        50% { transform: translateY(-10px); }
+                        100% { transform: translateY(0px); }
+                    }
+
+                    .auth-blob {
+                        transition: all 0.4s ease;
+                        animation: float 6s ease-in-out infinite;
+                    }
+                    .auth-blob:hover {
+                        border-radius: 50% 50% 50% 50% / 40% 60% 40% 60% !important;
+                        transform: translateX(10px) scale(1.02);
+                        box-shadow: 0 25px 50px rgba(135, 206, 235, 0.4) !important;
+                        background: #fff !important;
+                        animation-play-state: paused;
                     }
                 `}</style>
             </div>

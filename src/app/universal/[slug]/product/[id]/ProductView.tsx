@@ -17,19 +17,48 @@ export default function ProductView({ product, themeConfig }: ProductViewProps) 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem' }}>
                     {/* Image Gallery */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                        <div style={{
-                            borderRadius: '16px',
-                            overflow: 'hidden',
-                            border: '1px solid var(--border)',
-                            aspectRatio: '1/1',
-                            background: 'var(--card-bg)'
-                        }}>
-                            <img src={product.thumbnail} alt={product.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <div
+                            className={themeConfig?.cardStyle === 'blob' ? 'pdp-blob' : ''}
+                            style={{
+                                borderRadius: themeConfig?.cardStyle === 'blob' ? '30% 70% 70% 30% / 30% 30% 70% 70%' : '16px',
+                                overflow: 'hidden',
+                                border: themeConfig?.cardStyle === 'blob' ? 'none' : '1px solid var(--border)',
+                                aspectRatio: '1/1',
+                                background: 'var(--card-bg)',
+                                boxShadow: themeConfig?.cardStyle === 'blob' ? '0 10px 30px rgba(135, 206, 235, 0.2)' : 'none',
+                                padding: themeConfig?.cardStyle === 'blob' ? '2rem' : '0',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                transition: 'all 0.4s ease'
+                            }}>
+                            <img
+                                src={product.thumbnail}
+                                alt={product.title}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'contain',
+                                    filter: themeConfig?.cardStyle === 'blob' ? 'drop-shadow(0 10px 20px rgba(0,0,0,0.1))' : 'none'
+                                }}
+                            />
                         </div>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
                             {product.images?.slice(0, 4).map((img: string, i: number) => (
-                                <div key={i} style={{ borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--border)', aspectRatio: '1/1' }}>
-                                    <img src={img} alt="Thumbnail" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                <div key={i}
+                                    className={themeConfig?.cardStyle === 'blob' ? 'pdp-blob' : ''}
+                                    style={{
+                                        borderRadius: themeConfig?.cardStyle === 'blob' ? '30% 70% 70% 30% / 30% 30% 70% 70%' : '8px',
+                                        overflow: 'hidden',
+                                        border: themeConfig?.cardStyle === 'blob' ? 'none' : '1px solid var(--border)',
+                                        aspectRatio: '1/1',
+                                        boxShadow: themeConfig?.cardStyle === 'blob' ? '0 4px 10px rgba(135, 206, 235, 0.2)' : 'none',
+                                        background: 'var(--card-bg)',
+                                        padding: themeConfig?.cardStyle === 'blob' ? '0.5rem' : '0',
+                                        cursor: 'pointer',
+                                        transition: 'all 0.4s ease'
+                                    }}>
+                                    <img src={img} alt="Thumbnail" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                                 </div>
                             ))}
                         </div>
@@ -65,6 +94,26 @@ export default function ProductView({ product, themeConfig }: ProductViewProps) 
                     </div>
                 </div>
             </div>
-        </ThemeWrapper>
+
+            <style jsx>{`
+                @keyframes float {
+                    0% { transform: translateY(0px); }
+                    50% { transform: translateY(-10px); }
+                    100% { transform: translateY(0px); }
+                }
+
+                .pdp-blob {
+                    transition: all 0.4s ease;
+                    animation: float 6s ease-in-out infinite;
+                }
+                .pdp-blob:hover {
+                    border-radius: 50% 50% 50% 50% / 40% 60% 40% 60% !important;
+                    transform: translateX(10px) scale(1.02);
+                    box-shadow: 0 25px 50px rgba(135, 206, 235, 0.4) !important;
+                    background: #fff !important;
+                    animation-play-state: paused;
+                }
+            `}</style>
+        </ThemeWrapper >
     );
 }

@@ -20,9 +20,10 @@ type ProductCardProps = {
     product: Product;
     styles: Record<string, string>;
     slug: string;
+    cardStyle?: 'standard' | 'blob' | 'minimal' | 'bordered';
 };
 
-export default function ProductCard({ product, styles, slug }: ProductCardProps) {
+export default function ProductCard({ product, styles, slug, cardStyle }: ProductCardProps) {
     const formattedRating = product.rating ? Math.round(product.rating) : 0;
     const addItemToCart = useCartStore((state) => state.addItem);
     const addItemToWishlist = useWishlistStore((state) => state.addItem);
@@ -70,8 +71,27 @@ export default function ProductCard({ product, styles, slug }: ProductCardProps)
         window.location.href = '/checkout';
     };
 
+    const isBlob = cardStyle === 'blob';
+
     return (
-        <div className={`${styles.card} product-card-container`} style={{ position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+        <div
+            className={`${styles.card} product-card-container ${isBlob ? 'blob-card' : ''}`}
+            style={{
+                position: 'relative',
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+                ...(isBlob ? {
+                    borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
+                    background: 'rgba(255, 255, 255, 0.9)',
+                    backdropFilter: 'blur(10px)',
+                    padding: '2.5rem',
+                    textAlign: 'center',
+                    boxShadow: '0 10px 30px rgba(135, 206, 235, 0.2)',
+                    transition: 'all 0.4s ease'
+                } : {})
+            }}
+        >
             {/* The clickable area for detailed view */}
             <Link href={`/universal/${slug}/product/${product.id}`} style={{ flex: 1, textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
 
@@ -146,14 +166,22 @@ export default function ProductCard({ product, styles, slug }: ProductCardProps)
                     opacity: 0;
                     transform: translateY(20px);
                 }
-                div[class*="card"]:hover .product-actions {
+                div[class*="product-card-container"]:hover .product-actions {
                     opacity: 1;
                     transform: translateY(0);
                 }
-                div[class*="card"]:hover img {
+                div[class*="product-card-container"]:hover img {
                     transform: scale(1.08);
                 }
                 
+                /* Blob Hover Effect */
+                .blob-card:hover {
+                    border-radius: 50% 50% 50% 50% / 40% 60% 40% 60% !important;
+                    transform: translateY(-15px) scale(1.05);
+                    box-shadow: 0 25px 50px rgba(135, 206, 235, 0.4) !important;
+                    background: #fff !important;
+                }
+
                 .action-btn {
                     background: var(--card-bg, white);
                     border: 1px solid var(--border, transparent);

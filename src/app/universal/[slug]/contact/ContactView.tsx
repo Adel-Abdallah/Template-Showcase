@@ -20,7 +20,16 @@ export default function ContactView({ slug, themeConfig }: ContactViewProps) {
                 </section>
 
                 <div style={{ maxWidth: '600px', margin: '0 auto', animation: 'slideUp 0.8s ease-out 0.2s backwards' }}>
-                    <div style={{ padding: '2.5rem', background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-md)' }}>
+                    <div
+                        className={themeConfig?.cardStyle === 'blob' ? 'contact-blob' : ''}
+                        style={{
+                            padding: themeConfig?.cardStyle === 'blob' ? '4rem' : '2.5rem',
+                            background: 'var(--card-bg)',
+                            border: themeConfig?.cardStyle === 'blob' ? 'none' : '1px solid var(--border)',
+                            borderRadius: themeConfig?.cardStyle === 'blob' ? '30% 70% 70% 30% / 30% 30% 70% 70%' : 'var(--radius)',
+                            boxShadow: themeConfig?.cardStyle === 'blob' ? '0 10px 40px rgba(135, 206, 235, 0.2)' : 'var(--shadow-md)',
+                            transition: 'all 0.4s ease'
+                        }}>
                         <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
                                 <Input label="Name" placeholder="Your Name" />
@@ -48,6 +57,27 @@ export default function ContactView({ slug, themeConfig }: ContactViewProps) {
                     </div>
                 </div>
             </div>
-        </ThemeWrapper>
+
+            <style jsx global>{`
+                @keyframes float {
+                    0% { transform: translateY(0px); }
+                    50% { transform: translateY(-10px); }
+                    100% { transform: translateY(0px); }
+                }
+            `}</style>
+            <style jsx>{`
+                .contact-blob {
+                    transition: all 0.4s ease;
+                    animation: float 6s ease-in-out infinite;
+                }
+                .contact-blob:hover {
+                    border-radius: 50% 50% 50% 50% / 40% 60% 40% 60% !important;
+                    transform: translateX(10px) scale(1.02);
+                    box-shadow: 0 25px 50px rgba(135, 206, 235, 0.4) !important;
+                    background: #fff !important;
+                    animation-play-state: paused;
+                }
+            `}</style>
+        </ThemeWrapper >
     );
 }

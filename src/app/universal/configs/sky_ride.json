@@ -3,6 +3,10 @@
     "title": "SKY_RIDE",
     "subtitle": "Soaring High",
     "description": "A soft, airy theme with floating animations and pastel colors.",
+    "categoryLayout": "minimal",
+    "filterLayout": "top-bar",
+    "gridLayout": "grid",
+    "cardStyle": "blob",
     "style": {
         "colors": {
             "primary": "#87CEEB",

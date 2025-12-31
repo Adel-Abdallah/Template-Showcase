@@ -30,21 +30,70 @@ export default function AboutView({ slug, themeConfig }: AboutViewProps) {
                     </p>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', marginTop: '5rem', textAlign: 'center' }}>
-                        <div style={{ padding: '2rem', background: 'var(--card-bg)', borderRadius: 'var(--radius)', border: '1px solid var(--border)', animation: 'zoomIn 0.6s ease-out 0.6s backwards' }}>
+                        <div
+                            className={themeConfig?.cardStyle === 'blob' ? 'about-blob' : ''}
+                            style={{
+                                padding: '2rem',
+                                background: 'var(--card-bg)',
+                                borderRadius: themeConfig?.cardStyle === 'blob' ? '30% 70% 70% 30% / 30% 30% 70% 70%' : 'var(--radius)',
+                                border: themeConfig?.cardStyle === 'blob' ? 'none' : '1px solid var(--border)',
+                                boxShadow: themeConfig?.cardStyle === 'blob' ? '0 10px 30px rgba(135, 206, 235, 0.2)' : 'none',
+                                animation: 'zoomIn 0.6s ease-out 0.6s backwards',
+                                transition: 'all 0.4s ease'
+                            }}>
                             <h3 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem', color: 'var(--primary)' }}>10+</h3>
                             <p style={{ opacity: 0.8 }}>Premium Templates</p>
                         </div>
-                        <div style={{ padding: '2rem', background: 'var(--card-bg)', borderRadius: 'var(--radius)', border: '1px solid var(--border)', animation: 'zoomIn 0.6s ease-out 0.7s backwards' }}>
+                        <div
+                            className={themeConfig?.cardStyle === 'blob' ? 'about-blob' : ''}
+                            style={{
+                                padding: '2rem',
+                                background: 'var(--card-bg)',
+                                borderRadius: themeConfig?.cardStyle === 'blob' ? '40% 60% 60% 40% / 40% 40% 60% 60%' : 'var(--radius)',
+                                border: themeConfig?.cardStyle === 'blob' ? 'none' : '1px solid var(--border)',
+                                boxShadow: themeConfig?.cardStyle === 'blob' ? '0 10px 30px rgba(135, 206, 235, 0.2)' : 'none',
+                                animation: 'zoomIn 0.6s ease-out 0.7s backwards',
+                                transition: 'all 0.4s ease'
+                            }}>
                             <h3 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem', color: 'var(--primary)' }}>100%</h3>
                             <p style={{ opacity: 0.8 }}>Responsive Design</p>
                         </div>
-                        <div style={{ padding: '2rem', background: 'var(--card-bg)', borderRadius: 'var(--radius)', border: '1px solid var(--border)', animation: 'zoomIn 0.6s ease-out 0.8s backwards' }}>
+                        <div
+                            className={themeConfig?.cardStyle === 'blob' ? 'about-blob' : ''}
+                            style={{
+                                padding: '2rem',
+                                background: 'var(--card-bg)',
+                                borderRadius: themeConfig?.cardStyle === 'blob' ? '60% 40% 30% 70% / 60% 30% 70% 40%' : 'var(--radius)',
+                                border: themeConfig?.cardStyle === 'blob' ? 'none' : '1px solid var(--border)',
+                                boxShadow: themeConfig?.cardStyle === 'blob' ? '0 10px 30px rgba(135, 206, 235, 0.2)' : 'none',
+                                animation: 'zoomIn 0.6s ease-out 0.8s backwards',
+                                transition: 'all 0.4s ease'
+                            }}>
                             <h3 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem', color: 'var(--primary)' }}>24/7</h3>
                             <p style={{ opacity: 0.8 }}>Support</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <style jsx>{`
+                @keyframes float {
+                    0% { transform: translateY(0px); }
+                    50% { transform: translateY(-10px); }
+                    100% { transform: translateY(0px); }
+                }
+
+                .about-blob {
+                    transition: all 0.4s ease;
+                    animation: float 6s ease-in-out infinite;
+                }
+                .about-blob:hover {
+                    border-radius: 50% 50% 50% 50% / 40% 60% 40% 60% !important;
+                    transform: translateX(10px) scale(1.05);
+                    box-shadow: 0 25px 50px rgba(135, 206, 235, 0.4) !important;
+                    background: #fff !important;
+                    animation-play-state: paused;
+                }
+            `}</style>
         </ThemeWrapper>
     );
 }

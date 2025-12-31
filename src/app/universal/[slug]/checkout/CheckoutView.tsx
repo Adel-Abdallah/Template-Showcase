@@ -20,7 +20,16 @@ export default function CheckoutView({ slug, themeConfig }: CheckoutViewProps) {
                 <h1 style={{ fontSize: '2.5rem', marginBottom: '2rem', textAlign: 'center', color: 'var(--text)' }}>Checkout</h1>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem' }}>
-                    <section style={{ padding: '2rem', border: '1px solid var(--border)', borderRadius: 'var(--radius)', background: 'var(--card-bg)' }}>
+                    <section
+                        className={themeConfig?.cardStyle === 'blob' ? 'checkout-blob' : ''}
+                        style={{
+                            padding: themeConfig?.cardStyle === 'blob' ? '3rem' : '2rem',
+                            border: themeConfig?.cardStyle === 'blob' ? 'none' : '1px solid var(--border)',
+                            borderRadius: themeConfig?.cardStyle === 'blob' ? '30% 70% 70% 30% / 30% 30% 70% 70%' : 'var(--radius)',
+                            background: 'var(--card-bg)',
+                            boxShadow: themeConfig?.cardStyle === 'blob' ? '0 10px 30px rgba(135, 206, 235, 0.2)' : 'none',
+                            transition: 'all 0.4s ease'
+                        }}>
                         <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'var(--text)' }}>Shipping Information</h2>
                         <form style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
@@ -36,7 +45,16 @@ export default function CheckoutView({ slug, themeConfig }: CheckoutViewProps) {
                         </form>
                     </section>
 
-                    <section style={{ padding: '2rem', border: '1px solid var(--border)', borderRadius: 'var(--radius)', background: 'var(--card-bg)' }}>
+                    <section
+                        className={themeConfig?.cardStyle === 'blob' ? 'checkout-blob' : ''}
+                        style={{
+                            padding: themeConfig?.cardStyle === 'blob' ? '3rem' : '2rem',
+                            border: themeConfig?.cardStyle === 'blob' ? 'none' : '1px solid var(--border)',
+                            borderRadius: themeConfig?.cardStyle === 'blob' ? '40% 60% 60% 40% / 40% 40% 60% 60%' : 'var(--radius)',
+                            background: 'var(--card-bg)',
+                            boxShadow: themeConfig?.cardStyle === 'blob' ? '0 10px 30px rgba(135, 206, 235, 0.2)' : 'none',
+                            transition: 'all 0.4s ease'
+                        }}>
                         <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'var(--text)' }}>Payment</h2>
                         <div style={{
                             padding: '1.5rem',
@@ -62,6 +80,26 @@ export default function CheckoutView({ slug, themeConfig }: CheckoutViewProps) {
                     </section>
                 </div>
             </div>
-        </ThemeWrapper>
+
+            <style jsx>{`
+                @keyframes float {
+                    0% { transform: translateY(0px); }
+                    50% { transform: translateY(-10px); }
+                    100% { transform: translateY(0px); }
+                }
+
+                .checkout-blob {
+                    transition: all 0.4s ease;
+                    animation: float 6s ease-in-out infinite;
+                }
+                .checkout-blob:hover {
+                    border-radius: 50% 50% 50% 50% / 40% 60% 40% 60% !important;
+                    transform: translateX(10px) scale(1.02);
+                    box-shadow: 0 25px 50px rgba(135, 206, 235, 0.4) !important;
+                    background: #fff !important;
+                    animation-play-state: paused;
+                }
+            `}</style>
+        </ThemeWrapper >
     );
 }

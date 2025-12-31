@@ -22,20 +22,25 @@ export default function OrdersView({ slug, themeConfig }: OrdersViewProps) {
             <div style={{ minHeight: '80vh', padding: '4rem 1rem', maxWidth: '800px', margin: '0 auto' }}>
                 <h1 style={{ fontSize: '2.5rem', marginBottom: '2rem', fontFamily: 'var(--font-heading)' }}>Order History</h1>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                    {orders.map((order) => (
-                        <div key={order.id} style={{
-                            padding: '2rem',
-                            border: '1px solid var(--border)',
-                            borderRadius: 'var(--radius)',
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            background: 'var(--card-bg)',
-                            flexWrap: 'wrap',
-                            gap: '1rem',
-                            boxShadow: 'var(--shadow-md)'
-                        }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                    {orders.map((order, index) => (
+                        <div key={order.id}
+                            className={themeConfig?.cardStyle === 'blob' ? 'orders-blob' : ''}
+                            style={{
+                                padding: themeConfig?.cardStyle === 'blob' ? '2.5rem' : '2rem',
+                                border: themeConfig?.cardStyle === 'blob' ? 'none' : '1px solid var(--border)',
+                                borderRadius: themeConfig?.cardStyle === 'blob' ?
+                                    (index % 2 === 0 ? '30% 70% 70% 30% / 30% 30% 70% 70%' : '70% 30% 30% 70% / 70% 70% 30% 30%')
+                                    : 'var(--radius)',
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                                background: 'var(--card-bg)',
+                                flexWrap: 'wrap',
+                                gap: '1rem',
+                                boxShadow: themeConfig?.cardStyle === 'blob' ? '0 10px 30px rgba(135, 206, 235, 0.2)' : 'var(--shadow-md)',
+                                transition: 'all 0.4s ease'
+                            }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                                 <div style={{
                                     padding: '1rem',
@@ -73,6 +78,27 @@ export default function OrdersView({ slug, themeConfig }: OrdersViewProps) {
                     ))}
                 </div>
             </div>
+
+            <style jsx global>{`
+                @keyframes float {
+                    0% { transform: translateY(0px); }
+                    50% { transform: translateY(-10px); }
+                    100% { transform: translateY(0px); }
+                }
+            `}</style>
+            <style jsx>{`
+                .orders-blob {
+                    transition: all 0.4s ease;
+                    animation: float 6s ease-in-out infinite;
+                }
+                .orders-blob:hover {
+                    border-radius: 50% 50% 50% 50% / 40% 60% 40% 60% !important;
+                    transform: translateX(10px) scale(1.02);
+                    box-shadow: 0 25px 50px rgba(135, 206, 235, 0.4) !important;
+                    background: #fff !important;
+                    animation-play-state: paused;
+                }
+            `}</style>
         </ThemeWrapper>
     );
 }
