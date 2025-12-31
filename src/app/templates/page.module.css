@@ -1,0 +1,149 @@
+.page {
+    min-height: 100vh;
+    background: #0a0a0a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    gap: 1rem;
+}
+
+.navLogo {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.navLinks {
+    display: flex;
+    gap: 1rem;
+}
+
+.navLink {
+    color: #888;
+    transition: color 0.2s;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.navLink:hover {
+    color: #fff;
+}
+
+/* Header */
+.header {
+    padding: 4rem 1.5rem 2rem;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: #888;
+    font-size: 1.1rem;
+}
+
+/* Main Content */
+.main {
+    flex: 1;
+    padding: 2rem 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 1.5rem;
+    border-top: 1px solid #222;
+    background: #0a0a0a;
+    margin-top: auto;
+}
+
+.footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.footer p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.footerLinks {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footerLinks a {
+    color: #666;
+    transition: color 0.2s;
+    font-size: 0.9rem;
+}
+
+.footerLinks a:hover {
+    color: #fff;
+}
+
+/* Tablet and up */
+@media (min-width: 640px) {
+    .nav {
+        padding: 1.5rem 2rem;
+    }
+
+    .navLogo {
+        font-size: 1.25rem;
+    }
+
+    .navLinks {
+        gap: 2rem;
+    }
+
+    .footerContent {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .nav {
+        padding: 1.5rem 3rem;
+    }
+}

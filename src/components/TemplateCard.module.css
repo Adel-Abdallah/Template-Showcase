@@ -1,0 +1,93 @@
+.card {
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+    transition: all 0.3s;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.cardDesc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    flex: 1;
+}
+
+.pages {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.pages span {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.4rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.cardActions {
+    display: flex;
+    gap: 0;
+    background: #1a1a1a;
+    border-radius: 0 0 16px 16px;
+    overflow: hidden;
+}
+
+.previewBtn,
+.downloadBtn {
+    flex: 1;
+    padding: 0.875rem;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: background 0.2s;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.previewBtn {
+    background: #1a1a1a;
+    color: #fff;
+    border-right: 1px solid #333;
+}
+
+.previewBtn:hover {
+    background: #222;
+}
+
+.downloadBtn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+}
+
+.downloadBtn:hover {
+    filter: brightness(1.1);
+}
+
+@media (min-width: 1024px) {
+    .card {
+        padding: 2rem;
+        min-height: 220px;
+    }
+
+    .cardTitle {
+        font-size: 1.5rem;
+    }
+}

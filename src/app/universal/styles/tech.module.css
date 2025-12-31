@@ -76,6 +76,67 @@
     filter: grayscale(100%) contrast(1.2);
 }
 
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.productCard {
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.productImage {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.2);
+    transition: filter 0.3s;
+    border-bottom: 1px solid var(--border);
+}
+
+.productCard:hover .productImage {
+    filter: grayscale(0%) contrast(1);
+}
+
+.productInfo {
+    padding: 1rem;
+}
+
+.productName {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.productPrice {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.sidebar {
+    border-right: 1px solid var(--border);
+    padding: 2rem;
+}
+
+/* Re-map for specific overrides if needed */
+.primaryBtn {
+    background: var(--primary);
+    color: var(--on-primary);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: inherit;
+    /* Ensure radius is 0 */
+    border-radius: var(--radius);
+}
+
 .name {
     font-size: 1rem;
     text-transform: uppercase;
