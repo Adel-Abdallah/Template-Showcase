@@ -11,13 +11,7 @@ export interface HeroSectionProps {
     secondaryCta?: { label: string; href: string };
     image?: string;
     overlayOpacity?: number;
-    // Theme configs
-    themeStyles?: {
-        bg: string;
-        text: string;
-        accent: string;
-        height?: string;
-    };
+
 }
 
 export default function HeroSection({
@@ -27,20 +21,19 @@ export default function HeroSection({
     cta,
     secondaryCta,
     image,
-    overlayOpacity = 0.5,
-    themeStyles = { bg: '#111', text: '#fff', accent: '#3b82f6' }
+    overlayOpacity = 0.5
 }: HeroSectionProps) {
 
     const containerStyle: React.CSSProperties = {
         position: 'relative',
-        minHeight: themeStyles.height || '600px',
+        minHeight: '600px', // Can be var(--hero-height) if needed
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         textAlign: 'center',
         padding: '2rem',
-        background: themeStyles.bg,
-        color: themeStyles.text,
+        background: 'var(--bg)',
+        color: 'var(--text)',
         overflow: 'hidden'
     };
 
@@ -88,7 +81,7 @@ export default function HeroSection({
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         letterSpacing: '0.05em',
-                        color: themeStyles.accent
+                        color: 'var(--primary)'
                     }}>
                         {subtitle}
                     </span>
@@ -98,7 +91,8 @@ export default function HeroSection({
                     fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                     fontWeight: 800,
                     marginBottom: '1.5rem',
-                    lineHeight: 1.1
+                    lineHeight: 1.1,
+                    fontFamily: 'var(--font-heading)'
                 }}>
                     {title}
                 </h1>
@@ -120,7 +114,6 @@ export default function HeroSection({
                 <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                     {cta && (
                         <Button
-                            themeStyles={{ primary: themeStyles.accent, text: '#fff' }}
                             size="lg"
                             onClick={() => window.location.href = cta.href}
                         >
@@ -130,7 +123,6 @@ export default function HeroSection({
                     {secondaryCta && (
                         <Button
                             variant="outline"
-                            themeStyles={{ primary: themeStyles.text === '#fff' ? '#fff' : '#000' }}
                             size="lg"
                             onClick={() => window.location.href = secondaryCta.href}
                         >

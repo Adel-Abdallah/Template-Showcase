@@ -7,7 +7,7 @@ interface StarRatingProps {
     color?: string;
 }
 
-export default function StarRating({ rating, size = 16, color = "#fbbf24" }: StarRatingProps) {
+export default function StarRating({ rating, size = 16, color = "var(--star-color, #fbbf24)" }: StarRatingProps) {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
         stars.push(

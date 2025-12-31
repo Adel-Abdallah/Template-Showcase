@@ -30,7 +30,7 @@ export default function SidebarFilter({ styles, categories, tags }: SidebarFilte
             </div>
 
             {/* Price Range */}
-            <div style={{ marginBottom: '1.5rem', borderBottom: '1px solid rgba(128,128,128,0.1)', paddingBottom: '1rem' }}>
+            <div style={{ marginBottom: '1.5rem', borderBottom: '1px solid var(--border)', paddingBottom: '1rem' }}>
                 <button
                     onClick={() => toggleSection('price')}
                     style={{
@@ -65,7 +65,7 @@ export default function SidebarFilter({ styles, categories, tags }: SidebarFilte
 
             {/* Collections / Tags */}
             {tags && tags.length > 0 && (
-                <div style={{ marginBottom: '1.5rem', borderBottom: '1px solid rgba(128,128,128,0.1)', paddingBottom: '1rem' }}>
+                <div style={{ marginBottom: '1.5rem', borderBottom: '1px solid var(--border)', paddingBottom: '1rem' }}>
                     <button
                         onClick={() => toggleSection('collections')}
                         style={{
@@ -91,12 +91,12 @@ export default function SidebarFilter({ styles, categories, tags }: SidebarFilte
                             {tags.map(tag => (
                                 <span key={tag} style={{
                                     padding: '0.4rem 0.8rem',
-                                    border: '1px solid rgba(128,128,128,0.3)',
+                                    border: '1px solid var(--border)',
                                     borderRadius: '8px',
                                     fontSize: '0.8rem',
                                     cursor: 'pointer',
                                     transition: 'all 0.2s',
-                                    background: 'rgba(255,255,255,0.05)'
+                                    background: 'var(--card-bg, rgba(255,255,255,0.05))'
                                 }}>
                                     {tag}
                                 </span>

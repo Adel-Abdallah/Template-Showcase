@@ -5,10 +5,9 @@ interface PaginationProps {
     currentPage: number;
     totalPages: number;
     onPageChange: (page: number) => void;
-    styles?: Record<string, string>;
 }
 
-export default function Pagination({ currentPage, totalPages, onPageChange, styles }: PaginationProps) {
+export default function Pagination({ currentPage, totalPages, onPageChange }: PaginationProps) {
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginTop: '2rem' }}>
             <button
@@ -16,17 +15,19 @@ export default function Pagination({ currentPage, totalPages, onPageChange, styl
                 disabled={currentPage <= 1}
                 style={{
                     padding: '0.5rem',
-                    border: '1px solid #ccc',
+                    border: '1px solid var(--border)',
                     borderRadius: '4px',
                     opacity: currentPage <= 1 ? 0.5 : 1,
                     cursor: currentPage <= 1 ? 'not-allowed' : 'pointer',
                     display: 'flex',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    background: 'transparent',
+                    color: 'var(--text)'
                 }}
             >
                 <ChevronLeft size={20} />
             </button>
-            <span>
+            <span style={{ color: 'var(--text)' }}>
                 Page {currentPage} of {totalPages}
             </span>
             <button
@@ -34,12 +35,14 @@ export default function Pagination({ currentPage, totalPages, onPageChange, styl
                 disabled={currentPage >= totalPages}
                 style={{
                     padding: '0.5rem',
-                    border: '1px solid #ccc',
+                    border: '1px solid var(--border)',
                     borderRadius: '4px',
                     opacity: currentPage >= totalPages ? 0.5 : 1,
                     cursor: currentPage >= totalPages ? 'not-allowed' : 'pointer',
                     display: 'flex',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    background: 'transparent',
+                    color: 'var(--text)'
                 }}
             >
                 <ChevronRight size={20} />

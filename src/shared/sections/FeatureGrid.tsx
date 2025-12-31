@@ -12,24 +12,17 @@ export interface Feature {
 export interface FeatureGridProps {
     features: Feature[];
     columns?: 2 | 3 | 4;
-    themeStyles?: {
-        bg: string;
-        cardBg: string;
-        text: string;
-        accent: string;
-    };
 }
 
 export default function FeatureGrid({
     features,
-    columns = 3,
-    themeStyles = { bg: '#fff', cardBg: '#f9f9f9', text: '#333', accent: '#3b82f6' }
+    columns = 3
 }: FeatureGridProps) {
 
     const containerStyle: React.CSSProperties = {
         padding: '5rem 2rem',
-        background: themeStyles.bg,
-        color: themeStyles.text
+        background: 'var(--bg)',
+        color: 'var(--text)'
     };
 
     const gridStyle: React.CSSProperties = {
@@ -49,9 +42,9 @@ export default function FeatureGrid({
                     return (
                         <div key={idx} style={{
                             padding: '2rem',
-                            borderRadius: '16px',
-                            background: themeStyles.cardBg,
-                            border: `1px solid ${themeStyles.text}10`, // 10% opacity border
+                            borderRadius: 'var(--radius, 16px)',
+                            background: 'var(--card-bg, #f9f9f9)',
+                            border: `1px solid var(--border)`,
                             transition: 'transform 0.2s',
                             display: 'flex',
                             flexDirection: 'column',
@@ -62,8 +55,9 @@ export default function FeatureGrid({
                                 width: '50px',
                                 height: '50px',
                                 borderRadius: '12px',
-                                background: `${themeStyles.accent}20`,
-                                color: themeStyles.accent,
+                                background: 'var(--card-bg)', // Simplified to card bg or could be specific accent-bg
+                                border: '1px solid var(--border)',
+                                color: 'var(--primary)',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center'
