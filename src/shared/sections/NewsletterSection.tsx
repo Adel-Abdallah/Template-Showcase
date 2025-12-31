@@ -51,13 +51,12 @@ export default function NewsletterSection({
                             placeholder="Enter your email"
                             type="email"
                             fullWidth
-                            themeStyles={{ borderRadius: '50px' }}
-                            style={{ borderRadius: '50px', paddingLeft: '1.5rem', height: '100%' }}
+                            style={{ '--radius': '50px', paddingLeft: '1.5rem', height: '100%' } as React.CSSProperties}
                         />
                     </div>
                     <Button
                         size="lg"
-                        themeStyles={{ primary: themeStyles.accent, radius: '50px' }}
+                        style={{ '--primary': themeStyles.accent, '--radius': '50px' } as React.CSSProperties}
                     >
                         Subscribe
                     </Button>
