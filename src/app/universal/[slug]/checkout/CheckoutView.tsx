@@ -19,7 +19,7 @@ export default function CheckoutView({ slug, themeConfig }: CheckoutViewProps) {
             <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', minHeight: '80vh' }}>
                 <h1 style={{ fontSize: '2.5rem', marginBottom: '2rem', textAlign: 'center', color: 'var(--text)' }}>Checkout</h1>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem' }}>
+                <div className="checkout-layout" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem' }}>
                     <section
                         className={themeConfig?.cardStyle === 'blob' ? 'checkout-blob' : ''}
                         style={{
@@ -32,12 +32,12 @@ export default function CheckoutView({ slug, themeConfig }: CheckoutViewProps) {
                         }}>
                         <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'var(--text)' }}>Shipping Information</h2>
                         <form style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                            <div className="form-row-2">
                                 <Input placeholder="First Name" />
                                 <Input placeholder="Last Name" />
                             </div>
                             <Input placeholder="Address" />
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
+                            <div className="form-row-3">
                                 <Input placeholder="City" />
                                 <Input placeholder="State" />
                                 <Input placeholder="ZIP" />
@@ -64,7 +64,7 @@ export default function CheckoutView({ slug, themeConfig }: CheckoutViewProps) {
                             display: 'flex',
                             alignItems: 'center',
                             gap: '1rem',
-                            background: 'var(--card-bg)' // Replaced rgba with card-bg for consistency or could add a secondary-bg var
+                            background: 'var(--card-bg)'
                         }}>
                             <CreditCard size={24} style={{ opacity: 0.8, color: 'var(--text)' }} />
                             <div>
@@ -81,7 +81,27 @@ export default function CheckoutView({ slug, themeConfig }: CheckoutViewProps) {
                 </div>
             </div>
 
-            <style jsx>{`
+            <style>{`
+                .form-row-2 {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+                }
+                .form-row-3 {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    gap: 1rem;
+                }
+
+                @media (max-width: 600px) {
+                    .form-row-2, .form-row-3 {
+                        grid-template-columns: 1fr;
+                    }
+                    .checkout-blob {
+                        padding: 1.5rem !important; /* Reduce padding on mobile */
+                    }
+                }
+
                 @keyframes float {
                     0% { transform: translateY(0px); }
                     50% { transform: translateY(-10px); }

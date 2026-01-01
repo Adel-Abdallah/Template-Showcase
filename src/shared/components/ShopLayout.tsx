@@ -85,7 +85,7 @@ export default function ShopLayout({ styles, children, sidebarProps, themeStyle,
                 {children}
             </div>
 
-            <style jsx global>{`
+            <style>{`
                 .list-view .grid {
                     grid-template-columns: 1fr !important;
                 }

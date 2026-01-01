@@ -1,4 +1,4 @@
-'use client';
+
 import React from 'react';
 import { loadThemeData } from '../../../../shared/utils/themeLoader';
 import CheckoutView from './CheckoutView';

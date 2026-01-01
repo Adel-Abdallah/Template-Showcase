@@ -161,7 +161,7 @@ export default function ProductCard({ product, styles, slug, cardStyle }: Produc
                 </div>
             </Link>
 
-            <style jsx>{`
+            <style>{`
                 .product-actions {
                     opacity: 0;
                     transform: translateY(20px);

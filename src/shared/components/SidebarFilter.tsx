@@ -338,7 +338,7 @@ export default function SidebarFilter({ styles, categories, tags, isOpen, onClos
                     )}
                 </div>
 
-                <style jsx>{`
+                <style>{`
                     .custom-checkbox input:checked + .checkbox-box {
                         border-color: var(--text);
                     }

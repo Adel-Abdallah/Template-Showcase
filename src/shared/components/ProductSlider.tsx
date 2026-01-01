@@ -75,6 +75,7 @@ export default function ProductSlider({ title, products, styles, slug }: Product
             </div>
             <div
                 ref={scrollRef}
+                className="hide-scrollbar"
                 style={{
                     display: 'flex',
                     gap: '2rem',
@@ -91,8 +92,8 @@ export default function ProductSlider({ title, products, styles, slug }: Product
                     </div>
                 ))}
             </div>
-            <style jsx>{`
-                div::-webkit-scrollbar {
+            <style>{`
+                .hide-scrollbar::-webkit-scrollbar {
                     display: none;
                 }
                 .slider-arrow:hover {
