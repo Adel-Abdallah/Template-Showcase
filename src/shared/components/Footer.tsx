@@ -11,8 +11,8 @@ type FooterProps = {
 
 export default function Footer({ config, styles }: FooterProps) {
     return (
-        <footer className={styles.footer}>
-            <div className={styles.footerLinks}>
+        <footer className={`${styles.footer} global-footer`}>
+            <div className={`${styles.footerLinks} global-footer-links`}>
                 {config?.links.map((link, index) => (
                     <Link key={index} href={link.href} className={styles.footerLink}>
                         {link.label}
@@ -20,6 +20,18 @@ export default function Footer({ config, styles }: FooterProps) {
                 ))}
             </div>
             <p className={styles.copyright}>{config?.text}</p>
+            <style>{`
+                @media (max-width: 768px) {
+                    .global-footer-links {
+                        flex-direction: column !important;
+                        align-items: center !important;
+                        gap: 1rem !important;
+                    }
+                    .global-footer {
+                        padding: 2rem 1rem !important;
+                    }
+                }
+            `}</style>
         </footer>
     );
 }

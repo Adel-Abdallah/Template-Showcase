@@ -17,62 +17,115 @@ interface CartItemProps {
 
 export default function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
     return (
-        <div style={{
+        <div className="cart-item-row" style={{
             display: 'flex',
             alignItems: 'center',
             gap: '1rem',
             padding: '1.5rem',
             borderBottom: '1px solid var(--border)',
-            background: 'rgba(255,255,255,0.02)' // Could be var(--card-bg) but keeping subtle difference for row
+            background: 'rgba(255,255,255,0.02)'
         }}>
-            <div style={{ width: '80px', height: '80px', flexShrink: 0, borderRadius: 'var(--radius)', overflow: 'hidden' }}>
-                <img src={item.image} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div className="cart-item-image">
+                <img src={item.image} alt={item.name} />
             </div>
 
-            <div style={{ flex: 1 }}>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 'bold', marginBottom: '0.25rem', color: 'var(--text)' }}>{item.name}</h3>
-                <p style={{ opacity: 0.7, color: 'var(--text)' }}>${item.price.toFixed(2)}</p>
+            <div className="cart-item-info">
+                <h3>{item.name}</h3>
+                <p>${item.price.toFixed(2)}</p>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <button
-                    onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}
-                    style={{
-                        width: '30px', height: '30px',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        border: '1px solid var(--border)', borderRadius: '4px',
-                        background: 'transparent', color: 'var(--text)', cursor: 'pointer'
-                    }}
-                >
-                    -
-                </button>
-                <span style={{ width: '20px', textAlign: 'center', color: 'var(--text)' }}>{item.quantity}</span>
-                <button
-                    onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
-                    style={{
-                        width: '30px', height: '30px',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        border: '1px solid var(--border)', borderRadius: '4px',
-                        background: 'transparent', color: 'var(--text)', cursor: 'pointer'
-                    }}
-                >
-                    +
+            <div className="cart-item-actions">
+                <div className="quantity-controls">
+                    <button onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}>-</button>
+                    <span>{item.quantity}</span>
+                    <button onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}>+</button>
+                </div>
+
+                <button className="remove-btn" onClick={() => onRemove(item.id)}>
+                    <Trash2 size={20} />
                 </button>
             </div>
 
-            <button
-                onClick={() => onRemove(item.id)}
-                style={{
-                    padding: '0.5rem',
-                    borderRadius: '4px',
-                    border: 'none',
-                    background: 'transparent',
-                    color: '#ff4444',
-                    cursor: 'pointer'
-                }}
-            >
-                <Trash2 size={20} />
-            </button>
+            <style>{`
+                .cart-item-image {
+                    width: 80px;
+                    height: 80px;
+                    flex-shrink: 0;
+                    border-radius: var(--radius);
+                    overflow: hidden;
+                }
+                .cart-item-image img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .cart-item-info {
+                    flex: 1;
+                }
+                .cart-item-info h3 {
+                    font-size: 1.05rem;
+                    font-weight: bold;
+                    margin-bottom: 0.25rem;
+                    color: var(--text);
+                }
+                .cart-item-info p {
+                    opacity: 0.7;
+                    color: var(--text);
+                }
+                .cart-item-actions {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                }
+                .quantity-controls {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+                .quantity-controls button {
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid var(--border);
+                    border-radius: 4px;
+                    background: transparent;
+                    color: var(--text);
+                    cursor: pointer;
+                }
+                .quantity-controls span {
+                    width: 20px;
+                    text-align: center;
+                    color: var(--text);
+                }
+                .remove-btn {
+                    padding: 0.5rem;
+                    border-radius: 4px;
+                    border: none;
+                    background: transparent;
+                    color: #ff4444;
+                    cursor: pointer;
+                }
+
+                @media (max-width: 600px) {
+                    .cart-item-row {
+                        flex-wrap: wrap; /* Allow wrapping */
+                        gap: 1rem !important;
+                        padding: 1rem !important;
+                    }
+                    .cart-item-info {
+                        min-width: calc(100% - 100px); /* Fill remaining space next to image */
+                    }
+                    .cart-item-actions {
+                        width: 100%;
+                        justify-content: space-between;
+                        padding-top: 0.5rem;
+                        border-top: 1px solid var(--border);
+                        margin-top: 0.5rem;
+                    }
+                }
+            `}</style>
         </div>
     );
 }

@@ -26,7 +26,7 @@ export default function CartView({ slug, themeConfig }: CartViewProps) {
                         <Link href={`/universal/${slug}`} style={{ textDecoration: 'underline', color: 'var(--primary)' }}>Continue Shopping</Link>
                     </div>
                 ) : (
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 350px', gap: '2rem' }}>
+                    <div className="cart-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 350px', gap: '2rem' }}>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                             {items.map((item) => (
                                 <CartItem
@@ -72,7 +72,7 @@ export default function CartView({ slug, themeConfig }: CartViewProps) {
                     </div>
                 )}
             </div>
-            <style jsx>{`
+            <style>{`
                 @keyframes float {
                     0% { transform: translateY(0px); }
                     50% { transform: translateY(-10px); }
@@ -89,6 +89,12 @@ export default function CartView({ slug, themeConfig }: CartViewProps) {
                     box-shadow: 0 25px 50px rgba(135, 206, 235, 0.4) !important;
                     background: #fff !important;
                     animation-play-state: paused;
+                }
+                
+                @media (max-width: 768px) {
+                    .cart-layout {
+                        grid-template-columns: 1fr !important;
+                    }
                 }
             `}</style>
         </ThemeWrapper>

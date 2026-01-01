@@ -83,21 +83,61 @@ export default function SecondaryNavbar({ categories, slug, styles, layout = 'de
         }
     };
 
+    const scrollRef = React.useRef<HTMLDivElement>(null);
+
+    const scroll = (direction: 'left' | 'right') => {
+        if (scrollRef.current) {
+            const scrollAmount = 200;
+            scrollRef.current.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    const { ChevronLeft, ChevronRight } = require("lucide-react");
+
     return (
-        <div style={baseStyle} className="secondary-nav">
-            <Link href={`/universal/${slug}`} style={getLinkStyle('All')}>
-                All
-            </Link>
-            {categories.map((cat) => (
-                <Link
-                    key={cat}
-                    href={`/universal/${slug}?category=${encodeURIComponent(cat)}`}
-                    style={getLinkStyle(cat)}
-                >
-                    {cat}
+        <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+            <button
+                onClick={() => scroll('left')}
+                style={{
+                    border: 'none', background: 'transparent', cursor: 'pointer', padding: '0.5rem',
+                    color: 'var(--text)', opacity: 0.7, zIndex: 2
+                }}
+            >
+                <ChevronLeft size={20} />
+            </button>
+
+            <div
+                ref={scrollRef}
+                style={baseStyle}
+                className="secondary-nav"
+            >
+                <Link href={`/universal/${slug}`} style={getLinkStyle('All')}>
+                    All
                 </Link>
-            ))}
-            <style jsx>{`
+                {categories.map((cat) => (
+                    <Link
+                        key={cat}
+                        href={`/universal/${slug}?category=${encodeURIComponent(cat)}`}
+                        style={getLinkStyle(cat)}
+                    >
+                        {cat}
+                    </Link>
+                ))}
+            </div>
+
+            <button
+                onClick={() => scroll('right')}
+                style={{
+                    border: 'none', background: 'transparent', cursor: 'pointer', padding: '0.5rem',
+                    color: 'var(--text)', opacity: 0.7, zIndex: 2
+                }}
+            >
+                <ChevronRight size={20} />
+            </button>
+            <style>{`
                 .secondary-nav::-webkit-scrollbar {
                     display: none;
                 }

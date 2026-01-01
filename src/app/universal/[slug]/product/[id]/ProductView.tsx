@@ -13,10 +13,21 @@ interface ProductViewProps {
 export default function ProductView({ product, themeConfig }: ProductViewProps) {
     return (
         <ThemeWrapper config={themeConfig}>
-            <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem 1rem', minHeight: '80vh' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem' }}>
+            <div className="product-container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem 1rem', minHeight: '80vh' }}>
+                <div className="product-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem' }}>
+
                     {/* Image Gallery */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                    <div className="gallery-container" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+
+                        {/* Mobile Title (Visible only on mobile) */}
+                        <div className="mobile-title">
+                            <h1 style={{ fontSize: '2rem', marginBottom: '0.5rem', lineHeight: 1.2 }}>{product.title}</h1>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                                <StarRating rating={Math.round(product.rating)} />
+                                <span style={{ opacity: 0.6 }}>({product.reviews?.length || 0} reviews)</span>
+                            </div>
+                        </div>
+
                         <div
                             className={themeConfig?.cardStyle === 'blob' ? 'pdp-blob' : ''}
                             style={{
@@ -66,11 +77,13 @@ export default function ProductView({ product, themeConfig }: ProductViewProps) 
 
                     {/* Product Info */}
                     <div style={{ display: 'flex', flexDirection: 'column', color: 'var(--text)' }}>
-                        <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', lineHeight: 1.2 }}>{product.title}</h1>
+                        <div className="desktop-title">
+                            <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', lineHeight: 1.2 }}>{product.title}</h1>
 
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                            <StarRating rating={Math.round(product.rating)} />
-                            <span style={{ opacity: 0.6 }}>({product.reviews?.length || 0} reviews)</span>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                                <StarRating rating={Math.round(product.rating)} />
+                                <span style={{ opacity: 0.6 }}>({product.reviews?.length || 0} reviews)</span>
+                            </div>
                         </div>
 
                         <p style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '2rem', color: 'var(--primary)' }}>${product.price}</p>
@@ -95,7 +108,7 @@ export default function ProductView({ product, themeConfig }: ProductViewProps) 
                 </div>
             </div>
 
-            <style jsx>{`
+            <style>{`
                 @keyframes float {
                     0% { transform: translateY(0px); }
                     50% { transform: translateY(-10px); }
@@ -112,6 +125,26 @@ export default function ProductView({ product, themeConfig }: ProductViewProps) 
                     box-shadow: 0 25px 50px rgba(135, 206, 235, 0.4) !important;
                     background: #fff !important;
                     animation-play-state: paused;
+                }
+
+                .mobile-title {
+                    display: none;
+                }
+
+                @media (max-width: 768px) {
+                    .product-grid {
+                        grid-template-columns: 1fr !important;
+                        gap: 2rem !important;
+                    }
+                    .mobile-title {
+                        display: block;
+                    }
+                    .desktop-title {
+                        display: none;
+                    }
+                    .product-container {
+                        padding-top: 1rem !important;
+                    }
                 }
             `}</style>
         </ThemeWrapper >

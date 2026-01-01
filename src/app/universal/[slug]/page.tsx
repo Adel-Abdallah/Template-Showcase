@@ -171,7 +171,7 @@ export default async function UniversalPage({
                     {config.subtitle && (
                         <span className={styles.heroSubtitle}>{config.subtitle}</span>
                     )}
-                    <h1 className={styles.heroTitle}>{config.title}</h1>
+                    <h1 className={styles.heroTitle} style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', width: '100%', wordBreak: 'break-word', hyphens: 'auto' }}>{config.title}</h1>
                 </section>
             )}
 
